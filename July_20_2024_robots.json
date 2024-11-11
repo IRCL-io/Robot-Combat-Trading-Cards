@@ -1,0 +1,72 @@
+{
+    "event_name": "King of the Ant Hill",
+    "event_location": "Gem State Gaming Convention",
+    "event_dates": {
+      "start": "July 20, 2024",
+      "end": "July 20, 2024"
+    },
+    "class": "1lb Antweight",
+    "robots": [
+      {
+        "name": "BroomBox",
+        "team": "BoomBox",
+        "status": "Competing",
+        "image_url": "https://www.robotcombatevents.com/images/BroomBox1.jpg"
+      },
+      {
+        "name": "AntHide",
+        "team": "ADHD Garage",
+        "status": "Competing",
+        "image_url": "https://www.robotcombatevents.com/images/AntHide.jpg"
+      },
+      {
+        "name": "Welcome to Costco, I love you",
+        "team": "Idiocracy",
+        "status": "Competing",
+        "image_url": "https://www.robotcombatevents.com/images/WelcomeToCostcoILoveYou.jpg"
+      },
+      {
+        "name": "Eek! the Ant",
+        "team": "BoomBox",
+        "status": "Competing",
+        "image_url": "https://www.robotcombatevents.com/images/EekTheAnt.jpg"
+      },
+      {
+        "name": "Spectre",
+        "team": "ADHD Garage",
+        "status": "Competing",
+        "image_url": "https://www.robotcombatevents.com/images/Spectre.jpg"
+      },
+      {
+        "name": "Inky",
+        "team": "RoboWarner",
+        "status": "Competing",
+        "image_url": "https://www.robotcombatevents.com/images/Inky.jpg"
+      },
+      {
+        "name": "JUMBO",
+        "team": "Something",
+        "status": "Competing",
+        "image_url": "https://www.robotcombatevents.com/images/Jumbo.jpg"
+      },
+      {
+        "name": "Voltshot",
+        "team": "Trouble Robotics",
+        "status": "Competing",
+        "image_url": "https://www.robotcombatevents.com/images/Voltshot.jpg"
+      },
+      {
+        "name": "LittleKittyMeowMeow Supreme",
+        "team": "Vollen Robotics",
+        "status": "Competing",
+        "image_url": "https://www.robotcombatevents.com/images/LittleKittyMeowMeowSupreme.jpg"
+      },
+      {
+        "name": "ICU",
+        "team": "Tele Present Tense",
+        "status": "Competing",
+        "image_url": "https://www.robotcombatevents.com/images/ICU.jpg"
+      }
+    ]
+  }
+  

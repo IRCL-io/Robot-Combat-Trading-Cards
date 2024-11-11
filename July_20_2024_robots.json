@@ -5,8 +5,7 @@
       "start": "July 20, 2024",
       "end": "July 20, 2024"
     },
-    "class": "1lb Antweight",
-    "robots": [
+    "antweight_robots": [
       {
         "name": "BroomBox",
         "team": "BoomBox",

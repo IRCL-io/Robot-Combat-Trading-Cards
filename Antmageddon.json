@@ -1,0 +1,62 @@
+{
+    "event_name": "IRCL Antmageddon 2024",
+    "event_location": "ABU Games",
+    "event_dates": {
+      "start": "Saturday, November 23, 2024",
+      "end": "Saturday, November 23, 2024"
+    },
+    "antweight_robots": [
+      {
+        "name": "Voltshot",
+        "team": "Trouble Robotics",
+        "image_url": "https://www.robotcombatevents.com/images/robots/pxl_20241024_0243110362.jpg"
+      },
+      {
+        "name": "BroomBox",
+        "team": "BoomBox",
+        "image_url": "https://www.robotcombatevents.com/images/robots/broombox1.jpg"
+      },
+      {
+        "name": "Antila the Phun",
+        "team": "Barnhouse Robotics",
+        "image_url": "https://www.robotcombatevents.com/images/robots/rcelogo.jpg"
+      },
+      {
+        "name": "Oliphant",
+        "team": "Barnhouse Robotics",
+        "image_url": "https://www.robotcombatevents.com/images/robots/rcelogo.jpg"
+      },
+      {
+        "name": "Scorpious",
+        "team": "Wright Stuff",
+        "image_url": "https://www.robotcombatevents.com/images/robots/rcelogo.jpg"
+      },
+      {
+        "name": "JUMBO",
+        "team": "Something",
+        "image_url": "https://www.robotcombatevents.com/images/robots/jumbo.jpg"
+      },
+      {
+        "name": "Stingray",
+        "team": "Something",
+        "image_url": "https://www.robotcombatevents.com/images/robots/20230523_150358.jpg"
+      },
+      {
+        "name": "Brawndo the thirst mutilator",
+        "team": "Idiocracy",
+        "image_url": "https://www.robotcombatevents.com/images/robots/pxl_20241026_021724261.jpg"
+      },
+      {
+        "name": "Docter Lexus",
+        "team": "Idiocracy",
+        "image_url": "https://www.robotcombatevents.com/images/robots/forker.jpg"
+      },
+      {
+        "name": "Freyja",
+        "team": "Batchelor Bots",
+        "image_url": "https://www.robotcombatevents.com/images/robots/freyja.jpg"
+      }
+    ]
+    
+  }
+  

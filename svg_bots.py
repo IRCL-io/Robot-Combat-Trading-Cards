@@ -1,8 +1,8 @@
 import json
 
-filenamed = "Antmageddon plants.json"
-weightclass = "plant"
-event = "IRCL Antmageddon 2024"
+file_named = "Antmageddon ants.json"
+weight_class = "ant"
+event_named = "IRCL Antmageddon 2024"
 
 # Constants for page layout
 PAGE_WIDTH = 816
@@ -19,10 +19,11 @@ def create_robot_card_svg(robot, x, y):
     
     return f"""
     <g transform="translate({x}, {y})">
-        <rect width="{CARD_WIDTH}" height="{CARD_HEIGHT}" fill="lightgray" stroke="black" rx="15" ry="15"/>
-        <text x="{CARD_WIDTH / 2}" y="40" font-size="24" font-weight="bold" fill="black" text-anchor="middle" font-family="Roboto">{name}</text>
+        <rect width="{CARD_WIDTH}" height="{CARD_HEIGHT}" fill="charcoal" stroke="black" rx="15" ry="15"/>
+        <text x="{CARD_WIDTH / 2}" y="40" font-size="24" font-weight="bold" fill="white" text-anchor="middle" font-family="Roboto">{name}</text>
         <image href="{image_url}" x="50" y="60" width="200" height="200"/>
-        <text x="{CARD_WIDTH / 2}" y="320" font-size="20" fill="darkblue" text-anchor="middle" font-family="Roboto">Team: {team}</text>
+        <text x="{CARD_WIDTH / 2}" y="320" font-size="20" fill="lightblue" text-anchor="middle" font-family="Roboto">{team}</text>
+        <text x="{CARD_WIDTH / 2}" y="420" font-size="10" fill="grey" text-anchor="middle" font-family="Roboto">{event_named}</text>
     </g>
     """
 
@@ -49,7 +50,7 @@ def create_page_svg(robots, page_num):
             }}
         </style>
 
-        <text x="30%" y="30" font-size="24" font-weight="bold" text-anchor="middle">{event} ~ Page {page_num}</text>
+        <text x="30%" y="30" font-size="24" font-weight="bold" text-anchor="middle">{event_named} ~ Page {page_num}</text>
     """
 
     cards_per_row = PAGE_WIDTH // (CARD_WIDTH + CARD_SPACING)
@@ -83,12 +84,21 @@ def generate_robot_pages(json_file):
         page_robots = robots[start:start + max_cards_per_page]
         page_svg = create_page_svg(page_robots, page_num)
         
-        output_file = f"{weightclass}_robot_page_{page_num}.svg"
+        output_file = f"{weight_class}_robot_page_{page_num}.svg"
         with open(output_file, 'w') as f:
             f.write(page_svg)
         
         print(f"Generated {output_file}")
         page_num += 1
 
+def use_params(fil, wei, eve):
+    global file_named
+    global weight_class
+    global event_named
+    file_named = fil
+    weight_class = wei
+    event_named = eve
+    generate_robot_pages(file_named)
+
 # and go
-generate_robot_pages(filenamed)
+# use_params("Antmageddon ants.json", "ant", "IRCL!! Antmageddon 2024")

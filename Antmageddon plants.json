@@ -1,0 +1,38 @@
+{
+    "event_name": "IRCL Antmageddon 2024",
+    "event_location": "ABU Games",
+    "event_weight": "plant",
+    "event_dates": {
+      "start": "Saturday, November 23, 2024",
+      "end": "Saturday, November 23, 2024"
+    },
+    "robots": [
+      {
+        "name": "Micro Raptor",
+        "team": "Team HyperTech Robotics",
+        "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/12183/IMG_20240712_161424738.jpg"
+      },
+      {
+        "name": "Mt.Dew Camacho",
+        "team": "Idiocracy",
+        "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/9214/PXL_20230903_033808052_2.jpg"
+      },
+      {
+        "name": "Beef Supreme",
+        "team": "Idiocracy",
+        "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/10217/PXL_20231230_024357592_3.jpg"
+      },
+      {
+        "name": "Uhmerican Exxxpress",
+        "team": "Idiocracy",
+        "image_url": "https://www.robotcombatevents.com/assets/RCELogo-3383ca77f76e5be2b7755ea9d0c464aea25a87d8c9f2a4cffd63643392f59fe7.png"
+      },
+      {
+        "name": "Ammit",
+        "team": "BoomBox",
+        "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/15697/1000005519.jpg"
+      }
+    ]
+    
+  }
+  

@@ -1,25 +1,26 @@
 {
     "event_name": "IRCL Antmageddon 2024",
     "event_location": "ABU Games",
+    "event_weight": "ant",
     "event_dates": {
       "start": "Saturday, November 23, 2024",
       "end": "Saturday, November 23, 2024"
     },
-    "antweight_robots": [
+    "robots": [
       {
         "name": "Voltshot",
         "team": "Trouble Robotics",
-        "image_url": "https://www.robotcombatevents.com/images/robots/pxl_20241024_0243110362.jpg"
+        "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/11140/PXL_20241024_0243110362.jpg"
       },
       {
         "name": "BroomBox",
         "team": "BoomBox",
-        "image_url": "https://www.robotcombatevents.com/images/robots/broombox1.jpg"
+        "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/12036/Broombox1.png"
       },
       {
         "name": "Antila the Phun",
         "team": "Barnhouse Robotics",
-        "image_url": "https://www.robotcombatevents.com/images/robots/rcelogo.jpg"
+        "image_url": "https://www.robotcombatevents.com/assets/RCELogo-3383ca77f76e5be2b7755ea9d0c464aea25a87d8c9f2a4cffd63643392f59fe7.png"
       },
       {
         "name": "Oliphant",
@@ -34,27 +35,27 @@
       {
         "name": "JUMBO",
         "team": "Something",
-        "image_url": "https://www.robotcombatevents.com/images/robots/jumbo.jpg"
+        "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/11026/jumbo.jpg"
       },
       {
         "name": "Stingray",
         "team": "Something",
-        "image_url": "https://www.robotcombatevents.com/images/robots/20230523_150358.jpg"
+        "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/9240/20230523_150358.jpg"
       },
       {
         "name": "Brawndo the thirst mutilator",
         "team": "Idiocracy",
-        "image_url": "https://www.robotcombatevents.com/images/robots/pxl_20241026_021724261.jpg"
+        "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/16424/PXL_20241026_021724261.jpg"
       },
       {
         "name": "Docter Lexus",
         "team": "Idiocracy",
-        "image_url": "https://www.robotcombatevents.com/images/robots/forker.jpg"
+        "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/9813/forker.png"
       },
       {
         "name": "Freyja",
         "team": "Batchelor Bots",
-        "image_url": "https://www.robotcombatevents.com/images/robots/freyja.jpg"
+        "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/16616/Freyja.jpg"
       }
     ]
     

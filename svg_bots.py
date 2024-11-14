@@ -2,7 +2,7 @@ import json
 
 file_named = "Antmageddon ants.json"
 weight_class = "ant"
-event_named = "IRCL Antmageddon 2024"
+event_named = "Unspecified Parameter"
 
 # Constants for page layout
 PAGE_WIDTH = 816
@@ -16,14 +16,19 @@ def create_robot_card_svg(robot, x, y):
     name = robot['name']
     team = robot['team']
     image_url = robot['image_url']
-    
+    logo_image_url = "https://ircl-io.github.io/images/IRCL_logo_Transparent2.png"
+
     return f"""
     <g transform="translate({x}, {y})">
-        <rect width="{CARD_WIDTH}" height="{CARD_HEIGHT}" fill="charcoal" stroke="black" rx="15" ry="15"/>
-        <text x="{CARD_WIDTH / 2}" y="40" font-size="24" font-weight="bold" fill="white" text-anchor="middle" font-family="Roboto">{name}</text>
-        <image href="{image_url}" x="50" y="60" width="200" height="200"/>
-        <text x="{CARD_WIDTH / 2}" y="320" font-size="20" fill="lightblue" text-anchor="middle" font-family="Roboto">{team}</text>
-        <text x="{CARD_WIDTH / 2}" y="420" font-size="10" fill="grey" text-anchor="middle" font-family="Roboto">{event_named}</text>
+        <rect width="{CARD_WIDTH}" height="{CARD_HEIGHT}" fill="rgb(51, 51, 51)" stroke="black" rx="15" ry="15"/>
+        <image href="{logo_image_url}" x="1" y="14" width="290" stroke="black" />
+        
+        <text x="{CARD_WIDTH / 2}" y="42" font-size="24" font-weight="bold" fill="white" text-anchor="middle" font-family="Roboto">{name}</text>
+        
+        <image href="{image_url}" x="35" y="60" width="230" height="230"/>
+        <rect x="0" y="353" width="300" height="40" fill="rgba(51, 51, 51, 0.5)" />
+        <text x="{CARD_WIDTH / 2}" y="380" font-size="20" fill="white" text-anchor="middle" font-family="Roboto">{team}</text>
+        <text x="{CARD_WIDTH / 2}" y="420" font-size="16" fill="grey" text-anchor="middle" font-family="Roboto">{event_named}</text>
     </g>
     """
 
@@ -68,7 +73,6 @@ def create_page_svg(robots, page_num):
     svg_content += "</svg>"
     return svg_content
 
-
 def generate_robot_pages(json_file):
     """Read JSON data and generate paginated SVG pages for robot cards."""
     with open(json_file, 'r') as f:
@@ -101,4 +105,4 @@ def use_params(fil, wei, eve):
     generate_robot_pages(file_named)
 
 # and go
-# use_params("Antmageddon ants.json", "ant", "IRCL!! Antmageddon 2024")
+# use_params("Antmageddon plants.json", "plant", "IRCL! Antmageddon 2024")

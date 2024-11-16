@@ -8,52 +8,56 @@
     },
     "robots": [
       {
-        "name": "Voltshot",
-        "team": "Trouble Robotics",
-        "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/11140/PXL_20241024_0243110362.jpg"
-      },
-      {
         "name": "BroomBox",
+        "rank": "rank: 374",
         "team": "BoomBox",
         "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/12036/Broombox1.png"
       },
       {
         "name": "Antila the Phun",
+        "rank": "first event",
         "team": "Barnhouse Robotics",
         "image_url": "https://www.robotcombatevents.com/assets/RCELogo-3383ca77f76e5be2b7755ea9d0c464aea25a87d8c9f2a4cffd63643392f59fe7.png"
       },
       {
         "name": "Oliphant",
+        "rank": "first event",
         "team": "Barnhouse Robotics",
         "image_url": "https://www.robotcombatevents.com/assets/RCELogo-3383ca77f76e5be2b7755ea9d0c464aea25a87d8c9f2a4cffd63643392f59fe7.png"
       },
       {
         "name": "Scorpious",
+        "rank": "first event",
         "team": "Wright Stuff",
         "image_url": "https://www.robotcombatevents.com/assets/RCELogo-3383ca77f76e5be2b7755ea9d0c464aea25a87d8c9f2a4cffd63643392f59fe7.png"
       },
       {
         "name": "JUMBO",
+        "rank": "rank: 172",
         "team": "Something",
         "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/11026/jumbo.jpg"
       },
       {
         "name": "Stingray",
+        "rank": "first event",
         "team": "Something",
         "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/9240/20230523_150358.jpg"
       },
       {
         "name": "Brawndo the thirst mutilator",
+        "rank": "first event",
         "team": "Idiocracy",
         "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/16424/PXL_20241026_021724261.jpg"
       },
       {
         "name": "Docter Lexus",
+        "rank": "first event",
         "team": "Idiocracy",
         "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/9813/forker.png"
       },
       {
         "name": "Freyja",
+        "rank": "first event",
         "team": "Batchelor Bots",
         "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/16616/Freyja.jpg"
       }

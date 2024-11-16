@@ -14,6 +14,7 @@ CARD_SPACING = 20
 def create_robot_card_svg(robot, x, y):
     """Generate an SVG snippet for an individual robot card at position (x, y)."""
     name = robot['name']
+    rank = robot['rank']
     team = robot['team']
     image_url = robot['image_url']
     logo_image_url = "https://ircl-io.github.io/images/IRCL_logo_Transparent2.png"
@@ -22,10 +23,9 @@ def create_robot_card_svg(robot, x, y):
     <g transform="translate({x}, {y})">
         <rect width="{CARD_WIDTH}" height="{CARD_HEIGHT}" fill="rgb(51, 51, 51)" stroke="black" rx="15" ry="15"/>
         <image href="{logo_image_url}" x="1" y="14" width="290" stroke="black" />
-        
         <text x="{CARD_WIDTH / 2}" y="42" font-size="24" font-weight="bold" fill="white" text-anchor="middle" font-family="Roboto">{name}</text>
-        
         <image href="{image_url}" x="35" y="60" width="230" height="230"/>
+        <text x="{CARD_WIDTH / 2}" y="330" font-size="20" fill="white" text-anchor="middle" font-family="Roboto">{rank}</text>
         <rect x="0" y="353" width="300" height="40" fill="rgba(51, 51, 51, 0.5)" />
         <text x="{CARD_WIDTH / 2}" y="380" font-size="20" fill="white" text-anchor="middle" font-family="Roboto">{team}</text>
         <text x="{CARD_WIDTH / 2}" y="420" font-size="16" fill="grey" text-anchor="middle" font-family="Roboto">{event_named}</text>

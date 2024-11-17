@@ -1,10 +1,15 @@
 {
-    "event_name": "IRCL Antmageddon 2024",
-    "event_location": "ABU Games",
-    "event_dates": {
+  "event":{
+    "name": "IRCL Antmageddon 2024",
+    "url": "https://www.robotcombatevents.com/events/1940",
+    "ant_weight_url": "https://www.robotcombatevents.com/events/1940/competitions/2765",
+    "plant_weight_url": "https://www.robotcombatevents.com/events/1940/competitions/2764",
+    "location": "ABU Games",
+    "dates": {
       "start": "Saturday, November 23, 2024",
       "end": "Saturday, November 23, 2024"
-    },
+    }
+  },
     "robots": [
       {
         "name": "BroomBox",

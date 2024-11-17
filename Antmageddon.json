@@ -1,5 +1,5 @@
 {
-  "event":{
+  "event": {
     "name": "IRCL Antmageddon 2024",
     "url": "https://www.robotcombatevents.com/events/1940",
     "ant_weight_url": "https://www.robotcombatevents.com/events/1940/competitions/2765",
@@ -10,121 +10,139 @@
       "end": "Saturday, November 23, 2024"
     }
   },
-    "robots": [
-      {
-        "name": "BroomBox",
-        "rank": "rank: 374",
-        "weight": "ant",
-        "team": "BoomBox",
-        "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/12036/Broombox1.png"
-      },
-      {
-        "name": "Antila the Phun",
-        "rank": "first event",
-        "weight": "ant",
-        "team": "Barnhouse Robotics",
-        "image_url": "https://www.robotcombatevents.com/assets/RCELogo-3383ca77f76e5be2b7755ea9d0c464aea25a87d8c9f2a4cffd63643392f59fe7.png"
-      },
-      {
-        "name": "Oliphant",
-        "rank": "first event",
-        "weight": "ant",
-        "team": "Barnhouse Robotics",
-        "image_url": "https://www.robotcombatevents.com/assets/RCELogo-3383ca77f76e5be2b7755ea9d0c464aea25a87d8c9f2a4cffd63643392f59fe7.png"
-      },
-      {
-        "name": "Scorpious",
-        "rank": "first event",
-        "weight": "ant",
-        "team": "Wright Stuff",
-        "image_url": "https://www.robotcombatevents.com/assets/RCELogo-3383ca77f76e5be2b7755ea9d0c464aea25a87d8c9f2a4cffd63643392f59fe7.png"
-      },
-      {
-        "name": "JUMBO",
-        "rank": "rank: 172",
-        "weight": "ant",
-        "team": "Something",
-        "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/11026/jumbo.jpg"
-      },
-      {
-        "name": "Stingray",
-        "rank": "first event",
-        "weight": "ant",
-        "team": "Something",
-        "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/9240/20230523_150358.jpg"
-      },
-      {
-        "name": "Brawndo the thirst mutilator",
-        "rank": "first event",
-        "weight": "ant",
-        "team": "Idiocracy",
-        "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/16424/PXL_20241026_021724261.jpg"
-      },
-      {
-        "name": "Docter Lexus",
-        "rank": "first event",
-        "weight": "ant",
-        "team": "Idiocracy",
-        "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/9813/forker.png"
-      },
-      {
-        "name": "Freyja",
-        "rank": "first event",
-        "weight": "ant",
-        "team": "Batchelor Bots",
-        "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/16616/Freyja.jpg"
-      },
-      {
-        "name": "Micro Raptor",
-        "rank": "rank: 291",
-        "weight": "plant",
-        "team": "Team HyperTech Robotics",
-        "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/12183/IMG_20240712_161424738.jpg"
-      },
-      {
-        "name": "Mt.Dew Camacho",
-        "rank": "rank: 212",
-        "weight": "plant",
-        "team": "Idiocracy",
-        "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/9214/PXL_20230903_033808052_2.jpg"
-      },
-      {
-        "name": "Beef Supreme",
-        "rank": "rank: 245",
-        "weight": "plant",
-        "team": "Idiocracy",
-        "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/10217/PXL_20231230_024357592_3.jpg"
-      },
-      {
-        "name": "Uhmerican Exxxpress",
-        "rank": "rank: 291",
-        "weight": "plant",
-        "team": "Idiocracy",
-        "image_url": "https://www.robotcombatevents.com/assets/RCELogo-3383ca77f76e5be2b7755ea9d0c464aea25a87d8c9f2a4cffd63643392f59fe7.png"
-      },
-      {
-        "name": "Ammit",
-        "rank": "rank: 190",
-        "weight": "plant",
-        "team": "BoomBox",
-        "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/15697/1000005519.jpg"
-      },
-      {
-        "name": "Drumstick",
-        "rank": "rank: 170",
-        "weight": "plant",
-        "team": "Purge Engineering",
-        "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/15432/Drumstick_V2.jpg"
-      },
-      {
-        "name": "Smite",
-        "rank": "first event",
-        "weight": "plant",
-        "team": "Barnhouse Robotics",
-        "image_url": "https://www.robotcombatevents.com/assets/RCELogo-3383ca77f76e5be2b7755ea9d0c464aea25a87d8c9f2a4cffd63643392f59fe7.png"
-      }
-
-    ]
-    
-  }
-  
+  "robots": [
+    {
+      "name": "BroomBox",
+      "rank": "rank: 374",
+      "weight": "ant",
+      "team": "BoomBox",
+      "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/12036/Broombox1.png"
+    },
+    {
+      "name": "Antila the Phun",
+      "rank": "first event",
+      "weight": "ant",
+      "team": "Barnhouse Robotics",
+      "image_url": "https://www.robotcombatevents.com/assets/RCELogo-3383ca77f76e5be2b7755ea9d0c464aea25a87d8c9f2a4cffd63643392f59fe7.png"
+    },
+    {
+      "name": "Oliphant",
+      "rank": "first event",
+      "weight": "ant",
+      "team": "Barnhouse Robotics",
+      "image_url": "https://www.robotcombatevents.com/assets/RCELogo-3383ca77f76e5be2b7755ea9d0c464aea25a87d8c9f2a4cffd63643392f59fe7.png"
+    },
+    {
+      "name": "Scorpious",
+      "rank": "first event",
+      "weight": "ant",
+      "team": "Wright Stuff",
+      "image_url": "https://www.robotcombatevents.com/assets/RCELogo-3383ca77f76e5be2b7755ea9d0c464aea25a87d8c9f2a4cffd63643392f59fe7.png"
+    },
+    {
+      "name": "JUMBO",
+      "rank": "rank: 172",
+      "weight": "ant",
+      "team": "Something",
+      "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/11026/jumbo.jpg"
+    },
+    {
+      "name": "Stingray",
+      "rank": "first event",
+      "weight": "ant",
+      "team": "Something",
+      "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/9240/20230523_150358.jpg"
+    },
+    {
+      "name": "Brawndo the thirst mutilator",
+      "rank": "first event",
+      "weight": "ant",
+      "team": "Idiocracy",
+      "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/16424/PXL_20241026_021724261.jpg"
+    },
+    {
+      "name": "Docter Lexus",
+      "rank": "first event",
+      "weight": "ant",
+      "team": "Idiocracy",
+      "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/9813/forker.png"
+    },
+    {
+      "name": "Freyja",
+      "rank": "first event",
+      "weight": "ant",
+      "team": "Batchelor Bots",
+      "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/16616/Freyja.jpg"
+    },
+    {
+      "name": "Voltshot",
+      "rank": "first event",
+      "weight": "ant",
+      "team": "Trouble Robotics",
+      "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/16423/PXL_20241024_0243110362.jpg"
+    },
+    {
+      "name": "Tiny Totem",
+      "rank": "first event",
+      "weight": "ant",
+      "team": "Barnhouse Robotics",
+      "image_url": "https://www.robotcombatevents.com/assets/RCELogo-3383ca77f76e5be2b7755ea9d0c464aea25a87d8c9f2a4cffd63643392f59fe7.png"
+    },
+    {
+      "name": "ICU",
+      "rank": "first event",
+      "weight": "ant",
+      "team": "Tele Present Tense",
+      "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/16617/Spatula.jpg"
+    },
+    {
+      "name": "Micro Raptor",
+      "rank": "rank: 291",
+      "weight": "plant",
+      "team": "Team HyperTech Robotics",
+      "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/12183/IMG_20240712_161424738.jpg"
+    },
+    {
+      "name": "Mt.Dew Camacho",
+      "rank": "rank: 212",
+      "weight": "plant",
+      "team": "Idiocracy",
+      "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/9214/PXL_20230903_033808052_2.jpg"
+    },
+    {
+      "name": "Beef Supreme",
+      "rank": "rank: 245",
+      "weight": "plant",
+      "team": "Idiocracy",
+      "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/10217/PXL_20231230_024357592_3.jpg"
+    },
+    {
+      "name": "Uhmerican Exxxpress",
+      "rank": "rank: 291",
+      "weight": "plant",
+      "team": "Idiocracy",
+      "image_url": "https://www.robotcombatevents.com/assets/RCELogo-3383ca77f76e5be2b7755ea9d0c464aea25a87d8c9f2a4cffd63643392f59fe7.png"
+    },
+    {
+      "name": "Ammit",
+      "rank": "rank: 190",
+      "weight": "plant",
+      "team": "BoomBox",
+      "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/15697/1000005519.jpg"
+    },
+    {
+      "name": "Drumstick",
+      "rank": "rank: 170",
+      "weight": "plant",
+      "team": "Purge Engineering",
+      "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/15432/Drumstick_V2.jpg"
+    },
+    {
+      "name": "Smite",
+      "rank": "first event",
+      "weight": "plant",
+      "team": "Barnhouse Robotics",
+      "image_url": "https://www.robotcombatevents.com/assets/RCELogo-3383ca77f76e5be2b7755ea9d0c464aea25a87d8c9f2a4cffd63643392f59fe7.png"
+    }
+  ]
+}

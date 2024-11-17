@@ -1,7 +1,6 @@
 import json
 
-file_named = "Antmageddon ants.json"
-weight_class = "ant"
+file_named = "Unspecified json"
 event_named = "Unspecified Parameter"
 
 # Constants for page layout
@@ -15,6 +14,7 @@ def create_robot_card_svg(robot, x, y):
     """Generate an SVG snippet for an individual robot card at position (x, y)."""
     name = robot['name']
     rank = robot['rank']
+    weight = robot['weight']
     team = robot['team']
     image_url = robot['image_url']
     logo_image_url = "https://ircl-io.github.io/images/IRCL_logo_Transparent2.png"
@@ -26,6 +26,10 @@ def create_robot_card_svg(robot, x, y):
         <text x="{CARD_WIDTH / 2}" y="42" font-size="24" font-weight="bold" fill="white" text-anchor="middle" font-family="Roboto">{name}</text>
         <image href="{image_url}" x="35" y="60" width="230" height="230"/>
         <text x="{CARD_WIDTH / 2}" y="330" font-size="20" fill="white" text-anchor="middle" font-family="Roboto">{rank}</text>
+
+        <text x="{CARD_WIDTH / 2}" y="340" font-size="10" fill="white" text-anchor="middle" font-family="Roboto">{weight} weight</text>
+        <text x="{CARD_WIDTH / 2}" y="360" font-size="10" fill="white" text-anchor="middle" font-family="Roboto">team</text>
+
         <rect x="0" y="353" width="300" height="40" fill="rgba(51, 51, 51, 0.5)" />
         <text x="{CARD_WIDTH / 2}" y="380" font-size="20" fill="white" text-anchor="middle" font-family="Roboto">{team}</text>
         <text x="{CARD_WIDTH / 2}" y="420" font-size="16" fill="grey" text-anchor="middle" font-family="Roboto">{event_named}</text>
@@ -55,9 +59,9 @@ def create_page_svg(robots, page_num):
             }}
         </style>
 
-        <text x="30%" y="30" font-size="24" font-weight="bold" text-anchor="middle">{event_named} ~ Page {page_num}</text>
+        
     """
-
+# <text x="30%" y="30" font-size="24" font-weight="bold" text-anchor="middle">{event_named} ~ Page {page_num}</text>
     cards_per_row = PAGE_WIDTH // (CARD_WIDTH + CARD_SPACING)
     cards_per_column = (PAGE_HEIGHT - 50) // (CARD_HEIGHT + CARD_SPACING)
     max_cards_per_page = cards_per_row * cards_per_column
@@ -66,7 +70,7 @@ def create_page_svg(robots, page_num):
         row = i // cards_per_row
         col = i % cards_per_row
         x = col * (CARD_WIDTH + CARD_SPACING)
-        y = row * (CARD_HEIGHT + CARD_SPACING) + 50
+        y = row * (CARD_HEIGHT + CARD_SPACING)
 
         svg_content += create_robot_card_svg(robot, x, y)
 
@@ -75,7 +79,7 @@ def create_page_svg(robots, page_num):
 
 def generate_robot_pages(json_file):
     """Read JSON data and generate paginated SVG pages for robot cards."""
-    with open(json_file, 'r') as f:
+    with open(f"{json_file}.json", 'r') as f:
         data = json.load(f)
         robots = data.get("robots", [])
 
@@ -88,21 +92,20 @@ def generate_robot_pages(json_file):
         page_robots = robots[start:start + max_cards_per_page]
         page_svg = create_page_svg(page_robots, page_num)
         
-        output_file = f"{weight_class}_robot_page_{page_num}.svg"
+        output_file = f"{json_file}_robot_page_{page_num}.svg"
         with open(output_file, 'w') as f:
             f.write(page_svg)
         
         print(f"Generated {output_file}")
         page_num += 1
 
-def use_params(fil, wei, eve):
+def use_params(fil, eve):
     global file_named
-    global weight_class
+    
     global event_named
     file_named = fil
-    weight_class = wei
     event_named = eve
     generate_robot_pages(file_named)
 
 # and go
-# use_params("Antmageddon plants.json", "plant", "IRCL! Antmageddon 2024")
+use_params("Antmageddon", "IRCL! Antmageddon 2024")

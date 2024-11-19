@@ -82,11 +82,25 @@ def create_card_back(x, y):
     return f"""
     <g transform="translate({x}, {y})">
         <rect width="{CARD_WIDTH}" height="{CARD_HEIGHT}" fill="rgb(51, 51, 51)" stroke="black" rx="15" ry="15"/>
-        <text x="{CARD_WIDTH / 2}" y="{CARD_HEIGHT / 2}" font-size="24" font-weight="bold" fill="white" text-anchor="middle" font-family="Roboto">
-            Idaho Robot Combat League
+        <text x="115" y="120" font-size="60" font-weight="bold" fill="white" text-anchor="middle" font-family="Roboto">
+            IDAHO
         </text>
+        <text x="122" y="200" font-size="60" font-weight="bold" fill="white" text-anchor="middle" font-family="Roboto">
+            ROBOT
+        </text>
+        <text x="149" y="280" font-size="60" font-weight="bold" fill="white" text-anchor="middle" font-family="Roboto">
+            COMBAT
+        </text>
+        <text x="135" y="360" font-size="60" font-weight="bold" fill="white" text-anchor="middle" font-family="Roboto">
+            LEAGUE
+        </text>
+        <text x="150" y="415" font-size="32" font-weight="bold" fill="blue" text-anchor="middle" font-family="Roboto">
+            https://ircl.io/
+        </text>
+        
     </g>
     """
+         # <rect x="15" y="15" width="3" height="420" fill="white" stroke="white" />
 
 def create_card_back_page():
     """Generate a page containing four card backs."""
@@ -156,7 +170,7 @@ def generate_robot_pages(json_file):
         f.write(card_back_svg)
 
     print(f"Generated {card_back_file}")
-           
+
 
 def use_params(fil, eve):
     global file_named

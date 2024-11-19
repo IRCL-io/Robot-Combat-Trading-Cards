@@ -77,6 +77,56 @@ def create_page_svg(robots, page_num):
     svg_content += "</svg>"
     return svg_content
 
+def create_card_back(x, y):
+    """Generate an SVG snippet for a single card back positioned at (x, y)."""
+    return f"""
+    <g transform="translate({x}, {y})">
+        <rect width="{CARD_WIDTH}" height="{CARD_HEIGHT}" fill="rgb(51, 51, 51)" stroke="black" rx="15" ry="15"/>
+        <text x="{CARD_WIDTH / 2}" y="{CARD_HEIGHT / 2}" font-size="24" font-weight="bold" fill="white" text-anchor="middle" font-family="Roboto">
+            Idaho Robot Combat League
+        </text>
+    </g>
+    """
+
+def create_card_back_page():
+    """Generate a page containing four card backs."""
+    svg_content = f"""
+    <svg width="{PAGE_WIDTH}" height="{PAGE_HEIGHT}" xmlns="http://www.w3.org/2000/svg">
+        <!-- Link to Google Roboto font using @font-face -->
+        <style>
+            @font-face {{
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 400;
+                src: url('https://fonts.gstatic.com/s/roboto/v29/KFOmCnqEu92Fr1Mu4mxP.ttf') format('truetype');
+            }}
+            @font-face {{
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 700;
+                src: url('https://fonts.gstatic.com/s/roboto/v29/KFOlCnqEu92Fr1MmWUlfBBc9.ttf') format('truetype');
+            }}
+            text {{
+                font-family: 'Roboto', sans-serif;
+            }}
+        </style>
+    """
+
+    # Top-right aligned positions for four card backs
+    positions = [
+        (PAGE_WIDTH - CARD_WIDTH - CARD_SPACING, CARD_SPACING),                     # Top-right
+        (PAGE_WIDTH - CARD_WIDTH - CARD_SPACING, CARD_HEIGHT + 2 * CARD_SPACING),  # Below first card
+        (PAGE_WIDTH - 2 * (CARD_WIDTH + CARD_SPACING), CARD_SPACING),              # Left of first card
+        (PAGE_WIDTH - 2 * (CARD_WIDTH + CARD_SPACING), CARD_HEIGHT + 2 * CARD_SPACING)  # Below third card
+    ]
+
+    for x, y in positions:
+        svg_content += create_card_back(x, y)
+
+    svg_content += "</svg>"
+    return svg_content
+
+
 def generate_robot_pages(json_file):
     """Read JSON data and generate paginated SVG pages for robot cards."""
     with open(f"{json_file}.json", 'r') as f:
@@ -98,6 +148,15 @@ def generate_robot_pages(json_file):
         
         print(f"Generated {output_file}")
         page_num += 1
+
+    # Generate the card back page
+    card_back_svg = create_card_back_page()
+    card_back_file = f"{json_file}_card_back_page.svg"
+    with open(card_back_file, 'w') as f:
+        f.write(card_back_svg)
+
+    print(f"Generated {card_back_file}")
+           
 
 def use_params(fil, eve):
     global file_named

@@ -1,4 +1,6 @@
 import json
+import subprocess
+import os
 
 file_named = "Unspecified json"
 event_named = "Unspecified Parameter"
@@ -9,6 +11,18 @@ PAGE_HEIGHT = 1056
 CARD_WIDTH = 300
 CARD_HEIGHT = 450
 CARD_SPACING = 20
+
+def svg_to_pdf_with_inkscape(svg_file, pdf_file):
+    """Convert an SVG file to a PDF using Inkscape."""
+    try:
+        # Execute Inkscape command
+        subprocess.run(
+            ["inkscape", svg_file, "--export-filename", pdf_file],
+            check=True
+        )
+        print(f"Converted {svg_file} to {pdf_file}")
+    except subprocess.CalledProcessError as e:
+        print(f"Error during conversion of {svg_file} to PDF: {e}")
 
 def create_robot_card_svg(robot, x, y):
     """Generate an SVG snippet for an individual robot card at position (x, y)."""
@@ -21,7 +35,7 @@ def create_robot_card_svg(robot, x, y):
 
     return f"""
     <g transform="translate({x}, {y})">
-        <rect width="{CARD_WIDTH}" height="{CARD_HEIGHT}" fill="rgb(51, 51, 51)" stroke="black" rx="15" ry="15"/>
+        <rect width="{CARD_WIDTH}" height="{CARD_HEIGHT}" fill="rgb(66, 66, 66)" stroke="black" rx="15" ry="15"/>
         <image href="{logo_image_url}" x="1" y="14" width="290" stroke="black" />
         <text x="{CARD_WIDTH / 2}" y="42" font-size="24" font-weight="bold" fill="white" text-anchor="middle" font-family="Roboto">{name}</text>
         <image href="{image_url}" x="35" y="60" width="230" height="230"/>
@@ -30,7 +44,7 @@ def create_robot_card_svg(robot, x, y):
         <text x="{CARD_WIDTH / 2}" y="340" font-size="10" fill="white" text-anchor="middle" font-family="Roboto">{weight} weight</text>
         <text x="{CARD_WIDTH / 2}" y="360" font-size="10" fill="white" text-anchor="middle" font-family="Roboto">team</text>
 
-        <rect x="0" y="353" width="300" height="40" fill="rgba(51, 51, 51, 0.5)" />
+        <rect x="0" y="353" width="300" height="40" fill="rgba(66, 66, 66, 0.5)" />
         <text x="{CARD_WIDTH / 2}" y="380" font-size="20" fill="white" text-anchor="middle" font-family="Roboto">{team}</text>
         <text x="{CARD_WIDTH / 2}" y="420" font-size="16" fill="grey" text-anchor="middle" font-family="Roboto">{event_named}</text>
     </g>
@@ -81,7 +95,7 @@ def create_card_back(x, y):
     """Generate an SVG snippet for a single card back positioned at (x, y)."""
     return f"""
     <g transform="translate({x}, {y})">
-        <rect width="{CARD_WIDTH}" height="{CARD_HEIGHT}" fill="rgb(51, 51, 51)" stroke="black" rx="15" ry="15"/>
+        <rect width="{CARD_WIDTH}" height="{CARD_HEIGHT}" fill="rgb(66, 66, 66)" stroke="black" rx="15" ry="15"/>
         <text x="115" y="120" font-size="60" font-weight="bold" fill="white" text-anchor="middle" font-family="Roboto">
             IDAHO
         </text>
@@ -140,9 +154,20 @@ def create_card_back_page():
     svg_content += "</svg>"
     return svg_content
 
+def svg_to_png_with_inkscape(svg_file, png_file):
+    """Convert an SVG file to a PNG using Inkscape."""
+    try:
+        # Execute Inkscape command to export as PNG
+        subprocess.run(
+            ["inkscape", svg_file, "--export-filename", png_file],
+            check=True
+        )
+        print(f"Converted {svg_file} to {png_file}")
+    except subprocess.CalledProcessError as e:
+        print(f"Error during conversion of {svg_file} to PNG: {e}")
 
-def generate_robot_pages(json_file):
-    """Read JSON data and generate paginated SVG pages for robot cards."""
+def generate_robot_pages_with_png(json_file):
+    """Generate paginated SVGs and convert them to PNGs."""
     with open(f"{json_file}.json", 'r') as f:
         data = json.load(f)
         robots = data.get("robots", [])
@@ -152,25 +177,45 @@ def generate_robot_pages(json_file):
     max_cards_per_page = cards_per_row * cards_per_column
 
     page_num = 1
+    png_files = []
     for start in range(0, len(robots), max_cards_per_page):
         page_robots = robots[start:start + max_cards_per_page]
+        svg_file = f"{json_file}_robot_page_{page_num}.svg"
+        png_file = f"{json_file}_robot_page_{page_num}.png"
+
+        # Generate SVG file
         page_svg = create_page_svg(page_robots, page_num)
-        
-        output_file = f"{json_file}_robot_page_{page_num}.svg"
-        with open(output_file, 'w') as f:
+        with open(svg_file, 'w') as f:
             f.write(page_svg)
-        
-        print(f"Generated {output_file}")
+
+        print(f"Generated {svg_file}")
+
+        # Convert SVG to PNG
+        svg_to_png_with_inkscape(svg_file, png_file)
+        png_files.append(png_file)
+
+        # Optionally delete the SVG if not needed
+        os.remove(svg_file)
+
         page_num += 1
 
-    # Generate the card back page
+    # Generate and convert the card back page
     card_back_svg = create_card_back_page()
-    card_back_file = f"{json_file}_card_back_page.svg"
-    with open(card_back_file, 'w') as f:
+    card_back_svg_file = f"{json_file}_card_back_page.svg"
+    card_back_png_file = f"{json_file}_card_back_page.png"
+
+    with open(card_back_svg_file, 'w') as f:
         f.write(card_back_svg)
 
-    print(f"Generated {card_back_file}")
+    print(f"Generated {card_back_svg_file}")
 
+    svg_to_png_with_inkscape(card_back_svg_file, card_back_png_file)
+    png_files.append(card_back_png_file)
+
+    # Optionally delete the SVG if not needed
+    os.remove(card_back_svg_file)
+
+    print(f"All PNG files created: {png_files}")
 
 def use_params(fil, eve):
     global file_named
@@ -178,7 +223,7 @@ def use_params(fil, eve):
     global event_named
     file_named = fil
     event_named = eve
-    generate_robot_pages(file_named)
+    generate_robot_pages_with_png(file_named)
 
 # and go
 use_params("Antmageddon", "IRCL! Antmageddon 2024")

@@ -11,6 +11,7 @@ PAGE_HEIGHT = 1056
 CARD_WIDTH = 300
 CARD_HEIGHT = 450
 CARD_SPACING = 20
+GREY_COLOR = "rgb(66, 66, 66)"
 
 def svg_to_pdf_with_inkscape(svg_file, pdf_file):
     """Convert an SVG file to a PDF using Inkscape."""
@@ -31,22 +32,27 @@ def create_robot_card_svg(robot, x, y):
     weight = robot['weight']
     team = robot['team']
     image_url = robot['image_url']
-    logo_image_url = "https://ircl-io.github.io/images/IRCL_logo_Transparent2.png"
+    # Adjust font size for name based on character length
+    name_font_size = 16 if len(name) > 24 else 24
 
     return f"""
     <g transform="translate({x}, {y})">
-        <rect width="{CARD_WIDTH}" height="{CARD_HEIGHT}" fill="rgb(66, 66, 66)" stroke="black" rx="15" ry="15"/>
-        <image href="{logo_image_url}" x="1" y="-5" width="{CARD_WIDTH}" height="{CARD_HEIGHT+10}" stroke="black" />
-        <text x="{CARD_WIDTH / 2}" y="42" font-size="24" font-weight="bold" fill="white" text-anchor="middle" font-family="Roboto">{name}</text>
+        <rect width="{CARD_WIDTH}" height="{CARD_HEIGHT}" fill="{GREY_COLOR}" stroke="black" rx="15" ry="15"/>
+        
+        <!-- Draw the rectangle using the pattern -->
+        <rect x="0" y="0" width="{CARD_WIDTH}" height="{CARD_HEIGHT}" fill="url(#imagePattern)" /> 
+
+        <rect x="7" y="15" width="291" height="40" fill="{GREY_COLOR}" />
+        <text x="{CARD_WIDTH / 2}" y="42" font-size="{name_font_size}"  fill="white" text-anchor="middle" font-family="Roboto">{name}</text>
+
         <image href="{image_url}" x="35" y="60" width="230" height="230"/>
+
+        <rect x="35" y="308" width="230" height="120" fill="{GREY_COLOR}" />
         <text x="{CARD_WIDTH / 2}" y="330" font-size="20" fill="white" text-anchor="middle" font-family="Roboto">{rank}</text>
-
         <text x="{CARD_WIDTH / 2}" y="340" font-size="10" fill="white" text-anchor="middle" font-family="Roboto">{weight} weight</text>
-        <text x="{CARD_WIDTH / 2}" y="360" font-size="10" fill="white" text-anchor="middle" font-family="Roboto">team</text>
-
-        <rect x="0" y="353" width="300" height="40" fill="rgba(66, 66, 66, 0.5)" />
+        <text x="{CARD_WIDTH / 2}" y="360" font-size="10" fill="white" text-anchor="middle" font-family="Roboto">team</text>        
         <text x="{CARD_WIDTH / 2}" y="380" font-size="20" fill="white" text-anchor="middle" font-family="Roboto">{team}</text>
-        <text x="{CARD_WIDTH / 2}" y="420" font-size="16" fill="grey" text-anchor="middle" font-family="Roboto">{event_named}</text>
+        <text x="{CARD_WIDTH / 2}" y="420" font-size="16" fill="white" text-anchor="middle" font-family="Roboto">{event_named}</text>
     </g>
     """
 
@@ -72,6 +78,12 @@ def create_page_svg(robots, page_num):
                 font-family: 'Roboto', sans-serif;
             }}
         </style>
+        <!-- Define the pattern -->
+        <defs>
+            <pattern id="imagePattern" patternUnits="userSpaceOnUse" width="50" height="50">
+            <image href="https://ircl-io.github.io/images/IRCL_logo_Transparent2.png" x="0" y="0" width="50" height="50" />
+            </pattern>
+        </defs>
     """
 
     cards_per_row = PAGE_WIDTH // (CARD_WIDTH + CARD_SPACING)
@@ -91,9 +103,13 @@ def create_page_svg(robots, page_num):
 
 def create_card_back(x, y):
     """Generate an SVG snippet for a single card back positioned at (x, y)."""
+    logo_image_url = "https://ircl-io.github.io/images/IRCL_logo_Transparent2.png"
     return f"""
     <g transform="translate({x}, {y})">
-        <rect width="{CARD_WIDTH}" height="{CARD_HEIGHT}" fill="rgb(66, 66, 66)" stroke="black" rx="15" ry="15"/>
+        <rect width="{CARD_WIDTH}" height="{CARD_HEIGHT}" fill="{GREY_COLOR}" stroke="black" rx="15" ry="15"/>
+
+        <image href="{logo_image_url}" x="1" y="-5" width="{CARD_WIDTH}" height="{CARD_HEIGHT+10}" stroke="black" />
+
         <text x="115" y="120" font-size="60" font-weight="bold" fill="white" text-anchor="middle" font-family="Roboto">
             IDAHO
         </text>

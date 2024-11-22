@@ -11,7 +11,7 @@ PAGE_HEIGHT = 1056
 CARD_WIDTH = 300
 CARD_HEIGHT = 450
 CARD_SPACING = 20
-GREY_COLOR = "rgb(66, 66, 66)"
+GREY_COLOR = "rgb(77, 77, 77)"
 
 def svg_to_pdf_with_inkscape(svg_file, pdf_file):
     """Convert an SVG file to a PDF using Inkscape."""
@@ -103,27 +103,16 @@ def create_page_svg(robots, page_num):
 
 def create_card_back(x, y):
     """Generate an SVG snippet for a single card back positioned at (x, y)."""
-    logo_image_url = "https://ircl-io.github.io/images/IRCL_logo_Transparent2.png"
+    #logo_image_url = "https://ircl-io.github.io/images/IRCL_logo_Transparent2.png"
+    logo_image_url = "https://ircl-io.github.io/images/IRCL_logo_Transparent.png"
     return f"""
     <g transform="translate({x}, {y})">
         <rect width="{CARD_WIDTH}" height="{CARD_HEIGHT}" fill="{GREY_COLOR}" stroke="black" rx="15" ry="15"/>
 
-        <image href="{logo_image_url}" x="1" y="-5" width="{CARD_WIDTH}" height="{CARD_HEIGHT+10}" stroke="black" />
+        <image href="{logo_image_url}" x="-105" y="-40" width="{CARD_HEIGHT-15}" height="{CARD_WIDTH-15}" stroke="black" transform="rotate(90, {(CARD_WIDTH / 2)-85}, {(CARD_HEIGHT / 2)-45})" />
 
-        <text x="115" y="120" font-size="60" font-weight="bold" fill="white" text-anchor="middle" font-family="Roboto">
-            IDAHO
-        </text>
-        <text x="122" y="200" font-size="60" font-weight="bold" fill="white" text-anchor="middle" font-family="Roboto">
-            ROBOT
-        </text>
-        <text x="149" y="280" font-size="60" font-weight="bold" fill="white" text-anchor="middle" font-family="Roboto">
-            COMBAT
-        </text>
-        <text x="135" y="360" font-size="60" font-weight="bold" fill="white" text-anchor="middle" font-family="Roboto">
-            LEAGUE
-        </text>
-        <text x="150" y="415" font-size="32" font-weight="bold" fill="blue" text-anchor="middle" font-family="Roboto">
-            https://ircl.io/
+        <text x="240" y="430" font-size="32" font-weight="bold" fill="white" text-anchor="middle" font-family="Roboto">
+            ircl.io
         </text>
     </g>
     """
@@ -234,7 +223,9 @@ def generate_robot_pages_with_png(json_file):
     # # references which are resolved in the conversion to png
     os.remove(card_back_svg_file)
 
+    print(" ")
     print(f"All PNG files created: {png_files}")
+    print(" ")
 
 def use_params(fil, eve):
     global file_named

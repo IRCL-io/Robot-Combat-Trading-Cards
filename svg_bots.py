@@ -111,7 +111,7 @@ def create_card_back(x, y):
 
         <image href="{logo_image_url}" x="-105" y="-40" width="{CARD_HEIGHT-15}" height="{CARD_WIDTH-15}" stroke="black" transform="rotate(90, {(CARD_WIDTH / 2)-85}, {(CARD_HEIGHT / 2)-45})" />
 
-        <text x="240" y="430" font-size="32" font-weight="bold" fill="white" text-anchor="middle" font-family="Roboto">
+        <text x="230" y="430" font-size="32" font-weight="bold" fill="white" text-anchor="middle" font-family="Roboto">
             ircl.io
         </text>
     </g>

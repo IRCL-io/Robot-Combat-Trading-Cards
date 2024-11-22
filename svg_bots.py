@@ -36,7 +36,7 @@ def create_robot_card_svg(robot, x, y):
     return f"""
     <g transform="translate({x}, {y})">
         <rect width="{CARD_WIDTH}" height="{CARD_HEIGHT}" fill="rgb(66, 66, 66)" stroke="black" rx="15" ry="15"/>
-        <image href="{logo_image_url}" x="1" y="14" width="290" stroke="black" />
+        <image href="{logo_image_url}" x="1" y="-5" width="{CARD_WIDTH}" height="{CARD_HEIGHT+10}" stroke="black" />
         <text x="{CARD_WIDTH / 2}" y="42" font-size="24" font-weight="bold" fill="white" text-anchor="middle" font-family="Roboto">{name}</text>
         <image href="{image_url}" x="35" y="60" width="230" height="230"/>
         <text x="{CARD_WIDTH / 2}" y="330" font-size="20" fill="white" text-anchor="middle" font-family="Roboto">{rank}</text>
@@ -72,13 +72,11 @@ def create_page_svg(robots, page_num):
                 font-family: 'Roboto', sans-serif;
             }}
         </style>
-
-        
     """
-# <text x="30%" y="30" font-size="24" font-weight="bold" text-anchor="middle">{event_named} ~ Page {page_num}</text>
+
     cards_per_row = PAGE_WIDTH // (CARD_WIDTH + CARD_SPACING)
     cards_per_column = (PAGE_HEIGHT - 50) // (CARD_HEIGHT + CARD_SPACING)
-    max_cards_per_page = cards_per_row * cards_per_column
+    # max_cards_per_page = cards_per_row * cards_per_column
 
     for i, robot in enumerate(robots):
         row = i // cards_per_row
@@ -111,7 +109,6 @@ def create_card_back(x, y):
         <text x="150" y="415" font-size="32" font-weight="bold" fill="blue" text-anchor="middle" font-family="Roboto">
             https://ircl.io/
         </text>
-        
     </g>
     """
          # <rect x="15" y="15" width="3" height="420" fill="white" stroke="white" />
@@ -142,10 +139,10 @@ def create_card_back_page():
 
     # Top-right aligned positions for four card backs
     positions = [
-        (PAGE_WIDTH - CARD_WIDTH - CARD_SPACING, CARD_SPACING),                     # Top-right
-        (PAGE_WIDTH - CARD_WIDTH - CARD_SPACING, CARD_HEIGHT + 2 * CARD_SPACING),  # Below first card
-        (PAGE_WIDTH - 2 * (CARD_WIDTH + CARD_SPACING), CARD_SPACING),              # Left of first card
-        (PAGE_WIDTH - 2 * (CARD_WIDTH + CARD_SPACING), CARD_HEIGHT + 2 * CARD_SPACING)  # Below third card
+        (PAGE_WIDTH - CARD_WIDTH, 0),                     # Top-right
+        (PAGE_WIDTH - CARD_WIDTH, CARD_HEIGHT + CARD_SPACING),  # Below first card
+        (PAGE_WIDTH - (2 * CARD_WIDTH) - CARD_SPACING, 0),              # Left of first card
+        (PAGE_WIDTH - (2 * CARD_WIDTH) - CARD_SPACING, CARD_HEIGHT + CARD_SPACING)  # Below third card
     ]
 
     for x, y in positions:
@@ -195,6 +192,9 @@ def generate_robot_pages_with_png(json_file):
         png_files.append(png_file)
 
         # Optionally delete the SVG if not needed
+        # up to this point, the svg is the most efficient media,
+        # but there are multiple advanced svg features with web 
+        # # references which are resolved in the conversion to png
         os.remove(svg_file)
 
         page_num += 1
@@ -213,6 +213,9 @@ def generate_robot_pages_with_png(json_file):
     png_files.append(card_back_png_file)
 
     # Optionally delete the SVG if not needed
+    # up to this point, the svg is the most efficient media,
+    # but there are multiple advanced svg features with web 
+    # # references which are resolved in the conversion to png
     os.remove(card_back_svg_file)
 
     print(f"All PNG files created: {png_files}")

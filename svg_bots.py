@@ -8,8 +8,8 @@ event_named = "Unspecified Parameter"
 # Constants for page layout
 PAGE_WIDTH = 816
 PAGE_HEIGHT = 1056
-CARD_WIDTH = 300
-CARD_HEIGHT = 450
+CARD_WIDTH = 240
+CARD_HEIGHT = 336
 CARD_SPACING = 20
 GREY_COLOR = "rgb(77, 77, 77)"
 

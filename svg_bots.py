@@ -12,6 +12,8 @@ CARD_WIDTH = 240
 CARD_HEIGHT = 328
 CARD_SPACING = 12
 GREY_COLOR = "rgb(99, 99, 99)"
+BACKGROUND_IMG_SIZE = 24
+NAME_FONT_SIZE = 20
 
 def svg_to_pdf_with_inkscape(svg_file, pdf_file):
     """Convert an SVG file to a PDF using Inkscape."""
@@ -33,27 +35,34 @@ def create_robot_card_svg(robot, x, y):
     team = robot['team']
     image_url = robot['image_url']
     # Adjust font size for name based on character length
-    name_font_size = 16 if len(name) > 24 else 24
+    name_font_size = 16 if len(name) > 17 else NAME_FONT_SIZE
 
     return f"""
     <g transform="translate({x}, {y})">
         <rect width="{CARD_WIDTH}" height="{CARD_HEIGHT}" fill="{GREY_COLOR}" stroke="black" rx="15" ry="15"/>
         
-        <!-- Draw the rectangle using the pattern -->
         <rect x="0" y="0" width="{CARD_WIDTH}" height="{CARD_HEIGHT}" fill="url(#imagePattern)" /> 
 
         <rect x="16" y="12" width="{CARD_WIDTH - 32}" height="28" fill="{GREY_COLOR}"  rx="15" ry="15" />
-        <text x="{CARD_WIDTH / 2}" y="36" font-size="{name_font_size}"  fill="white" text-anchor="middle" font-family="Roboto">{name}</text>
+        <text x="{CARD_WIDTH / 2}" y="32" font-size="{name_font_size}"  fill="white" text-anchor="middle" font-family="Roboto">{name}</text>
 
-        <image href="{image_url}" x="1" y="48" width="{CARD_WIDTH - 2}" height="{CARD_WIDTH - 2}"/>
+        <rect x="35" y="{CARD_HEIGHT - 75}" width="{CARD_WIDTH - 90}" height="30" fill="{GREY_COLOR}"  rx="15" ry="15" />
 
-        <rect x="35" y="{CARD_HEIGHT - 60}" width="{CARD_WIDTH - 70}" height="42" fill="{GREY_COLOR}"  rx="15" ry="15" />
-        <text x="{CARD_WIDTH / 2}" y="{CARD_HEIGHT - 76}" font-size="10" fill="white" text-anchor="middle" font-family="Roboto">{weight} weight</text>
-        <text x="{CARD_WIDTH / 2}" y="{CARD_HEIGHT - 57}" font-size="20" fill="white" text-anchor="middle" font-family="Roboto">{rank}</text>
+        <image href="{image_url}" x="1" y="42" width="{CARD_WIDTH - 2}" height="{CARD_WIDTH - 2}"/>
+
+        <rect x="35" y="{CARD_HEIGHT - 52}" width="{CARD_WIDTH - 70}" height="42" fill="{GREY_COLOR}"  rx="15" ry="15" />
+
         
-        <text x="{CARD_WIDTH / 2}" y="{CARD_HEIGHT - 46}" font-size="10" fill="white" text-anchor="middle" font-family="Roboto">team</text>        
-        <text x="{CARD_WIDTH / 2}" y="{CARD_HEIGHT - 28}" font-size="20" fill="white" text-anchor="middle" font-family="Roboto">{team}</text>
-        <text x="{CARD_WIDTH / 2}" y="{CARD_HEIGHT - 10}" font-size="16" fill="white" text-anchor="middle" font-family="Roboto">{event_named}</text>
+        <text x="{(CARD_WIDTH / 2) + 1}" y="{CARD_HEIGHT - 60}" 
+            font-size="20" fill="black" text-anchor="middle" font-family="Roboto">{rank}</text>
+        <text x="{CARD_WIDTH / 2}" y="{CARD_HEIGHT - 61}" 
+            font-size="20" fill="white" text-anchor="middle" font-family="Roboto">{rank}</text>
+
+              
+        <text x="{CARD_WIDTH / 2}" y="{CARD_HEIGHT - 45}" font-size="10" fill="white" text-anchor="middle" font-family="Roboto">{weight} weight</text>
+
+        <text x="{CARD_WIDTH / 2}" y="{CARD_HEIGHT - 28}" font-size="18" fill="white" text-anchor="middle" font-family="Roboto">{team}</text>
+        <text x="{CARD_WIDTH / 2}" y="{CARD_HEIGHT - 14}" font-size="12" fill="white" text-anchor="middle" font-family="Roboto">{event_named}</text>
     </g>
     """
 
@@ -80,8 +89,8 @@ def create_page_svg(robots, page_num):
         </style>
          <!-- Define the pattern -->
         <defs>
-            <pattern id="imagePattern" patternUnits="userSpaceOnUse" width="50" height="50">
-            <image href="https://ircl-io.github.io/images/IRCL_logo_Transparent2.png" x="0" y="0" width="30" height="30" />
+            <pattern id="imagePattern" patternUnits="userSpaceOnUse" width="{BACKGROUND_IMG_SIZE}" height="{BACKGROUND_IMG_SIZE}">
+            <image href="https://ircl-io.github.io/images/IRCL_logo_Transparent2.png" x="0" y="0" width="{BACKGROUND_IMG_SIZE}" height="{BACKGROUND_IMG_SIZE}" />
             </pattern>
         </defs>
     """

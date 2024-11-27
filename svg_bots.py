@@ -42,17 +42,18 @@ def create_robot_card_svg(robot, x, y):
         <!-- Draw the rectangle using the pattern -->
         <rect x="0" y="0" width="{CARD_WIDTH}" height="{CARD_HEIGHT}" fill="url(#imagePattern)" /> 
 
-        <rect x="7" y="15" width="291" height="40" fill="{GREY_COLOR}" />
-        <text x="{CARD_WIDTH / 2}" y="42" font-size="{name_font_size}"  fill="white" text-anchor="middle" font-family="Roboto">{name}</text>
+        <rect x="16" y="12" width="{CARD_WIDTH - 32}" height="28" fill="{GREY_COLOR}"  rx="15" ry="15" />
+        <text x="{CARD_WIDTH / 2}" y="36" font-size="{name_font_size}"  fill="white" text-anchor="middle" font-family="Roboto">{name}</text>
 
-        <image href="{image_url}" x="35" y="60" width="230" height="230"/>
+        <image href="{image_url}" x="1" y="48" width="{CARD_WIDTH - 2}" height="{CARD_WIDTH - 2}"/>
 
-        <rect x="35" y="308" width="230" height="120" fill="{GREY_COLOR}" />
-        <text x="{CARD_WIDTH / 2}" y="330" font-size="20" fill="white" text-anchor="middle" font-family="Roboto">{rank}</text>
-        <text x="{CARD_WIDTH / 2}" y="340" font-size="10" fill="white" text-anchor="middle" font-family="Roboto">{weight} weight</text>
-        <text x="{CARD_WIDTH / 2}" y="360" font-size="10" fill="white" text-anchor="middle" font-family="Roboto">team</text>        
-        <text x="{CARD_WIDTH / 2}" y="380" font-size="20" fill="white" text-anchor="middle" font-family="Roboto">{team}</text>
-        <text x="{CARD_WIDTH / 2}" y="420" font-size="16" fill="white" text-anchor="middle" font-family="Roboto">{event_named}</text>
+        <rect x="35" y="{CARD_HEIGHT - 60}" width="{CARD_WIDTH - 70}" height="42" fill="{GREY_COLOR}"  rx="15" ry="15" />
+        <text x="{CARD_WIDTH / 2}" y="{CARD_HEIGHT - 76}" font-size="10" fill="white" text-anchor="middle" font-family="Roboto">{weight} weight</text>
+        <text x="{CARD_WIDTH / 2}" y="{CARD_HEIGHT - 57}" font-size="20" fill="white" text-anchor="middle" font-family="Roboto">{rank}</text>
+        
+        <text x="{CARD_WIDTH / 2}" y="{CARD_HEIGHT - 46}" font-size="10" fill="white" text-anchor="middle" font-family="Roboto">team</text>        
+        <text x="{CARD_WIDTH / 2}" y="{CARD_HEIGHT - 28}" font-size="20" fill="white" text-anchor="middle" font-family="Roboto">{team}</text>
+        <text x="{CARD_WIDTH / 2}" y="{CARD_HEIGHT - 10}" font-size="16" fill="white" text-anchor="middle" font-family="Roboto">{event_named}</text>
     </g>
     """
 
@@ -77,6 +78,12 @@ def create_page_svg(robots, page_num):
                 font-family: 'Roboto', sans-serif;
             }}
         </style>
+         <!-- Define the pattern -->
+        <defs>
+            <pattern id="imagePattern" patternUnits="userSpaceOnUse" width="50" height="50">
+            <image href="https://ircl-io.github.io/images/IRCL_logo_Transparent2.png" x="0" y="0" width="30" height="30" />
+            </pattern>
+        </defs>
     """
 
     # Correctly calculate the number of cards per row and column
@@ -112,7 +119,7 @@ def create_card_back(x, y):
     <g transform="translate({x}, {y})">
         <rect width="{CARD_WIDTH}" height="{CARD_HEIGHT}" fill="{GREY_COLOR}" stroke="black" rx="15" ry="15"/>
 
-        <image href="{logo_image_url}" x="-105" y="-40" width="{CARD_HEIGHT-15}" height="{CARD_WIDTH-15}" stroke="black" transform="rotate(90, {(CARD_WIDTH / 2)-85}, {(CARD_HEIGHT / 2)-45})" />
+        <image href="{logo_image_url}" x="1" y="1" width="{CARD_WIDTH -2}" height="{CARD_HEIGHT-2}" stroke="black" transform="rotate(90, {(CARD_WIDTH / 2)-85}, {(CARD_HEIGHT / 2)-45})" />
 
         <text x="230" y="430" font-size="32" font-weight="bold" fill="white" text-anchor="middle" font-family="Roboto">
             ircl.io

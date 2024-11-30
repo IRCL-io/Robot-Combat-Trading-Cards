@@ -15,17 +15,40 @@ GREY_COLOR = "rgb(99, 99, 99)"
 BACKGROUND_IMG_SIZE = 24
 NAME_FONT_SIZE = 20
 
-def svg_to_pdf_with_inkscape(svg_file, pdf_file):
-    """Convert an SVG file to a PDF using Inkscape."""
-    try:
-        # Execute Inkscape command
-        subprocess.run(
-            ["inkscape", svg_file, "--export-filename", pdf_file],
-            check=True
-        )
-        print(f"Converted {svg_file} to {pdf_file}")
-    except subprocess.CalledProcessError as e:
-        print(f"Error during conversion of {svg_file} to PDF: {e}")
+from PyPDF2 import PdfWriter, PdfReader
+
+def assemble_pngs_to_pdf_with_alternating_backs(front_pngs, back_png, output_pdf):
+    """Assemble PNGs into a PDF with alternating card back pages."""
+    import img2pdf  # Install using `pip install img2pdf`
+
+    # Convert front PNGs to individual PDFs
+    front_pdfs = []
+    for front_png in front_pngs:
+        front_pdf = front_png.replace('.png', '.pdf')
+        with open(front_pdf, 'wb') as f:
+            f.write(img2pdf.convert(front_png))
+        front_pdfs.append(front_pdf)
+
+    # Convert card back PNG to a PDF
+    back_pdf = back_png.replace('.png', '.pdf')
+    with open(back_pdf, 'wb') as f:
+        f.write(img2pdf.convert(back_png))
+
+    # Assemble the final PDF with alternating pages
+    writer = PdfWriter()
+    for front_pdf in front_pdfs:
+        writer.append(PdfReader(front_pdf))  # Add the front page
+        writer.append(PdfReader(back_pdf))  # Add the card back page
+
+    # Write the final PDF
+    with open(output_pdf, 'wb') as f:
+        writer.write(f)
+
+    print(f"Generated PDF with alternating card backs: {output_pdf}")
+
+    # Optionally clean up intermediate PDFs
+    for pdf in front_pdfs + [back_pdf]:
+        os.remove(pdf)
 
 def create_robot_card_svg(robot, x, y):
     """Generate an SVG snippet for an individual robot card at position (x, y)."""
@@ -122,20 +145,19 @@ def create_page_svg(robots, page_num):
 
 def create_card_back(x, y):
     """Generate an SVG snippet for a single card back positioned at (x, y)."""
-    #logo_image_url = "https://ircl-io.github.io/images/IRCL_logo_Transparent2.png"
-    logo_image_url = "https://ircl-io.github.io/images/IRCL_logo_Transparent.png"
+    logo_image_url = "https://ircl-io.github.io/images/IRCL/IRCL_logo_Transparent-90.png"
+
     return f"""
     <g transform="translate({x}, {y})">
         <rect width="{CARD_WIDTH}" height="{CARD_HEIGHT}" fill="{GREY_COLOR}" stroke="black" rx="15" ry="15"/>
 
-        <image href="{logo_image_url}" x="1" y="1" width="{CARD_WIDTH -2}" height="{CARD_HEIGHT-2}" stroke="black" transform="rotate(90, {(CARD_WIDTH / 2)-85}, {(CARD_HEIGHT / 2)-45})" />
+        <image href="{logo_image_url}" x="1" y="1" width="{CARD_WIDTH -2}" height="{CARD_HEIGHT-2}" stroke="black"  />
 
-        <text x="230" y="430" font-size="32" font-weight="bold" fill="white" text-anchor="middle" font-family="Roboto">
+        <text x="60" y="10" font-size="32" font-weight="bold" fill="white" text-anchor="middle" font-family="Roboto" transform="rotate(90, 10, 10)" >
             ircl.io
         </text>
     </g>
     """
-         # <rect x="15" y="15" width="3" height="420" fill="white" stroke="white" />
 
 def create_card_back_page():
     """Generate a page containing four card backs."""
@@ -258,6 +280,10 @@ def generate_robot_pages_with_png(json_file):
     print(" ")
     print(f"All PNG files created: {png_files}")
     print(" ")
+    # After all PNGs are created:
+    output_pdf = f"{json_file}_cards_with_backs.pdf"
+    assemble_pngs_to_pdf_with_alternating_backs(png_files[:-1], png_files[-1], output_pdf)
+    print(f"Final PDF created: {output_pdf}")
 
 def use_params(fil, eve):
     global file_named

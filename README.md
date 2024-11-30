@@ -1,10 +1,11 @@
 # Robot-Combat-Trading-Cards
 
 This project mostly-autonomously generates trading cards for a given robot combat event.   
-Execute the process from the jupyter notebook:
-[make_svg_from_json.ipynb](make_svg_from_json.ipynb)
+
+Run this python module to generate svg cards, convert them to png(resolving internet references), and assemble in one complete pdf:
+[svg_bots.py](svg_bots.py)
    
-The JSON is generated with ChatGPT prompting, noted in [prompts.md](prompts.md)
+The source JSON data is generated with ChatGPT prompting, noted in [prompts.md](prompts.md)
 
 events:
 

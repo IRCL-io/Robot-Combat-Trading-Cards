@@ -6,8 +6,8 @@ file_named = "Unspecified json"
 event_named = "Unspecified Parameter"
 
 # Constants for page layout
-PAGE_WIDTH = 778 #816 768
-PAGE_HEIGHT = 1018 #1056 1008
+PAGE_WIDTH = 2400 #778 #816 768 > width="2400" height="3150"
+PAGE_HEIGHT = 3150 #1018 #1056 1008
 CARD_WIDTH = 240
 CARD_HEIGHT = 328
 CARD_SPACING = 12

@@ -1,6 +1,7 @@
 import json
 import subprocess
 import os
+import glob
 
 file_named = "Unspecified json"
 event_named = "Unspecified Parameter"
@@ -14,9 +15,10 @@ CARD_SPACING = 38  # 1/8 inch at 300 dpi
 CARD_WIDTH = 824
 CARD_HEIGHT = 1074
 
-GREY_COLOR = "rgb(99, 99, 99)"
-BACKGROUND_IMG_SIZE = 80  # scaled up from previous
-NAME_FONT_SIZE = 66        # slightly larger font size
+GREY_COLOR = "rgb(210, 210, 210)"
+DARKER_GREY_COLOR = "rgb(95, 95, 95)"
+BACKGROUND_IMG_SIZE = 90  
+NAME_FONT_SIZE = 66        
 
 from PyPDF2 import PdfWriter, PdfReader
 
@@ -68,26 +70,28 @@ def create_robot_card_svg(robot, x, y):
         
         <rect x="0" y="0" width="{CARD_WIDTH}" height="{CARD_HEIGHT}" fill="url(#imagePattern)" /> 
 
-        <rect x="16" y="12" width="{CARD_WIDTH - 32}" height="28" fill="{GREY_COLOR}" rx="45" ry="45" />
-        <text x="{CARD_WIDTH / 2}" y="32" font-size="{name_font_size}" fill="white" text-anchor="middle" font-family="Roboto">{name}</text>
+        <rect x="16" y="24" width="{CARD_WIDTH - 32}" height="48" fill="{DARKER_GREY_COLOR}" rx="45" ry="45" />
 
-        <rect x="35" y="{CARD_HEIGHT - 75}" width="{CARD_WIDTH - 90}" height="30" fill="{GREY_COLOR}" rx="45" ry="45" />
+
+        <rect x="35" y="{CARD_HEIGHT - 150}" width="{CARD_WIDTH - 90}" height="60" fill="{DARKER_GREY_COLOR}" rx="45" ry="45" />
 
         <image href="{image_url}" x="1" y="42" width="{CARD_WIDTH - 2}" height="{CARD_WIDTH - 2}"/>
 
-        <rect x="35" y="{CARD_HEIGHT - 52}" width="{CARD_WIDTH - 70}" height="42" fill="{GREY_COLOR}" rx="45" ry="45" />
+        <text x="{CARD_WIDTH / 2}" y="64" font-size="{name_font_size}" fill="white" text-anchor="middle" font-family="Roboto">{name}</text>
+
+        <rect x="35" y="{CARD_HEIGHT - 104}" width="{CARD_WIDTH - 70}" height="84" fill="{DARKER_GREY_COLOR}" rx="45" ry="45" />
 
         
-        <text x="{(CARD_WIDTH / 2) + 1}" y="{CARD_HEIGHT - 60}" 
+        <text x="{(CARD_WIDTH / 2) + 1}" y="{CARD_HEIGHT - 120}" 
             font-size="40" fill="black" text-anchor="middle" font-family="Roboto">{rank}</text>
-        <text x="{CARD_WIDTH / 2}" y="{CARD_HEIGHT - 61}" 
+        <text x="{CARD_WIDTH / 2}" y="{CARD_HEIGHT - 122}" 
             font-size="40" fill="white" text-anchor="middle" font-family="Roboto">{rank}</text>
 
               
-        <text x="{CARD_WIDTH / 2}" y="{CARD_HEIGHT - 45}" font-size="20" fill="white" text-anchor="middle" font-family="Roboto">{weight} weight</text>
+        <text x="{CARD_WIDTH / 2}" y="{CARD_HEIGHT - 90}" font-size="20" fill="white" text-anchor="middle" font-family="Roboto">{weight} weight</text>
 
-        <text x="{CARD_WIDTH / 2}" y="{CARD_HEIGHT - 28}" font-size="36" fill="white" text-anchor="middle" font-family="Roboto">{team}</text>
-        <text x="{CARD_WIDTH / 2}" y="{CARD_HEIGHT - 14}" font-size="24" fill="white" text-anchor="middle" font-family="Roboto">{event_named}</text>
+        <text x="{CARD_WIDTH / 2}" y="{CARD_HEIGHT - 48}" font-size="36" fill="white" text-anchor="middle" font-family="Roboto">{team}</text>
+        <text x="{CARD_WIDTH / 2}" y="{CARD_HEIGHT - 28}" font-size="24" fill="white" text-anchor="middle" font-family="Roboto">{event_named}</text>
     </g>
     """
 
@@ -147,7 +151,7 @@ def create_card_back(x, y):
     <g transform="translate({x}, {y})">
         <rect width="{CARD_WIDTH}" height="{CARD_HEIGHT}" fill="{GREY_COLOR}" stroke="black" rx="45" ry="45"/>
         <image href="{logo_image_url}" x="1" y="1" width="{CARD_WIDTH -2}" height="{CARD_HEIGHT-2}" stroke="black"  />
-        <text x="60" y="10" font-size="64" font-weight="bold" fill="white" text-anchor="middle" font-family="Roboto" transform="rotate(90, 10, 10)">
+        <text x="60" y="60" font-size="64" font-weight="bold" fill="white" text-anchor="middle" font-family="Roboto" transform="rotate(90, 60, 120)">
             ircl.io
         </text>
     </g>
@@ -245,6 +249,9 @@ def use_params(fil, eve):
     file_named = fil
     event_named = eve
     generate_robot_pages_with_png(file_named)
+    for file_path in glob.glob('*.png'):
+        os.remove(file_path)
+    print(f"extra files removed")
 
 # Example usage:
 use_params("Antmageddon", "IRCL! Antmageddon 2024")

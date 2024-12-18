@@ -76,7 +76,10 @@ def create_robot_card_svg(robot, x, y):
     image_url = robot['image_url']
     place = robot['place']
 
-    first_place_image = '' if place != 1 else '<image href="https://www.pngmart.com/files/5/Crown-PNG-Free-Download.png" x="20" y="10" width="100" height="100"/>'
+    first_place_image = '' if place != 1 else f"""
+        <rect x="20" y="20" width="60" height="60" fill="gold" stroke="black" rx="{CORNER_SIZE}" ry="{CORNER_SIZE}"/>
+        <image href="https://www.pngmart.com/files/5/Crown-PNG-Free-Download.png" x="20" y="10" width="100" height="100"/>
+    """
 
     return f"""
     <g transform="translate({x}, {y})">

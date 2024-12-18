@@ -2,7 +2,7 @@
 
 This project mostly-autonomously generates trading cards for a given robot combat event.   
 
-Run this python module to generate svg cards, convert them to png(resolving internet references), and assemble in one complete pdf:
+Run this python module to generate svg cards, convert them to png(resolving internet references), and assemble in one complete pdf::::===>>
 [svg_bots.py](svg_bots.py)
    
 The source JSON data is generated with ChatGPT prompting, noted in [prompts.md](prompts.md)

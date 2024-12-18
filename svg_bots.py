@@ -18,7 +18,8 @@ CARD_HEIGHT = 1074
 GREY_COLOR = "rgb(210, 210, 210)"
 DARKER_GREY_COLOR = "rgb(95, 95, 95)"
 BACKGROUND_IMG_SIZE = 90  
-NAME_FONT_SIZE = 66        
+NAME_FONT_SIZE = 84        
+CORNER_SIZE = 40
 
 from PyPDF2 import PdfWriter, PdfReader
 
@@ -54,6 +55,18 @@ def assemble_pngs_to_pdf_with_alternating_backs(front_pngs, back_png, output_pdf
     for pdf in front_pdfs + [back_pdf]:
         os.remove(pdf)
 
+
+def name_band(name):    
+    name_font_size = NAME_FONT_SIZE if len(name) <= 17 else int(NAME_FONT_SIZE * 0.6)
+    name_font_y = 116 if len(name) <= 17 else 104
+
+    return f"""
+        <rect x="40" y="40" width="{CARD_WIDTH - 80}" height="100" fill="{DARKER_GREY_COLOR}" rx="{CORNER_SIZE}" ry="{CORNER_SIZE}" />
+
+        <text x="{CARD_WIDTH / 2}" y="{name_font_y}" font-size="{name_font_size}" fill="black" text-anchor="middle" font-family="Roboto">{name}</text>
+        <text x="{(CARD_WIDTH / 2) + 2}" y="{name_font_y + 2}" font-size="{name_font_size}" fill="white" text-anchor="middle" font-family="Roboto">{name}</text>
+    """
+
 def create_robot_card_svg(robot, x, y):
     """Generate an SVG snippet for an individual robot card at position (x, y)."""
     name = robot['name']
@@ -61,8 +74,9 @@ def create_robot_card_svg(robot, x, y):
     weight = robot['weight']
     team = robot['team']
     image_url = robot['image_url']
-    # Adjust font size for long names
-    name_font_size = NAME_FONT_SIZE if len(name) <= 17 else int(NAME_FONT_SIZE * 0.8)
+    place = robot['place']
+
+    first_place_image = '' if place != 1 else '<image href="https://www.pngmart.com/files/5/Crown-PNG-Free-Download.png" x="20" y="10" width="100" height="100"/>'
 
     return f"""
     <g transform="translate({x}, {y})">
@@ -70,28 +84,29 @@ def create_robot_card_svg(robot, x, y):
         
         <rect x="0" y="0" width="{CARD_WIDTH}" height="{CARD_HEIGHT}" fill="url(#imagePattern)" /> 
 
-        <rect x="16" y="24" width="{CARD_WIDTH - 32}" height="48" fill="{DARKER_GREY_COLOR}" rx="45" ry="45" />
 
-
-        <rect x="35" y="{CARD_HEIGHT - 150}" width="{CARD_WIDTH - 90}" height="60" fill="{DARKER_GREY_COLOR}" rx="45" ry="45" />
-
-        <image href="{image_url}" x="1" y="42" width="{CARD_WIDTH - 2}" height="{CARD_WIDTH - 2}"/>
-
-        <text x="{CARD_WIDTH / 2}" y="64" font-size="{name_font_size}" fill="white" text-anchor="middle" font-family="Roboto">{name}</text>
-
-        <rect x="35" y="{CARD_HEIGHT - 104}" width="{CARD_WIDTH - 70}" height="84" fill="{DARKER_GREY_COLOR}" rx="45" ry="45" />
+        <image href="{image_url}" x="1" y="80" width="{CARD_WIDTH - 2}" height="{CARD_WIDTH - 2}"/>
 
         
-        <text x="{(CARD_WIDTH / 2) + 1}" y="{CARD_HEIGHT - 120}" 
-            font-size="40" fill="black" text-anchor="middle" font-family="Roboto">{rank}</text>
-        <text x="{CARD_WIDTH / 2}" y="{CARD_HEIGHT - 122}" 
-            font-size="40" fill="white" text-anchor="middle" font-family="Roboto">{rank}</text>
+        {name_band(name)}
 
-              
-        <text x="{CARD_WIDTH / 2}" y="{CARD_HEIGHT - 90}" font-size="20" fill="white" text-anchor="middle" font-family="Roboto">{weight} weight</text>
+        {first_place_image}
+        
+        <rect x="90" y="{CARD_HEIGHT - 254}" width="{CARD_WIDTH - 180}" height="120" fill="{DARKER_GREY_COLOR}" rx="{CORNER_SIZE}" ry="{CORNER_SIZE}" />
 
-        <text x="{CARD_WIDTH / 2}" y="{CARD_HEIGHT - 48}" font-size="36" fill="white" text-anchor="middle" font-family="Roboto">{team}</text>
-        <text x="{CARD_WIDTH / 2}" y="{CARD_HEIGHT - 28}" font-size="24" fill="white" text-anchor="middle" font-family="Roboto">{event_named}</text>
+        <rect x="40" y="{CARD_HEIGHT - 120}" width="{CARD_WIDTH - 80}" height="80" fill="{DARKER_GREY_COLOR}" rx="{CORNER_SIZE}" ry="{CORNER_SIZE}" />
+
+        
+        <text x="{(CARD_WIDTH / 2) + 1}" y="{CARD_HEIGHT - 200}" 
+            font-size="52" fill="black" text-anchor="middle" font-family="Roboto">{rank}</text>
+        <text x="{CARD_WIDTH / 2}" y="{CARD_HEIGHT - 202}" 
+            font-size="52" fill="white" text-anchor="middle" font-family="Roboto">{rank}</text>
+
+        <text x="{CARD_WIDTH / 2}" y="{CARD_HEIGHT - 160}" font-size="36" fill="white" text-anchor="middle" font-family="Roboto">team {team}</text>
+
+        <text x="{CARD_WIDTH / 2}" y="{CARD_HEIGHT - 88}" font-size="24" fill="white" text-anchor="middle" font-family="Roboto">{weight} weight</text>  
+        
+        <text x="{CARD_WIDTH / 2}" y="{CARD_HEIGHT - 60}" font-size="24" fill="white" text-anchor="middle" font-family="Roboto">{event_named}</text>
     </g>
     """
 

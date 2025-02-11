@@ -21,7 +21,7 @@ BACKGROUND_IMG_SIZE = 90
 NAME_FONT_SIZE = 84        
 CORNER_SIZE = 40
 
-from PyPDF2 import PdfWriter, PdfReader
+from pypdf import PdfWriter, PdfReader
 
 def assemble_pngs_to_pdf_with_alternating_backs(front_pngs, back_png, output_pdf):
     """Assemble PNGs into a PDF with alternating card back pages."""
@@ -272,4 +272,4 @@ def use_params(fil, eve):
     print(f"extra files removed")
 
 # Example usage:
-use_params("Antmageddon", "IRCL! Antmageddon 2024")
+use_params("SpringBotBreaker", "IRCL : Spring Bot Breaker 2025")

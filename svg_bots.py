@@ -4,7 +4,7 @@ import os
 import glob
 
 file_named = "Unspecified json"
-event_named = "Unspecified Parameter"
+event_named = "Unspecified Event"
 
 # Page size: U.S. Letter at 300 dpi
 PAGE_WIDTH = 2550
@@ -12,7 +12,8 @@ PAGE_HEIGHT = 3300
 
 # Card layout: 3x3 grid with 1/8" (38 px) spacing
 CARD_SPACING = 38  # 1/8 inch at 300 dpi
-CARD_WIDTH = 824
+CARD_WIDTH_SUBTRACTOR = 54
+CARD_WIDTH = 824 - CARD_WIDTH_SUBTRACTOR # 770 #824 originally.  Removed 54.
 CARD_HEIGHT = 1074
 
 GREY_COLOR = "rgb(210, 210, 210)"
@@ -67,7 +68,7 @@ def name_band(name):
         <text x="{(CARD_WIDTH / 2) + 2}" y="{name_font_y + 2}" font-size="{name_font_size}" fill="white" text-anchor="middle" font-family="Roboto">{name}</text>
     """
 
-def create_robot_card_svg(robot, x, y):
+def create_card_front(robot, x, y):
     """Generate an SVG snippet for an individual robot card at position (x, y)."""
     name = robot['name']
     rank = robot['rank']
@@ -83,37 +84,34 @@ def create_robot_card_svg(robot, x, y):
 
     return f"""
     <g transform="translate({x}, {y})">
-        <rect width="{CARD_WIDTH}" height="{CARD_HEIGHT}" fill="{GREY_COLOR}" stroke="black" rx="45" ry="45"/>
-        
+           
         <rect x="0" y="0" width="{CARD_WIDTH}" height="{CARD_HEIGHT}" fill="url(#imagePattern)" /> 
-
-
         <image href="{image_url}" x="1" y="80" width="{CARD_WIDTH - 2}" height="{CARD_WIDTH - 2}"/>
-
         
         {name_band(name)}
-
         {first_place_image}
         
         <rect x="90" y="{CARD_HEIGHT - 254}" width="{CARD_WIDTH - 180}" height="120" fill="{DARKER_GREY_COLOR}" rx="{CORNER_SIZE}" ry="{CORNER_SIZE}" />
 
         <rect x="40" y="{CARD_HEIGHT - 120}" width="{CARD_WIDTH - 80}" height="80" fill="{DARKER_GREY_COLOR}" rx="{CORNER_SIZE}" ry="{CORNER_SIZE}" />
-
         
         <text x="{(CARD_WIDTH / 2) + 1}" y="{CARD_HEIGHT - 200}" 
             font-size="52" fill="black" text-anchor="middle" font-family="Roboto">{rank}</text>
         <text x="{CARD_WIDTH / 2}" y="{CARD_HEIGHT - 202}" 
             font-size="52" fill="white" text-anchor="middle" font-family="Roboto">{rank}</text>
 
-        <text x="{CARD_WIDTH / 2}" y="{CARD_HEIGHT - 160}" font-size="36" fill="white" text-anchor="middle" font-family="Roboto">team {team}</text>
+        <text x="{CARD_WIDTH / 2}" y="{CARD_HEIGHT - 160}" font-size="36" fill="white" text-anchor="middle" font-family="Roboto">{team}</text>
 
         <text x="{CARD_WIDTH / 2}" y="{CARD_HEIGHT - 88}" font-size="24" fill="white" text-anchor="middle" font-family="Roboto">{weight} weight</text>  
         
-        <text x="{CARD_WIDTH / 2}" y="{CARD_HEIGHT - 60}" font-size="24" fill="white" text-anchor="middle" font-family="Roboto">{event_named}</text>
+        <text x="{CARD_WIDTH / 2}" y="{CARD_HEIGHT - 60}" 
+        font-size="24" fill="white" text-anchor="middle" font-family="Roboto">{event_named}</text>
+
+        <rect width="{CARD_WIDTH}" height="{CARD_HEIGHT}" stroke="black" stroke-width="10" fill="none" rx="45" ry="45" />   
     </g>
     """
 
-def create_page_svg(robots, page_num):
+def create_page_front(robots, page_num):
     """Generate a complete SVG page with a 3x3 grid of robot cards."""
     svg_content = f"""
     <svg width="{PAGE_WIDTH}" height="{PAGE_HEIGHT}" xmlns="http://www.w3.org/2000/svg">
@@ -133,17 +131,21 @@ def create_page_svg(robots, page_num):
             text {{
                 font-family: 'Roboto', sans-serif;
             }}
+            
         </style>
         <defs>
             <pattern id="imagePattern" patternUnits="userSpaceOnUse" width="{BACKGROUND_IMG_SIZE}" height="{BACKGROUND_IMG_SIZE}">
                 <image href="https://ircl-io.github.io/images/IRCL_logo_Transparent2.png" x="0" y="0" width="{BACKGROUND_IMG_SIZE}" height="{BACKGROUND_IMG_SIZE}" />
             </pattern>
         </defs>
+        <rect x="0" y="0" width="{PAGE_WIDTH}" height="{PAGE_HEIGHT}" fill="{DARKER_GREY_COLOR}" rx="{CORNER_SIZE}" ry="{CORNER_SIZE}" />
     """
 
     cards_per_row = 3
     cards_per_column = 3
     max_cards_per_page = cards_per_row * cards_per_column
+
+    left_edge = (CARD_WIDTH_SUBTRACTOR * 3) / 2
 
     print(f"Page {page_num}: {max_cards_per_page} cards maximum")
     print(f"Card layout: {cards_per_row}x{cards_per_column}, Card: {CARD_WIDTH}x{CARD_HEIGHT}, Spacing: {CARD_SPACING}px")
@@ -153,10 +155,10 @@ def create_page_svg(robots, page_num):
     for i, robot in enumerate(robots_to_display):
         row = i // cards_per_row
         col = i % cards_per_row
-        x = col * (CARD_WIDTH + CARD_SPACING)
+        x = col * (CARD_WIDTH + CARD_SPACING) + left_edge
         y = row * (CARD_HEIGHT + CARD_SPACING)
         print(f"Placing robot {i} at ({x}, {y})")
-        svg_content += create_robot_card_svg(robot, x, y)
+        svg_content += create_card_front(robot, x, y)
 
     svg_content += "</svg>"
     return svg_content
@@ -233,7 +235,7 @@ def generate_robot_pages_with_png(json_file):
         svg_file = f"{json_file}_robot_page_{page_num}.svg"
         png_file = f"{json_file}_robot_page_{page_num}.png"
 
-        page_svg = create_page_svg(page_robots, page_num)
+        page_svg = create_page_front(page_robots, page_num)
         with open(svg_file, 'w') as f:
             f.write(page_svg)
 

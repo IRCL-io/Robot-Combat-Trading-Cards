@@ -103,7 +103,7 @@
     },
     {
       "name": "ICU",
-      "rank": "rank: 536",
+      "rank": "536",
       "weight": "ant",
       "team": "Tele Present Tense",
       "url": "https://www.robotcombatevents.com/groups/3652/resources/13076",
@@ -119,7 +119,7 @@
       "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/16395/IMG_20241114_123633030_AE_3.jpg"
     },    {
       "name": "Inky",
-      "rank": "rank: 210",
+      "rank": "210",
       "weight": "ant",
       "team": "RoboWarner",
       "url": "https://www.robotcombatevents.com/groups/741/resources/12303",
@@ -136,7 +136,7 @@
     },
     {
       "name": "Micro Raptor",
-      "rank": "rank: 191",
+      "rank": "191",
       "weight": "plant",
       "team": "Team HyperTech Robotics",
       "url": "https://www.robotcombatevents.com/groups/2609/resources/12183",
@@ -145,7 +145,7 @@
     },
     {
       "name": "Mt.Dew Camacho",
-      "rank": "rank: 97",
+      "rank": "97",
       "weight": "plant",
       "team": "Idiocracy",
       "url": "https://www.robotcombatevents.com/groups/2553/resources/9214",
@@ -154,7 +154,7 @@
     },
     {
       "name": "Beef Supreme",
-      "rank": "rank: 247",
+      "rank": "247",
       "weight": "plant",
       "team": "Idiocracy",
       "url": "https://www.robotcombatevents.com/groups/3652/resources/17217",
@@ -163,7 +163,7 @@
     },
     {
       "name": "Uhmerican Exxxpress",
-      "rank": "rank: 317",
+      "rank": "317",
       "weight": "plant",
       "team": "Idiocracy",
       "url": "https://www.robotcombatevents.com/groups/2553/resources/12284",
@@ -172,7 +172,7 @@
     },
     {
       "name": "Ammit",
-      "rank": "rank: 208",
+      "rank": "208",
       "weight": "plant",
       "team": "BoomBox",
       "url": "https://www.robotcombatevents.com/groups/3241/resources/15697",
@@ -181,7 +181,7 @@
     },
     {
       "name": "Drumstick",
-      "rank": "rank: 73",
+      "rank": "73",
       "weight": "plant",
       "team": "Purge Engineering",
       "url": "https://www.robotcombatevents.com/groups/5164/resources/15432",
@@ -208,7 +208,7 @@
     },
     {
       "name": "Pac Attac",
-      "rank": "rank: 39",
+      "rank": "39",
       "weight": "plant",
       "team": "RoboWarner",
       "url": "https://www.robotcombatevents.com/groups/741/resources/2788",

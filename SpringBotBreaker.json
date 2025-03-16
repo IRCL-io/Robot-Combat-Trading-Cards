@@ -1,6 +1,6 @@
 {
     "event": {
-      "name": "IRCL : Spring Bot Breaker 2025",
+      "name": "IRCL Spring Bot Breaker 2025",
       "url": "https://www.robotcombatevents.com/events/3557",
       "ant_weight_url": "https://www.robotcombatevents.com/events/3557/competitions/4381",
       "plant_weight_url": "https://www.robotcombatevents.com/events/3557/competitions/4382",
@@ -13,7 +13,7 @@
     "robots": [
       {
         "name": "Voltshot",
-        "rank": "104",
+        "rank": "rank: 104",
         "weight": "ant",
         "team": "Trouble Robotics",
         "url": "https://www.robotcombatevents.com/groups/1925/resources/11140",
@@ -32,7 +32,7 @@
 
       {
         "name": "AntHide",
-        "rank": "350",
+        "rank": "rank: 350",
         "weight": "ant",
         "team": "ADHD Garage",
         "url": "https://www.robotcombatevents.com/groups/1107/resources/8151",

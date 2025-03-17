@@ -112,7 +112,6 @@ def create_card_front(robot, x, y):
     """
 
 def create_page_front(robots, page_num):
-    """Generate a complete SVG page with a 3x3 grid of robot cards."""
     svg_content = f"""
     <svg width="{PAGE_WIDTH}" height="{PAGE_HEIGHT}" xmlns="http://www.w3.org/2000/svg">
         <style>
@@ -131,7 +130,6 @@ def create_page_front(robots, page_num):
             text {{
                 font-family: 'Roboto', sans-serif;
             }}
-            
         </style>
         <defs>
             <pattern id="imagePattern" patternUnits="userSpaceOnUse" width="{BACKGROUND_IMG_SIZE}" height="{BACKGROUND_IMG_SIZE}">
@@ -156,7 +154,7 @@ def create_page_front(robots, page_num):
         row = i // cards_per_row
         col = i % cards_per_row
         x = col * (CARD_WIDTH + CARD_SPACING) + left_edge
-        y = row * (CARD_HEIGHT + CARD_SPACING)
+        y = row * (CARD_HEIGHT + CARD_SPACING) + 3
         print(f"Placing robot {i} at ({x}, {y})")
         svg_content += create_card_front(robot, x, y)
 
@@ -174,11 +172,11 @@ def create_card_back(x, y):
         <text x="60" y="60" font-size="64" font-weight="bold" fill="white" text-anchor="middle" font-family="Roboto" transform="rotate(90, 60, 120)">
             ircl.io
         </text>
+        <rect width="{CARD_WIDTH}" height="{CARD_HEIGHT}" stroke="black" stroke-width="10" fill="none" rx="45" ry="45" />  
     </g>
     """
 
-def create_card_back_page():
-    """Generate a page containing 9 card backs arranged 3x3."""
+def create_page_back():
     svg_content = f"""
     <svg width="{PAGE_WIDTH}" height="{PAGE_HEIGHT}" xmlns="http://www.w3.org/2000/svg">
         <style>
@@ -200,11 +198,11 @@ def create_card_back_page():
         </style>
     """
 
-    # Same 3x3 grid for backs
+    left_edge = (CARD_WIDTH_SUBTRACTOR * 3) / 2
     for row in range(3):
         for col in range(3):
-            x = col * (CARD_WIDTH + CARD_SPACING)
-            y = row * (CARD_HEIGHT + CARD_SPACING)
+            x = col * (CARD_WIDTH + CARD_SPACING) + left_edge
+            y = row * (CARD_HEIGHT + CARD_SPACING) + 3
             svg_content += create_card_back(x, y)
 
     svg_content += "</svg>"
@@ -247,7 +245,7 @@ def generate_robot_pages_with_png(json_file):
         page_num += 1
 
     # Create card back page
-    card_back_svg = create_card_back_page()
+    card_back_svg = create_page_back()
     card_back_svg_file = f"{json_file}_card_back_page.svg"
     card_back_png_file = f"{json_file}_card_back_page.png"
     with open(card_back_svg_file, 'w') as f:

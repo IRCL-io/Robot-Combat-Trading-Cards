@@ -84,7 +84,7 @@ def create_card_front(robot, x, y):
 
     return f"""
     <g transform="translate({x}, {y})">
-           
+           <rect width="{CARD_WIDTH}" height="{CARD_HEIGHT}" fill="{GREY_COLOR}" stroke="black" rx="45" ry="45"/>
         <rect x="0" y="0" width="{CARD_WIDTH}" height="{CARD_HEIGHT}" fill="url(#imagePattern)" /> 
         <image href="{image_url}" x="1" y="80" width="{CARD_WIDTH - 2}" height="{CARD_WIDTH - 2}"/>
         
@@ -136,7 +136,7 @@ def create_page_front(robots, page_num):
                 <image href="https://ircl-io.github.io/images/IRCL_logo_Transparent2.png" x="0" y="0" width="{BACKGROUND_IMG_SIZE}" height="{BACKGROUND_IMG_SIZE}" />
             </pattern>
         </defs>
-        <rect x="0" y="0" width="{PAGE_WIDTH}" height="{PAGE_HEIGHT}" fill="{DARKER_GREY_COLOR}" rx="{CORNER_SIZE}" ry="{CORNER_SIZE}" />
+        <rect x="0" y="0" width="{PAGE_WIDTH}" height="{PAGE_HEIGHT}" fill="black" rx="{CORNER_SIZE}" ry="{CORNER_SIZE}" />
     """
 
     cards_per_row = 3
@@ -196,6 +196,7 @@ def create_page_back():
                 font-family: 'Roboto', sans-serif;
             }}
         </style>
+        <rect x="0" y="0" width="{PAGE_WIDTH}" height="{PAGE_HEIGHT}" fill="black" rx="{CORNER_SIZE}" ry="{CORNER_SIZE}" />
     """
 
     left_edge = (CARD_WIDTH_SUBTRACTOR * 3) / 2

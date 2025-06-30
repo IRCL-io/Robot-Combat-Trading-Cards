@@ -1,0 +1,149 @@
+{
+    "event": {
+      "name": "Bot Oblivion 2025",
+      "url": "https://www.robotcombatevents.com/events/4646",
+      "ant_weight_url": "",
+      "plant_weight_url": "",
+      "Beetleweight": "https://www.robotcombatevents.com/events/4646/competitions/5404",
+      "location": "Gem State Gaming Convention",
+      "dates": {
+        "start": "Saturday, July 19, 2025",
+        "end": "Sunday, July 20, 2025"
+      }
+    },
+    "robots": [
+      {
+        "name": "BoomBox",
+        "weight": "Beetleweight",
+        "team": "BoomBox",
+        "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/13551/inbound875028470751609531.png"
+      },        
+      {
+        "name": "Upgrayedd",
+        "weight": "Beetleweight",
+        "team": "Idiocracy",
+        "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/11162/PXL_20240314_211206179_3.jpg"
+      },        
+      {
+        "name": "Frito Pendejo",
+        "weight": "Beetleweight",
+        "team": "Idiocracy",
+        "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/9215/PXL_20230923_052842380.jpg"
+      },        
+      {
+        "name": "Lunar",
+        "weight": "Beetleweight",
+        "team": "DC Robotics",
+        "image_url": "https://www.robotcombatevents.com/assets/RCELogo-3383ca77f76e5be2b7755ea9d0c464aea25a87d8c9f2a4cffd63643392f59fe7.png"
+      },        
+      {
+        "name": "SweeperKeeper",
+        "weight": "Beetleweight",
+        "team": "BoomBox",
+        "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/21130/Screenshot_20250505_085650_Fusion.jpg"
+      },        
+      {
+        "name": "Virilade",
+        "weight": "Beetleweight",
+        "team": "Idiocracy",
+        "image_url": "https://www.robotcombatevents.com/assets/RCELogo-3383ca77f76e5be2b7755ea9d0c464aea25a87d8c9f2a4cffd63643392f59fe7.png"
+      },        
+      {
+        "name": "Erbert",
+        "weight": "Beetleweight",
+        "team": "On the Rocks Robotics",
+        "image_url": ""
+      },        
+      {
+        "name": "Renegade",
+        "weight": "Beetleweight",
+        "team": "Bad Decisions Robotics",
+        "image_url": ""
+      },      
+      {
+        "name": "TENACITY!",
+        "weight": "Full Combat Antweight",
+        "team": "Team HyperTech Robotics",
+        "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/18674/20250325_220427.jpg"
+      },
+      {
+        "name": "Brawndo the thirst mutilator",
+        "weight": "Full Combat Antweight",
+        "team": "Idiocracy",
+        "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/16424/PXL_20241026_021724261.jpg"
+      },
+      {
+        "name": "Thunk!",
+        "weight": "Full Combat Antweight",
+        "team": "On the Rocks Robotics",
+        "image_url": "https://www.robotcombatevents.com/assets/RCELogo-3383ca77f76e5be2b7755ea9d0c464aea25a87d8c9f2a4cffd63643392f59fe7.png"
+      },
+      {
+        "name": "A is for Aardvark FC",
+        "weight": "Full Combat Antweight",
+        "team": "Buhler's Bots",
+        "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/20619/IMG_8658.JPG"
+      },
+      {
+        "name": "Triple A",
+        "weight": "Full Combat Antweight",
+        "team": "Bad Decisions Robotics",
+        "image_url": "https://www.robotcombatevents.com/assets/RCELogo-3383ca77f76e5be2b7755ea9d0c464aea25a87d8c9f2a4cffd63643392f59fe7.png"
+      },
+      {
+        "name": "Deadly Croissant",
+        "weight": "Plastic Antweight",
+        "team": "BoweBots",
+        "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/17486/PXL_20250505_042220639.jpg"
+      },
+      {
+        "name": "Schlagzeug",
+        "weight": "Plastic Antweight",
+        "team": "BoweBots",
+        "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/17612/PXL_20250507_120441776.jpg"
+      },
+      {
+        "name": "",
+        "weight": "Plastic Antweight",
+        "team": "",
+        "image_url": ""
+      },
+      {
+        "name": "",
+        "weight": "Plastic Antweight",
+        "team": "",
+        "image_url": ""
+      },
+      {
+        "name": "",
+        "weight": "Plastic Antweight",
+        "team": "",
+        "image_url": ""
+      },
+      {
+        "name": "",
+        "weight": "Plastic Antweight",
+        "team": "",
+        "image_url": ""
+      },
+      {
+        "name": "",
+        "weight": "Plastic Antweight",
+        "team": "",
+        "image_url": ""
+      },
+      {
+        "name": "",
+        "weight": "Plastic Antweight",
+        "team": "",
+        "image_url": ""
+      },
+      {
+        "name": "",
+        "weight": "Plastic Antweight",
+        "team": "",
+        "image_url": ""
+      }
+    ]
+  }
+  

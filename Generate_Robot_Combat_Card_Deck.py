@@ -276,4 +276,4 @@ def use_params(fil, eve):
     print(f"extra files removed")
 
 # Example usage:
-use_params("SpringBotBreaker", "IRCL Spring Bot Breaker 2025")
+use_params("Bot Oblivion 2025", "IRCL Bot Oblivion 2025")

@@ -77,17 +77,10 @@ def name_band(name):
 def create_card_front(robot, x, y):
     """Generate an SVG snippet for an individual robot card at position (x, y)."""
     name = robot['name']
-    rank = robot['rank']
     weight = robot['weight']
     team = robot['team']
     image_url = robot['image_url']
-    place = robot['place']
-
-    first_place_image = '' if place != 1 else f"""
-        <rect x="20" y="20" width="60" height="60" fill="gold" stroke="black" rx="{CORNER_SIZE}" ry="{CORNER_SIZE}"/>
-        <image href="https://www.pngmart.com/files/5/Crown-PNG-Free-Download.png" x="20" y="10" width="100" height="100"/>
-    """
-
+    
     return f"""
     <g transform="translate({x}, {y})">
            <rect width="{CARD_WIDTH}" height="{CARD_HEIGHT}" fill="{GREY_COLOR}" stroke="black" rx="45" ry="45"/>
@@ -95,16 +88,12 @@ def create_card_front(robot, x, y):
         <image href="{image_url}" x="1" y="80" width="{CARD_WIDTH - 2}" height="{CARD_WIDTH - 2}"/>
         
         {name_band(name)}
-        {first_place_image}
         
         <rect x="90" y="{CARD_HEIGHT - 254}" width="{CARD_WIDTH - 180}" height="120" fill="{DARKER_GREY_COLOR}" rx="{CORNER_SIZE}" ry="{CORNER_SIZE}" />
 
         <rect x="40" y="{CARD_HEIGHT - 120}" width="{CARD_WIDTH - 80}" height="80" fill="{DARKER_GREY_COLOR}" rx="{CORNER_SIZE}" ry="{CORNER_SIZE}" />
         
-        <text x="{(CARD_WIDTH / 2) + 1}" y="{CARD_HEIGHT - 200}" 
-            font-size="52" fill="black" text-anchor="middle" font-family="Roboto">{rank}</text>
-        <text x="{CARD_WIDTH / 2}" y="{CARD_HEIGHT - 202}" 
-            font-size="52" fill="white" text-anchor="middle" font-family="Roboto">{rank}</text>
+        
 
         <text x="{CARD_WIDTH / 2}" y="{CARD_HEIGHT - 160}" font-size="36" fill="white" text-anchor="middle" font-family="Roboto">{team}</text>
 
@@ -275,5 +264,5 @@ def use_params(fil, eve):
         os.remove(file_path)
     print(f"extra files removed")
 
-# Example usage:
-use_params("Bot Oblivion 2025", "IRCL Bot Oblivion 2025")
+# Start Here:
+use_params("Bot Oblivion 2025", "Bot Oblivion 2025")

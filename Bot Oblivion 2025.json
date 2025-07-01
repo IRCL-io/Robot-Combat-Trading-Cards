@@ -89,6 +89,12 @@
         "weight": "Full Combat Antweight",
         "team": "Bad Decisions Robotics",
         "image_url": "https://www.robotcombatevents.com/assets/RCELogo-3383ca77f76e5be2b7755ea9d0c464aea25a87d8c9f2a4cffd63643392f59fe7.png"
+      },      
+      {
+        "name": "ICU2",
+        "weight": "Full Combat Antweight",
+        "team": "Tele Present Tense",
+        "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/17217/ICU2_Medium_2.png"
       },
       {
         "name": "Deadly Croissant",

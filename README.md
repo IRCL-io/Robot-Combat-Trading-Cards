@@ -1,6 +1,6 @@
 # Robot-Combat-Trading-Cards
-## [recently generated cards](/past%20events/SpringBotBreaker_deck.pdf)
-<iframe src="/past%20events/SpringBotBreaker_deck.pdf" width="600" height="400" title="Example Cards"></iframe>
+## >> [recently generated cards](/past%20events/SpringBotBreaker_deck.pdf) <<
+
 
 This project generates trading cards for a given robot combat event.   
 
@@ -14,6 +14,6 @@ https://www.robotcombatevents.com/events/1940
 
 
 ### King of the Anthill July 20, 2024
-https://www.robotcombatevents.com/events/1346/competitions/2226
+https://www.robotcombatevents.com/events/1346
 https://challonge.com/anthill2024
 

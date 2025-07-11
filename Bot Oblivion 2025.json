@@ -19,64 +19,46 @@
         "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/13551/inbound875028470751609531.png"
       },        
       {
-        "name": "Upgrayedd",
-        "weight": "Beetleweight",
-        "team": "Idiocracy",
-        "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/11162/PXL_20240314_211206179_3.jpg"
-      },        
-      {
-        "name": "Frito Pendejo",
-        "weight": "Beetleweight",
-        "team": "Idiocracy",
-        "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/9215/PXL_20230923_052842380.jpg"
-      },        
-      {
-        "name": "Lunar",
-        "weight": "Beetleweight",
-        "team": "DC Robotics",
-        "image_url": "https://www.robotcombatevents.com/assets/RCELogo-3383ca77f76e5be2b7755ea9d0c464aea25a87d8c9f2a4cffd63643392f59fe7.png"
-      },        
-      {
         "name": "SweeperKeeper",
         "weight": "Beetleweight",
         "team": "BoomBox",
         "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/21130/Screenshot_20250505_085650_Fusion.jpg"
-      },        
+      },   
       {
         "name": "Virilade",
         "weight": "Beetleweight",
         "team": "Idiocracy",
         "image_url": "https://www.robotcombatevents.com/assets/RCELogo-3383ca77f76e5be2b7755ea9d0c464aea25a87d8c9f2a4cffd63643392f59fe7.png"
-      },        
-      {
-        "name": "Erbert",
-        "weight": "Beetleweight",
-        "team": "On the Rocks Robotics",
-        "image_url": ""
-      },        
+      },  
       {
         "name": "Renegade",
         "weight": "Beetleweight",
         "team": "Bad Decisions Robotics",
-        "image_url": ""
-      },      
+        "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/14013/IMG_1146-min.jpeg"
+      },     
+      {
+        "name": "Gyro",
+        "weight": "Beetleweight",
+        "team": "Geometrically Robotic",
+        "image_url": "https://www.robotcombatevents.com/assets/RCELogo-3383ca77f76e5be2b7755ea9d0c464aea25a87d8c9f2a4cffd63643392f59fe7.png"
+      },                   
+      {
+        "name": "Plan B",
+        "weight": "Beetleweight",
+        "team": "Something",
+        "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/18553/476064446_519674403912169_7897790394868896022_n.jpg"
+      },        
+      {
+        "name": "Under-Bite",
+        "weight": "Beetleweight",
+        "team": "BuhlerBots",
+        "image_url": "https://www.robotcombatevents.com/assets/RCELogo-3383ca77f76e5be2b7755ea9d0c464aea25a87d8c9f2a4cffd63643392f59fe7.png"
+      },        
       {
         "name": "TENACITY!",
         "weight": "Full Combat Antweight",
         "team": "Team HyperTech Robotics",
         "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/18674/20250325_220427.jpg"
-      },
-      {
-        "name": "Brawndo the thirst mutilator",
-        "weight": "Full Combat Antweight",
-        "team": "Idiocracy",
-        "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/16424/PXL_20241026_021724261.jpg"
-      },
-      {
-        "name": "Thunk!",
-        "weight": "Full Combat Antweight",
-        "team": "On the Rocks Robotics",
-        "image_url": "https://www.robotcombatevents.com/assets/RCELogo-3383ca77f76e5be2b7755ea9d0c464aea25a87d8c9f2a4cffd63643392f59fe7.png"
       },
       {
         "name": "A is for Aardvark FC",
@@ -95,6 +77,24 @@
         "weight": "Full Combat Antweight",
         "team": "Tele Present Tense",
         "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/17217/ICU2_Medium_2.png"
+      },      
+      {
+        "name": "Litten",
+        "weight": "Full Combat Antweight",
+        "team": "Batchelor Bots",
+        "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/21414/Litten_Robot.png"
+      },      
+      {
+        "name": "JUMBO",
+        "weight": "Full Combat Antweight",
+        "team": "Something",
+        "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/11026/jumbo.jpg"
+      },      
+      {
+        "name": "Anubis",
+        "weight": "Full Combat Antweight",
+        "team": "BoomBox",
+        "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/13584/20240815_215539.jpg"
       },
       {
         "name": "Deadly Croissant",
@@ -109,46 +109,46 @@
         "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/17612/PXL_20250507_120441776.jpg"
       },
       {
-        "name": "",
+        "name": "I Think I'm A Clone Now",
         "weight": "Plastic Antweight",
-        "team": "",
-        "image_url": ""
+        "team": "BoweBots",
+        "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/19596/PXL_20250314_020823711_2__1_.jpg"
       },
       {
-        "name": "",
+        "name": "Squatchy",
         "weight": "Plastic Antweight",
-        "team": "",
-        "image_url": ""
+        "team": "Team Squatch",
+        "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/16140/sqmk3.1.jpg"
       },
       {
-        "name": "",
+        "name": "WedgeMaster",
         "weight": "Plastic Antweight",
-        "team": "",
-        "image_url": ""
+        "team": "BoweBots",
+        "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/20957/Wedgemaster.png"
       },
       {
-        "name": "",
+        "name": "Double A",
         "weight": "Plastic Antweight",
-        "team": "",
-        "image_url": ""
+        "team": "Bad Decisions Robotics",
+        "image_url": "https://www.robotcombatevents.com/assets/RCELogo-3383ca77f76e5be2b7755ea9d0c464aea25a87d8c9f2a4cffd63643392f59fe7.png"
       },
       {
-        "name": "",
+        "name": "Rickrolled",
         "weight": "Plastic Antweight",
-        "team": "",
-        "image_url": ""
+        "team": "BoweBots",
+        "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/21313/Screenshot_2025-06-24_153703.png"
       },
       {
-        "name": "",
+        "name": "RUPTURE",
         "weight": "Plastic Antweight",
-        "team": "",
-        "image_url": ""
+        "team": "Geometrically Robotic",
+        "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/21376/IMG_5078.jpg"
       },
       {
-        "name": "",
+        "name": "Uhmerican Exxxpress",
         "weight": "Plastic Antweight",
-        "team": "",
-        "image_url": ""
+        "team": "Idiocracy",
+        "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/12284/UhmericanExxxpress.png"
       }
     ]
   }

@@ -89,18 +89,17 @@ def create_card_front(robot, x, y):
         
         {name_band(name)}
         
-        <rect x="90" y="{CARD_HEIGHT - 254}" width="{CARD_WIDTH - 180}" height="120" fill="{DARKER_GREY_COLOR}" rx="{CORNER_SIZE}" ry="{CORNER_SIZE}" />
-
         <rect x="40" y="{CARD_HEIGHT - 120}" width="{CARD_WIDTH - 80}" height="80" fill="{DARKER_GREY_COLOR}" rx="{CORNER_SIZE}" ry="{CORNER_SIZE}" />
-        
-        
 
-        <text x="{CARD_WIDTH / 2}" y="{CARD_HEIGHT - 160}" font-size="36" fill="white" text-anchor="middle" font-family="Roboto">{team}</text>
+        <rect x="40" y="{CARD_HEIGHT - 254}" width="{CARD_WIDTH - 80}" height="120" fill="{DARKER_GREY_COLOR}" rx="{CORNER_SIZE}" ry="{CORNER_SIZE}" />
 
-        <text x="{CARD_WIDTH / 2}" y="{CARD_HEIGHT - 88}" font-size="24" fill="white" text-anchor="middle" font-family="Roboto">{weight} weight</text>  
         
-        <text x="{CARD_WIDTH / 2}" y="{CARD_HEIGHT - 60}" 
-        font-size="24" fill="white" text-anchor="middle" font-family="Roboto">{event_named}</text>
+        
+        <text x="{CARD_WIDTH / 2}" y="{CARD_HEIGHT - 200}" font-size="36" fill="white" text-anchor="middle" font-family="Roboto">{weight}</text>  
+
+        <text x="{CARD_WIDTH / 2}" y="{CARD_HEIGHT - 160}" font-size="36" fill="white" text-anchor="middle" font-family="Roboto">by {team}</text>
+             
+        <text x="{CARD_WIDTH / 2}" y="{CARD_HEIGHT - 65}" font-size="36" fill="white" text-anchor="middle" font-family="Roboto">{event_named}</text>
 
         <rect width="{CARD_WIDTH}" height="{CARD_HEIGHT}" stroke="black" stroke-width="10" fill="none" rx="45" ry="45" />   
     </g>

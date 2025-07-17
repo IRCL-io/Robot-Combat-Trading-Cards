@@ -95,11 +95,11 @@ def create_card_front(robot, x, y):
 
         
         
-        <text x="{CARD_WIDTH / 2}" y="{CARD_HEIGHT - 200}" font-size="36" fill="white" text-anchor="middle" font-family="Roboto">{weight}</text>  
+        <text x="{CARD_WIDTH / 2}" y="{CARD_HEIGHT - 205}" font-size="36" fill="white" text-anchor="middle" font-family="Roboto">{weight}</text>  
 
-        <text x="{CARD_WIDTH / 2}" y="{CARD_HEIGHT - 160}" font-size="36" fill="white" text-anchor="middle" font-family="Roboto">by {team}</text>
+        <text x="{CARD_WIDTH / 2}" y="{CARD_HEIGHT - 165}" font-size="36" fill="white" text-anchor="middle" font-family="Roboto">by {team}</text>
              
-        <text x="{CARD_WIDTH / 2}" y="{CARD_HEIGHT - 65}" font-size="36" fill="white" text-anchor="middle" font-family="Roboto">{event_named}</text>
+        <text x="{CARD_WIDTH / 2}" y="{CARD_HEIGHT - 70}" font-size="36" fill="white" text-anchor="middle" font-family="Roboto">{event_named}</text>
 
         <rect width="{CARD_WIDTH}" height="{CARD_HEIGHT}" stroke="black" stroke-width="10" fill="none" rx="45" ry="45" />   
     </g>

@@ -52,13 +52,19 @@
         "name": "Under-Bite",
         "weight": "Beetleweight",
         "team": "BuhlerBots",
-        "image_url": "https://www.robotcombatevents.com/assets/RCELogo-3383ca77f76e5be2b7755ea9d0c464aea25a87d8c9f2a4cffd63643392f59fe7.png"
+        "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/21447/Image_1.jpeg"
+      },  
+      {
+        "name": "Apple Monger",
+        "weight": "Beetleweight",
+        "team": "Tele Present Tense",
+        "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/21623/apples_Medium.png"
       },        
       {
         "name": "TENACITY!",
         "weight": "Full Combat Antweight",
         "team": "Team HyperTech Robotics",
-        "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/18674/20250325_220427.jpg"
+        "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/18674/20250715_140123__1_.jpg"
       },
       {
         "name": "A is for Aardvark FC",
@@ -78,12 +84,7 @@
         "team": "Tele Present Tense",
         "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/17217/ICU2_Medium_2.png"
       },      
-      {
-        "name": "Litten",
-        "weight": "Full Combat Antweight",
-        "team": "Batchelor Bots",
-        "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/21414/Litten_Robot.png"
-      },      
+
       {
         "name": "JUMBO",
         "weight": "Full Combat Antweight",
@@ -94,7 +95,13 @@
         "name": "Anubis",
         "weight": "Full Combat Antweight",
         "team": "BoomBox",
-        "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/13584/20240815_215539.jpg"
+        "image_url": "https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/13584/20250716_193414.jpg"
+      },
+      {
+        "name": "Cyclone",
+        "weight": "Full Combat Antweight",
+        "team": "Bobbsey Twins",
+        "image_url": "https://www.robotcombatevents.com/assets/RCELogo-3383ca77f76e5be2b7755ea9d0c464aea25a87d8c9f2a4cffd63643392f59fe7.png"
       },
       {
         "name": "Deadly Croissant",

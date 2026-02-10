@@ -1,5 +1,4 @@
 import argparse
-import json
 import os
 import re
 import subprocess
@@ -212,17 +211,120 @@ def svg_to_png_with_inkscape(svg_file: Path, png_file: Path) -> None:
         print(f"Error during conversion of {svg_file} to PNG: {e}")
 
 
-def load_event_data(json_path: Path):
-    with open(json_path, "r", encoding="utf-8") as f:
-        data = json.load(f)
-    event = data.get("event", {})
-    robots = data.get("robots", [])
-    event_name = event.get("name") or json_path.stem
-    return event, robots, event_name
+def parse_ttdb_sections(ttdb_text: str):
+    sections = []
+    for block in re.split(r"^\\s*---+\\s*$", ttdb_text, flags=re.M):
+        lines = [line.rstrip("\\n") for line in block.splitlines()]
+        header_line = None
+        for line in lines:
+            if line.startswith("@LAT"):
+                header_line = line.strip()
+                break
+        if not header_line:
+            continue
+        record_id = header_line.split()[0]
+        relates_match = re.search(r"relates:([^|]+)", header_line)
+        relates_raw = relates_match.group(1).strip() if relates_match else ""
+        relates = []
+        if relates_raw:
+            for token in relates_raw.split(","):
+                token = token.strip()
+                if not token:
+                    continue
+                if ">@" in token:
+                    edge_type, target = token.split(">@", 1)
+                    relates.append((edge_type.strip(), f"@{target.strip()}"))
+                elif ">" in token:
+                    edge_type, target = token.split(">", 1)
+                    relates.append((edge_type.strip(), target.strip()))
+        title = None
+        for line in lines:
+            if line.startswith("## "):
+                title = line.replace("## ", "", 1).strip()
+                break
+        sections.append(
+            {
+                "record_id": record_id,
+                "header": header_line,
+                "title": title,
+                "lines": lines,
+                "relates": relates,
+            }
+        )
+    return sections
+
+
+def parse_event_block(section):
+    event = {"name": None, "url": None, "location": None, "dates": None}
+    if section.get("title"):
+        event_title = section["title"].replace("(Event)", "").strip()
+        event["name"] = event_title
+    for line in section.get("lines", []):
+        if line.strip().startswith("- URL:"):
+            event["url"] = line.split(":", 1)[1].strip()
+        elif line.strip().startswith("- Location:"):
+            event["location"] = line.split(":", 1)[1].strip()
+        elif line.strip().startswith("- Dates:"):
+            event["dates"] = line.split(":", 1)[1].strip()
+    return event
+
+
+def parse_robot_block(section):
+    robot = {"name": None, "weight": None, "team": None, "image_url": None}
+    if section.get("title"):
+        robot["name"] = section["title"].strip()
+    for line in section.get("lines", []):
+        stripped = line.strip()
+        if stripped.startswith("- Weight class:"):
+            robot["weight"] = stripped.split(":", 1)[1].strip()
+        elif stripped.startswith("- Team:"):
+            robot["team"] = stripped.split(":", 1)[1].strip()
+        elif stripped.startswith("- Image:"):
+            robot["image_url"] = stripped.split(":", 1)[1].strip()
+    return robot
+
+
+def load_event_from_ttdb(ttdb_path: Path, event_name: str):
+    ttdb_text = ttdb_path.read_text(encoding="utf-8")
+    sections = parse_ttdb_sections(ttdb_text)
+    event_section = None
+    for section in sections:
+        title = section.get("title")
+        if not title:
+            continue
+        normalized = title.replace("(Event)", "").strip()
+        if normalized.lower() == event_name.lower():
+            event_section = section
+            break
+    if not event_section:
+        raise ValueError(f"Event not found in TTDB: {event_name}")
+
+    event = parse_event_block(event_section)
+    event_id = event_section["record_id"]
+
+    robots = []
+    for section in sections:
+        if section["record_id"] == event_id:
+            continue
+        relates = section.get("relates", [])
+        if not any(edge == "competes_in" and target == event_id for edge, target in relates):
+            continue
+        robot = parse_robot_block(section)
+        if all(robot.values()):
+            robots.append(robot)
+        else:
+            missing = [k for k, v in robot.items() if not v]
+            print(f"Skipping robot {robot.get('name') or section['record_id']}: missing {missing}")
+
+    if not robots:
+        raise ValueError(f"No robots linked to event {event_name} via competes_in edges.")
+
+    event_name_final = event.get("name") or event_name
+    return event, robots, event_name_final
 
 
 def generate_robot_pages_with_png(
-    json_path: Path,
+    ttdb_path: Path,
     event_name: str,
     cards_dir: Path,
     output_dir: Path,
@@ -230,7 +332,7 @@ def generate_robot_pages_with_png(
     keep_pngs: bool,
 ) -> Path:
     """Generate paginated SVGs and convert them to PNGs."""
-    _event, robots, event_name = load_event_data(json_path)
+    _event, robots, event_name = load_event_from_ttdb(ttdb_path, event_name)
 
     cards_dir.mkdir(parents=True, exist_ok=True)
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -291,15 +393,15 @@ def generate_robot_pages_with_png(
 def main() -> None:
     parser = argparse.ArgumentParser(description="Generate robot combat card decks.")
     parser.add_argument(
-        "--input",
-        "-i",
-        default="Bot Oblivion 2025.json",
-        help="Path to the event JSON file.",
+        "--ttdb",
+        "-t",
+        default="cards/IRCL_TTDB.md",
+        help="Path to the IRCL TTDB markdown file.",
     )
     parser.add_argument(
         "--event-name",
-        default=None,
-        help="Override the event name used on cards.",
+        required=True,
+        help="Event name to render (must match an Event title in the TTDB).",
     )
     parser.add_argument(
         "--cards-dir",
@@ -323,12 +425,11 @@ def main() -> None:
     )
 
     args = parser.parse_args()
-    json_path = Path(args.input)
-    if not json_path.exists():
-        raise FileNotFoundError(f"JSON input not found: {json_path}")
+    ttdb_path = Path(args.ttdb)
+    if not ttdb_path.exists():
+        raise FileNotFoundError(f"TTDB input not found: {ttdb_path}")
 
-    event, _robots, default_event_name = load_event_data(json_path)
-    event_name = args.event_name or default_event_name
+    event_name = args.event_name
     event_slug = slugify(event_name)
 
     base_dir = Path(__file__).resolve().parent
@@ -336,13 +437,16 @@ def main() -> None:
     output_dir = Path(args.output_dir) if args.output_dir else base_dir / "output" / event_slug
 
     print(f"Event: {event_name}")
+    event, _robots, resolved_name = load_event_from_ttdb(ttdb_path, event_name)
+    if resolved_name != event_name:
+        print(f"Resolved event name: {resolved_name}")
     if event:
         print(f"Event source: {event.get('url', 'unknown')}")
     print(f"Cards dir: {cards_dir}")
     print(f"Output dir: {output_dir}")
 
     generate_robot_pages_with_png(
-        json_path=json_path,
+        ttdb_path=ttdb_path,
         event_name=event_name,
         cards_dir=cards_dir,
         output_dir=output_dir,

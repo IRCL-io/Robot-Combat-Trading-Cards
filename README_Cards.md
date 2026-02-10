@@ -4,8 +4,13 @@
 
 This project generates trading cards for a given robot combat event.   
 
-Run this python module to generate svg cards, convert them to png(resolving internet references), and assemble in one complete pdf::::===>>
+Run this python module to generate svg cards, convert them to png, and assemble in one complete pdf::::===>>
 [Generate_Robot_Combat_Card_Deck.py](/Generate_Robot_Combat_Card_Deck.py)
+
+Example:
+```bash
+python Generate_Robot_Combat_Card_Deck.py --ttdb "cards/IRCL_TTDB.md" --event-name "Bot Oblivion 2025"
+```
    
 
 ## Past IRCL Events:

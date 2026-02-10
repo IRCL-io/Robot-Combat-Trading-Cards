@@ -14,5 +14,5 @@
 
 ## How to run
 ```bash
-python Generate_Robot_Combat_Card_Deck.py --input "Bot Oblivion 2025.json"
+python Generate_Robot_Combat_Card_Deck.py --ttdb "cards/IRCL_TTDB.md" --event-name "Bot Oblivion 2025"
 ```

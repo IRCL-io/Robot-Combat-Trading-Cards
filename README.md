@@ -6,6 +6,8 @@
 
 Workflow version: 3.8
 
+This edition of TTE is dedicated to making Idaho Robot Combat League trading cards and maintaining a TTDB of robots, events, and individual card images for each robot at each event and one card back image per event. Also this repo serves as the factory for producing the pdf version of all cards, fronts and backs, for an event.
+
 ## prompt:
 Read TTE_PROMPT.md and make that.
 

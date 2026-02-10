@@ -213,44 +213,50 @@ def svg_to_png_with_inkscape(svg_file: Path, png_file: Path) -> None:
 
 def parse_ttdb_sections(ttdb_text: str):
     sections = []
-    for block in re.split(r"^\\s*---+\\s*$", ttdb_text, flags=re.M):
-        lines = [line.rstrip("\\n") for line in block.splitlines()]
-        header_line = None
-        for line in lines:
-            if line.startswith("@LAT"):
-                header_line = line.strip()
-                break
-        if not header_line:
-            continue
-        record_id = header_line.split()[0]
-        relates_match = re.search(r"relates:([^|]+)", header_line)
-        relates_raw = relates_match.group(1).strip() if relates_match else ""
-        relates = []
-        if relates_raw:
-            for token in relates_raw.split(","):
-                token = token.strip()
-                if not token:
-                    continue
-                if ">@" in token:
-                    edge_type, target = token.split(">@", 1)
-                    relates.append((edge_type.strip(), f"@{target.strip()}"))
-                elif ">" in token:
-                    edge_type, target = token.split(">", 1)
-                    relates.append((edge_type.strip(), target.strip()))
-        title = None
-        for line in lines:
-            if line.startswith("## "):
-                title = line.replace("## ", "", 1).strip()
-                break
-        sections.append(
-            {
-                "record_id": record_id,
+    current = None
+    for raw_line in ttdb_text.splitlines():
+        line = raw_line.rstrip("\r\n")
+        stripped = line.lstrip()
+        if stripped.startswith("@LAT"):
+            if current:
+                sections.append(current)
+            header_line = stripped.strip()
+            current = {
+                "record_id": header_line.split()[0],
                 "header": header_line,
-                "title": title,
-                "lines": lines,
-                "relates": relates,
+                "title": None,
+                "lines": [line],
+                "relates": [],
             }
-        )
+
+            relates_match = re.search(r"relates:([^|]+)", header_line)
+            relates_raw = relates_match.group(1).strip() if relates_match else ""
+            relates = []
+            if relates_raw:
+                for token in relates_raw.split(","):
+                    token = token.strip()
+                    if not token:
+                        continue
+                    if ">@" in token:
+                        edge_type, target = token.split(">@", 1)
+                        relates.append((edge_type.strip(), f"@{target.strip()}"))
+                    elif ">" in token:
+                        edge_type, target = token.split(">", 1)
+                        relates.append((edge_type.strip(), target.strip()))
+            current["relates"] = relates
+            continue
+
+        if current is None:
+            continue
+
+        current["lines"].append(line)
+        if current["title"] is None:
+            if stripped.startswith("## "):
+                current["title"] = stripped.replace("## ", "", 1).strip()
+
+    if current:
+        sections.append(current)
+
     return sections
 
 
@@ -269,6 +275,15 @@ def parse_event_block(section):
     return event
 
 
+def extract_event_robot_ids(section) -> list[str]:
+    robot_ids = []
+    for line in section.get("lines", []):
+        match = re.search(r"-\\s+(@LAT\\S+)", line)
+        if match:
+            robot_ids.append(match.group(1).strip())
+    return robot_ids
+
+
 def parse_robot_block(section):
     robot = {"name": None, "weight": None, "team": None, "image_url": None}
     if section.get("title"):
@@ -284,16 +299,22 @@ def parse_robot_block(section):
     return robot
 
 
+def normalize_event_name(name: str) -> str:
+    cleaned = name.replace("(Event)", "").strip()
+    return re.sub(r"\\s+", " ", cleaned)
+
+
 def load_event_from_ttdb(ttdb_path: Path, event_name: str):
     ttdb_text = ttdb_path.read_text(encoding="utf-8")
     sections = parse_ttdb_sections(ttdb_text)
     event_section = None
+    target_name = normalize_event_name(event_name).lower()
     for section in sections:
         title = section.get("title")
         if not title:
             continue
-        normalized = title.replace("(Event)", "").strip()
-        if normalized.lower() == event_name.lower():
+        normalized = normalize_event_name(title)
+        if normalized.lower() == target_name:
             event_section = section
             break
     if not event_section:
@@ -302,6 +323,7 @@ def load_event_from_ttdb(ttdb_path: Path, event_name: str):
     event = parse_event_block(event_section)
     event_id = event_section["record_id"]
 
+    record_map = {section["record_id"]: section for section in sections}
     robots = []
     for section in sections:
         if section["record_id"] == event_id:
@@ -317,7 +339,39 @@ def load_event_from_ttdb(ttdb_path: Path, event_name: str):
             print(f"Skipping robot {robot.get('name') or section['record_id']}: missing {missing}")
 
     if not robots:
-        raise ValueError(f"No robots linked to event {event_name} via competes_in edges.")
+        fallback_ids = [
+            target
+            for edge, target in event_section.get("relates", [])
+            if edge in {"has_bot", "has_robot"}
+        ]
+        for record_id in fallback_ids:
+            section = record_map.get(record_id)
+            if not section:
+                continue
+            robot = parse_robot_block(section)
+            if all(robot.values()):
+                robots.append(robot)
+            else:
+                missing = [k for k, v in robot.items() if not v]
+                print(f"Skipping robot {robot.get('name') or section['record_id']}: missing {missing}")
+
+    if not robots:
+        fallback_ids = extract_event_robot_ids(event_section)
+        for record_id in fallback_ids:
+            section = record_map.get(record_id)
+            if not section:
+                continue
+            robot = parse_robot_block(section)
+            if all(robot.values()):
+                robots.append(robot)
+            else:
+                missing = [k for k, v in robot.items() if not v]
+                print(f"Skipping robot {robot.get('name') or section['record_id']}: missing {missing}")
+
+    if not robots:
+        raise ValueError(
+            f"No robots linked to event {event_name} via competes_in edges or event has_bot links."
+        )
 
     event_name_final = event.get("name") or event_name
     return event, robots, event_name_final
@@ -423,6 +477,11 @@ def main() -> None:
         action="store_true",
         help="Remove PNGs after PDF assembly.",
     )
+    parser.add_argument(
+        "--debug",
+        action="store_true",
+        help="Print TTDB parsing diagnostics.",
+    )
 
     args = parser.parse_args()
     ttdb_path = Path(args.ttdb)
@@ -437,6 +496,15 @@ def main() -> None:
     output_dir = Path(args.output_dir) if args.output_dir else base_dir / "output" / event_slug
 
     print(f"Event: {event_name}")
+    event = None
+    resolved_name = event_name
+    if args.debug:
+        ttdb_text = ttdb_path.read_text(encoding="utf-8")
+        sections = parse_ttdb_sections(ttdb_text)
+        print(f"TTDB sections: {len(sections)}")
+        for section in sections[:5]:
+            print(f"Section {section['record_id']} title={section.get('title')} relates={section.get('relates')}")
+
     event, _robots, resolved_name = load_event_from_ttdb(ttdb_path, event_name)
     if resolved_name != event_name:
         print(f"Resolved event name: {resolved_name}")

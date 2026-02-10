@@ -20,3 +20,20 @@ How to update:
   - `deliverables/cycle-XX/output/` (print-ready PDF, if any)
   - `deliverables/cycle-XX/REVIEW.md`
   - `deliverables/cycle-XX/DELIVERY.md`
+
+## Cycle 01
+- Status: in progress (PDF render blocked: inkscape not available in environment)
+- Prompt source: `deliverables/cycle-01/BOOTSTRAP.md`
+- Deliverables root: `deliverables/cycle-01/`
+- Primary artifacts:
+  - `deliverables/cycle-01/IRCL_TTDB_Bot_Oblivion_2025-cycle.md`
+  - `library/IRCL_TTDB_v0-1.md`
+  - `Generate_Robot_Combat_Card_Deck.py`
+  - `cards/README.md`
+  - `cards/generate_cards.py`
+- Other deliverables:
+  - `deliverables/cycle-01/STORYTELLER.md`
+  - `deliverables/cycle-01/SVG_ENGINEER.md`
+  - `deliverables/cycle-01/SOLUTION.md`
+  - `deliverables/cycle-01/REVIEW.md`
+  - `deliverables/cycle-01/DELIVERY.md`

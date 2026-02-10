@@ -1,3 +1,57 @@
 # LOG
 
 ## Entries
+- Step: 1
+- Role: Bootstrap
+- Summary: Interpreted the cycle-01 prompt, defined objectives and risks, proposed team composition, and recommended plan adjustments.
+- Decisions: Include SVG engineer and pipeline validation as part of cycle-01; emphasize TTDB RFC alignment.
+- Open questions: What is the authoritative source for Bot Oblivion 2025 card data in this repo?
+- Next step: Storyteller
+- Step: 2
+- Role: Storyteller
+- Summary: Defined the narrative focus, themes, tone, and visual storytelling guidance for the Bot Oblivion 2025 card deck.
+- Decisions: Prioritized documentary clarity and event identity markers across cards.
+- Open questions: Confirm whether a dedicated event badge exists in current assets.
+- Next step: SVG engineer
+- Step: 3
+- Role: SVG engineer
+- Summary: Documented SVG layout constraints, rendering considerations, and guidance for consistent card output.
+- Decisions: Preserve the 3x3 letter layout and Roboto font usage; prioritize deterministic SVG templates.
+- Open questions: Whether to bundle fonts and event badge assets locally for offline rendering.
+- Next step: Orchestrator
+- Step: 4
+- Role: Orchestrator
+- Summary: Expanded cycle inputs and refined the critical path to emphasize TTDB compliance, card pipeline, and PDF validation.
+- Decisions: Added RFCs and TTAI specs as required inputs; clarified core worker deliverables and review scope.
+- Open questions: None.
+- Next step: Core worker
+- Step: 5
+- Role: Core worker
+- Summary: Created the Bot Oblivion 2025 TTDB dataset, promoted it to library, and refactored the card/PDF generator into a reusable CLI with organized output folders.
+- Decisions: Default generator outputs to `cards/<event>` and `output/<event>`; retained SVG-based rendering with Inkscape.
+- Open questions: Whether to bundle local font assets for offline rendering and to include an event-specific badge.
+- Next step: Reviewer
+- Step: 6
+- Role: Reviewer
+- Summary: Reviewed TTDB file structure, typed-edge compliance, and generator reuse; documented validation gaps.
+- Decisions: Marked PDF resemblance as unverified pending a render run.
+- Open questions: Run the generator to visually confirm PDF parity with the reference deck.
+- Next step: Delivery packager
+- Step: 7
+- Role: Delivery packager
+- Summary: Assembled delivery notes, documented dependencies and output paths, and updated release tracking.
+- Decisions: Marked cycle status as in progress due to missing PDF render validation.
+- Open questions: Run PDF generation once Inkscape is available to close the delivery gate.
+- Next step: Retrospective
+- Step: 8
+- Role: Retrospective
+- Summary: Added recommended plan adjustments and new next-cycle prompts to the bootstrap document.
+- Decisions: Emphasized dependency checks, asset pinning, and PDF metadata validation for future cycles.
+- Open questions: Which next-cycle prompt should be selected to proceed?
+- Next step: Human selection for next cycle
+- Step: 8a
+- Role: Orchestrator
+- Summary: Added explicit deliverable paths to PLAN entries to align with TTE-RFC-0002.
+- Decisions: None.
+- Open questions: None.
+- Next step: Human selection for next cycle

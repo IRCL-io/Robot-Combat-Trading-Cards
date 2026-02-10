@@ -1,10 +1,11 @@
+import argparse
 import json
-import subprocess
 import os
-import glob
+import re
+import subprocess
+from pathlib import Path
 
-file_named = "Unspecified json"
-event_named = "Unspecified Event"
+from pypdf import PdfReader, PdfWriter
 
 # Page size: U.S. Letter at 300 dpi
 PAGE_WIDTH = 2550
@@ -13,57 +14,54 @@ PAGE_HEIGHT = 3300
 # Card layout: 3x3 grid with 1/8" (38 px) spacing
 CARD_SPACING = 38  # 1/8 inch at 300 dpi = 37.5
 
-CARD_WIDTH = 770 #824 originally.  Removed 54.
-# pw 2550
-# - 2310(cw 770 * 3) = 240
-# - 76(cs 38 * 2) = 164
-# / 2 = 82
-
-LEFT_SIDE_OF_PAGE = 82 #previously 63
+CARD_WIDTH = 770  # 824 originally. Removed 54.
+LEFT_SIDE_OF_PAGE = 82  # previously 63
 CARD_HEIGHT = 1074
 
 GREY_COLOR = "rgb(210, 210, 210)"
 DARKER_GREY_COLOR = "rgb(95, 95, 95)"
-BACKGROUND_IMG_SIZE = 90  
-NAME_FONT_SIZE = 84        
+BACKGROUND_IMG_SIZE = 90
+NAME_FONT_SIZE = 84
 CORNER_SIZE = 40
 
-from pypdf import PdfWriter, PdfReader
 
-def assemble_pngs_to_pdf_with_alternating_backs(front_pngs, back_png, output_pdf):
+def slugify(text: str) -> str:
+    slug = re.sub(r"[^A-Za-z0-9]+", "_", text.strip())
+    slug = slug.strip("_")
+    return slug or "event"
+
+
+def assemble_pngs_to_pdf_with_alternating_backs(front_pngs, back_png, output_pdf: Path) -> None:
     """Assemble PNGs into a PDF with alternating card back pages."""
     import img2pdf
 
-    # Convert front PNGs to individual PDFs
     front_pdfs = []
     for front_png in front_pngs:
-        front_pdf = front_png.replace('.png', '.pdf')
-        with open(front_pdf, 'wb') as f:
-            f.write(img2pdf.convert(front_png))
+        front_pdf = Path(str(front_png).replace(".png", ".pdf"))
+        with open(front_pdf, "wb") as f:
+            f.write(img2pdf.convert(str(front_png)))
         front_pdfs.append(front_pdf)
 
-    # Convert card back PNG to a PDF
-    back_pdf = back_png.replace('.png', '.pdf')
-    with open(back_pdf, 'wb') as f:
-        f.write(img2pdf.convert(back_png))
+    back_pdf = Path(str(back_png).replace(".png", ".pdf"))
+    with open(back_pdf, "wb") as f:
+        f.write(img2pdf.convert(str(back_png)))
 
-    # Assemble the final PDF
     writer = PdfWriter()
     for front_pdf in front_pdfs:
-        writer.append(PdfReader(front_pdf))
-        writer.append(PdfReader(back_pdf))
+        writer.append(PdfReader(str(front_pdf)))
+        writer.append(PdfReader(str(back_pdf)))
 
-    with open(output_pdf, 'wb') as f:
+    output_pdf.parent.mkdir(parents=True, exist_ok=True)
+    with open(output_pdf, "wb") as f:
         writer.write(f)
 
     print(f"Generated PDF with alternating card backs: {output_pdf}")
 
-    # Clean up intermediate PDFs
     for pdf in front_pdfs + [back_pdf]:
-        os.remove(pdf)
+        pdf.unlink(missing_ok=True)
 
 
-def name_band(name):    
+def name_band(name: str) -> str:
     name_font_size = NAME_FONT_SIZE if len(name) <= 13 else int(NAME_FONT_SIZE * 0.6)
     name_font_y = 116 if len(name) <= 13 else 104
 
@@ -74,38 +72,37 @@ def name_band(name):
         <text x="{(CARD_WIDTH / 2) + 2}" y="{name_font_y + 2}" font-size="{name_font_size}" fill="white" text-anchor="middle" font-family="Roboto">{name}</text>
     """
 
-def create_card_front(robot, x, y):
+
+def create_card_front(robot, x, y, event_name: str) -> str:
     """Generate an SVG snippet for an individual robot card at position (x, y)."""
-    name = robot['name']
-    weight = robot['weight']
-    team = robot['team']
-    image_url = robot['image_url']
-    
+    name = robot["name"]
+    weight = robot["weight"]
+    team = robot["team"]
+    image_url = robot["image_url"]
+
     return f"""
     <g transform="translate({x}, {y})">
            <rect width="{CARD_WIDTH}" height="{CARD_HEIGHT}" fill="{GREY_COLOR}" stroke="black" rx="45" ry="45"/>
-        <rect x="0" y="0" width="{CARD_WIDTH}" height="{CARD_HEIGHT}" fill="url(#imagePattern)" /> 
+        <rect x="0" y="0" width="{CARD_WIDTH}" height="{CARD_HEIGHT}" fill="url(#imagePattern)" />
         <image href="{image_url}" x="1" y="80" width="{CARD_WIDTH - 2}" height="{CARD_WIDTH - 2}"/>
-        
+
         {name_band(name)}
-        
+
         <rect x="40" y="{CARD_HEIGHT - 120}" width="{CARD_WIDTH - 80}" height="80" fill="{DARKER_GREY_COLOR}" rx="{CORNER_SIZE}" ry="{CORNER_SIZE}" />
 
         <rect x="40" y="{CARD_HEIGHT - 254}" width="{CARD_WIDTH - 80}" height="120" fill="{DARKER_GREY_COLOR}" rx="{CORNER_SIZE}" ry="{CORNER_SIZE}" />
 
-        
-        
-        <text x="{CARD_WIDTH / 2}" y="{CARD_HEIGHT - 205}" font-size="36" fill="white" text-anchor="middle" font-family="Roboto">{weight}</text>  
-
+        <text x="{CARD_WIDTH / 2}" y="{CARD_HEIGHT - 205}" font-size="36" fill="white" text-anchor="middle" font-family="Roboto">{weight}</text>
         <text x="{CARD_WIDTH / 2}" y="{CARD_HEIGHT - 165}" font-size="36" fill="white" text-anchor="middle" font-family="Roboto">by {team}</text>
-             
-        <text x="{CARD_WIDTH / 2}" y="{CARD_HEIGHT - 70}" font-size="36" fill="white" text-anchor="middle" font-family="Roboto">{event_named}</text>
 
-        <rect width="{CARD_WIDTH}" height="{CARD_HEIGHT}" stroke="black" stroke-width="10" fill="none" rx="45" ry="45" />   
+        <text x="{CARD_WIDTH / 2}" y="{CARD_HEIGHT - 70}" font-size="36" fill="white" text-anchor="middle" font-family="Roboto">{event_name}</text>
+
+        <rect width="{CARD_WIDTH}" height="{CARD_HEIGHT}" stroke="black" stroke-width="10" fill="none" rx="45" ry="45" />
     </g>
     """
 
-def create_page_front(robots, page_num):
+
+def create_page_front(robots, page_num: int, event_name: str) -> str:
     svg_content = f"""
     <svg width="{PAGE_WIDTH}" height="{PAGE_HEIGHT}" xmlns="http://www.w3.org/2000/svg">
         <style>
@@ -148,12 +145,13 @@ def create_page_front(robots, page_num):
         x = col * (CARD_WIDTH + CARD_SPACING) + LEFT_SIDE_OF_PAGE
         y = row * (CARD_HEIGHT + CARD_SPACING) + 3
         print(f"Placing robot {i} at ({x}, {y})")
-        svg_content += create_card_front(robot, x, y)
+        svg_content += create_card_front(robot, x, y, event_name)
 
     svg_content += "</svg>"
     return svg_content
 
-def create_card_back(x, y):
+
+def create_card_back(x, y) -> str:
     """Generate an SVG snippet for a single card back positioned at (x, y)."""
     logo_image_url = "https://ircl-io.github.io/images/IRCL/IRCL_logo_Transparent-90.png"
 
@@ -164,11 +162,12 @@ def create_card_back(x, y):
         <text x="60" y="60" font-size="64" font-weight="bold" fill="white" text-anchor="middle" font-family="Roboto" transform="rotate(90, 60, 120)">
             ircl.io
         </text>
-        <rect width="{CARD_WIDTH}" height="{CARD_HEIGHT}" stroke="black" stroke-width="10" fill="none" rx="45" ry="45" />  
+        <rect width="{CARD_WIDTH}" height="{CARD_HEIGHT}" stroke="black" stroke-width="10" fill="none" rx="45" ry="45" />
     </g>
     """
 
-def create_page_back():
+
+def create_page_back() -> str:
     svg_content = f"""
     <svg width="{PAGE_WIDTH}" height="{PAGE_HEIGHT}" xmlns="http://www.w3.org/2000/svg">
         <style>
@@ -200,68 +199,157 @@ def create_page_back():
     svg_content += "</svg>"
     return svg_content
 
-def svg_to_png_with_inkscape(svg_file, png_file):
+
+def svg_to_png_with_inkscape(svg_file: Path, png_file: Path) -> None:
     """Convert an SVG file to a PNG using Inkscape."""
     try:
-        subprocess.run(["inkscape", svg_file, "--export-filename", png_file], check=True)
+        subprocess.run(
+            ["inkscape", str(svg_file), "--export-filename", str(png_file)],
+            check=True,
+        )
         print(f"Converted {svg_file} to {png_file}")
     except subprocess.CalledProcessError as e:
         print(f"Error during conversion of {svg_file} to PNG: {e}")
 
-def generate_robot_pages_with_png(json_file):
-    """Generate paginated SVGs and convert them to PNGs."""
-    with open(f"{json_file}.json", 'r') as f:
+
+def load_event_data(json_path: Path):
+    with open(json_path, "r", encoding="utf-8") as f:
         data = json.load(f)
-        robots = data.get("robots", [])
+    event = data.get("event", {})
+    robots = data.get("robots", [])
+    event_name = event.get("name") or json_path.stem
+    return event, robots, event_name
+
+
+def generate_robot_pages_with_png(
+    json_path: Path,
+    event_name: str,
+    cards_dir: Path,
+    output_dir: Path,
+    keep_svgs: bool,
+    keep_pngs: bool,
+) -> Path:
+    """Generate paginated SVGs and convert them to PNGs."""
+    _event, robots, event_name = load_event_data(json_path)
+
+    cards_dir.mkdir(parents=True, exist_ok=True)
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    svg_dir = cards_dir / "svgs"
+    svg_dir.mkdir(parents=True, exist_ok=True)
 
     max_cards_per_page = 9  # 3x3
     page_num = 1
     png_files = []
+    event_slug = slugify(event_name)
 
     for start in range(0, len(robots), max_cards_per_page):
-        page_robots = robots[start:start + max_cards_per_page]
+        page_robots = robots[start : start + max_cards_per_page]
         if not page_robots:
             break
-        svg_file = f"{json_file}_robot_page_{page_num}.svg"
-        png_file = f"{json_file}_robot_page_{page_num}.png"
+        svg_file = svg_dir / f"{event_slug}_robot_page_{page_num}.svg"
+        png_file = cards_dir / f"{event_slug}_robot_page_{page_num}.png"
 
-        page_svg = create_page_front(page_robots, page_num)
-        with open(svg_file, 'w') as f:
-            f.write(page_svg)
+        page_svg = create_page_front(page_robots, page_num, event_name)
+        svg_file.write_text(page_svg, encoding="utf-8")
 
         print(f"Generated SVG for page {page_num}: {svg_file}")
         svg_to_png_with_inkscape(svg_file, png_file)
         png_files.append(png_file)
-        os.remove(svg_file)
 
         page_num += 1
 
-    # Create card back page
     card_back_svg = create_page_back()
-    card_back_svg_file = f"{json_file}_card_back_page.svg"
-    card_back_png_file = f"{json_file}_card_back_page.png"
-    with open(card_back_svg_file, 'w') as f:
-        f.write(card_back_svg)
+    card_back_svg_file = svg_dir / f"{event_slug}_card_back_page.svg"
+    card_back_png_file = cards_dir / f"{event_slug}_card_back_page.png"
+    card_back_svg_file.write_text(card_back_svg, encoding="utf-8")
 
     print(f"Generated SVG for card backs: {card_back_svg_file}")
     svg_to_png_with_inkscape(card_back_svg_file, card_back_png_file)
     png_files.append(card_back_png_file)
-    os.remove(card_back_svg_file)
 
     print(f"All PNG files created: {png_files}")
-    output_pdf = f"{json_file}_deck.pdf"
+    output_pdf = output_dir / f"{event_slug}_deck.pdf"
     assemble_pngs_to_pdf_with_alternating_backs(png_files[:-1], png_files[-1], output_pdf)
     print(f"Final PDF created: {output_pdf}")
 
-def use_params(fil, eve):
-    global file_named
-    global event_named
-    file_named = fil
-    event_named = eve
-    generate_robot_pages_with_png(file_named)
-    for file_path in glob.glob('*.png'):
-        os.remove(file_path)
-    print(f"extra files removed")
+    if not keep_svgs:
+        for svg_path in svg_dir.glob("*.svg"):
+            svg_path.unlink(missing_ok=True)
+        try:
+            svg_dir.rmdir()
+        except OSError:
+            pass
 
-# Start Here:
-use_params("Bot Oblivion 2025", "Bot Oblivion 2025")
+    if not keep_pngs:
+        for png_path in png_files:
+            png_path.unlink(missing_ok=True)
+
+    return output_pdf
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description="Generate robot combat card decks.")
+    parser.add_argument(
+        "--input",
+        "-i",
+        default="Bot Oblivion 2025.json",
+        help="Path to the event JSON file.",
+    )
+    parser.add_argument(
+        "--event-name",
+        default=None,
+        help="Override the event name used on cards.",
+    )
+    parser.add_argument(
+        "--cards-dir",
+        default=None,
+        help="Directory for generated card PNGs.",
+    )
+    parser.add_argument(
+        "--output-dir",
+        default=None,
+        help="Directory for generated PDFs.",
+    )
+    parser.add_argument(
+        "--keep-svgs",
+        action="store_true",
+        help="Keep intermediate SVG pages.",
+    )
+    parser.add_argument(
+        "--cleanup-pngs",
+        action="store_true",
+        help="Remove PNGs after PDF assembly.",
+    )
+
+    args = parser.parse_args()
+    json_path = Path(args.input)
+    if not json_path.exists():
+        raise FileNotFoundError(f"JSON input not found: {json_path}")
+
+    event, _robots, default_event_name = load_event_data(json_path)
+    event_name = args.event_name or default_event_name
+    event_slug = slugify(event_name)
+
+    base_dir = Path(__file__).resolve().parent
+    cards_dir = Path(args.cards_dir) if args.cards_dir else base_dir / "cards" / event_slug
+    output_dir = Path(args.output_dir) if args.output_dir else base_dir / "output" / event_slug
+
+    print(f"Event: {event_name}")
+    if event:
+        print(f"Event source: {event.get('url', 'unknown')}")
+    print(f"Cards dir: {cards_dir}")
+    print(f"Output dir: {output_dir}")
+
+    generate_robot_pages_with_png(
+        json_path=json_path,
+        event_name=event_name,
+        cards_dir=cards_dir,
+        output_dir=output_dir,
+        keep_svgs=args.keep_svgs,
+        keep_pngs=not args.cleanup_pngs,
+    )
+
+
+if __name__ == "__main__":
+    main()

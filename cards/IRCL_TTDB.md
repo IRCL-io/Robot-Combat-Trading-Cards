@@ -6,6 +6,11 @@
 > - `RFCs/TTDB-RFC-0003-Typed-Edges.md`
 > - `RFCs/TTDB-RFC-0004-Event-ID-and-Collision.md`
 
+> Robot dedup policy:
+> - A robot record is unique by the `(name, team)` pair.
+> - When adding a robot, search for an existing record with the same `(name, team)` and reuse it.
+> - Always maintain bidirectional links: event `has_bot` → robot and robot `competes_in` → event.
+
 ```mmpdb
 db_id: mmpdb:ircl:events:v0-1
 db_name: "IRCL TTDB"
@@ -187,7 +192,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 
 ---
 
-@LAT12LON1 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
+@LAT12LON1 | created:1770743813 | updated:1770755062 | relates:competes_in>@LAT0LON0,competes_in>@LAT25LON1
 
 ## ICU2
 - Weight class: Full Combat Antweight
@@ -301,3 +306,231 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 - Weight class: Plastic Antweight
 - Team: Idiocracy
 - Image: https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/12284/UhmericanExxxpress.png
+
+---
+
+@LAT25LON1 | created:1770754151 | updated:1770755062 | relates:has_bot>@LAT26LON1,has_bot>@LAT27LON1,has_bot>@LAT28LON1,has_bot>@LAT29LON1,has_bot>@LAT30LON1,has_bot>@LAT31LON1,has_bot>@LAT32LON1,has_bot>@LAT33LON1,has_bot>@LAT34LON1,has_bot>@LAT35LON1,has_bot>@LAT36LON1,has_bot>@LAT37LON1,has_bot>@LAT38LON1,has_bot>@LAT39LON1,has_bot>@LAT40LON1,has_bot>@LAT41LON1,has_bot>@LAT42LON1,has_bot>@LAT43LON1,has_bot>@LAT12LON1,has_bot>@LAT45LON1,has_bot>@LAT46LON1
+
+## IRCL Presents: Spring Bot Breaker 2026 (Event)
+- URL: https://www.robotcombatevents.com/events/6479
+- Location: 7211 W Colonial St, Boise, ID 83709, USA
+- Date: Saturday, March 28, 2026
+- Begin: 10:00
+- End: 22:00
+- Website: https://ircl-io.github.io/
+- Registration fee: $25
+- Registrations:
+  - Full Combat Antweight: {{count:Full Combat Antweight}}
+  - Plastic Antweight: {{count:Plastic Antweight}}
+  - Beetleweight: {{count:Beetleweight}}
+
+### Robots
+#### Full Combat Antweight
+- @LAT37LON1 Metally Croissant (Full Combat Antweight)
+- @LAT38LON1 TENACITY! (Full Combat Antweight)
+- @LAT39LON1 Anteater (Full Combat Antweight)
+- @LAT40LON1 Benny (Full Combat Antweight)
+- @LAT41LON1 AntHide (Full Combat Antweight)
+- @LAT42LON1 Lil' Nasty (Full Combat Antweight)
+- @LAT43LON1 Zephyr (Full Combat Antweight)
+- @LAT12LON1 ICU2 (Full Combat Antweight)
+- @LAT45LON1 Black Talon (Full Combat Antweight)
+- @LAT46LON1 Ghost Viper (Full Combat Antweight)
+
+#### Plastic Antweight
+- @LAT26LON1 Smite (Plastic Antweight)
+- @LAT27LON1 Deadly Croissant (Plastic Antweight)
+- @LAT28LON1 Badger (Plastic Antweight)
+- @LAT29LON1 Drumstick (Plastic Antweight)
+- @LAT30LON1 ⭐Slay⭐ Queen SLAY (Plastic Antweight)
+
+#### Beetleweight
+- @LAT31LON1 Doomflower (Beetleweight)
+- @LAT32LON1 Renegade (Beetleweight)
+- @LAT33LON1 Brutal Baguette (Beetleweight)
+- @LAT34LON1 Sukuna 宿儺 (Beetleweight)
+- @LAT35LON1 CRUX (Beetleweight)
+- @LAT36LON1 Over-N-Out (Beetleweight)
+
+### Notes
+- Uses SPARC rules for robot construction.
+
+---
+
+@LAT26LON1 | created:1770754151 | updated:1770754151 | relates:competes_in>@LAT25LON1
+
+## Smite
+- Weight class: Plastic Antweight
+- Team: Barnhouse Robotics
+- Image: https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/17042/PXL_20250312_023621774.png
+
+---
+
+@LAT27LON1 | created:1770754151 | updated:1770754151 | relates:competes_in>@LAT25LON1
+
+## Deadly Croissant
+- Weight class: Plastic Antweight
+- Team: BoweBots
+- Image: https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/17486/Screenshot_20250817-205519_2.png
+
+---
+
+@LAT28LON1 | created:1770754151 | updated:1770754151 | relates:competes_in>@LAT25LON1
+
+## Badger
+- Weight class: Plastic Antweight
+- Team: Team HyperTech Robotics
+- Image: https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/23853/Screenshot_2025-12-17_083346.png
+
+---
+
+@LAT29LON1 | created:1770754151 | updated:1770754151 | relates:competes_in>@LAT25LON1
+
+## Drumstick
+- Weight class: Plastic Antweight
+- Team: Purge Engineering
+- Image: https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/15432/RCL_Pic.png
+
+---
+
+@LAT30LON1 | created:1770754151 | updated:1770754151 | relates:competes_in>@LAT25LON1
+
+## ⭐Slay⭐ Queen SLAY
+- Weight class: Plastic Antweight
+- Team: ADHD Garage
+- Image: https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/24072/PlantHide__1_.png
+
+---
+
+@LAT31LON1 | created:1770754151 | updated:1770754151 | relates:competes_in>@LAT25LON1
+
+## Doomflower
+- Weight class: Beetleweight
+- Team: Barnhouse Robotics
+- Image: https://www.robotcombatevents.com/assets/RCELogo-3383ca77f76e5be2b7755ea9d0c464aea25a87d8c9f2a4cffd63643392f59fe7.png
+
+---
+
+@LAT32LON1 | created:1770754151 | updated:1770754151 | relates:competes_in>@LAT25LON1
+
+## Renegade
+- Weight class: Beetleweight
+- Team: Bad Decisions Robotics
+- Image: https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/14013/IMG_1403-min.jpeg
+
+---
+
+@LAT33LON1 | created:1770754151 | updated:1770754151 | relates:competes_in>@LAT25LON1
+
+## Brutal Baguette
+- Weight class: Beetleweight
+- Team: BoweBots
+- Image: https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/24357/Brutal_Baguette.png
+
+---
+
+@LAT34LON1 | created:1770754151 | updated:1770754151 | relates:competes_in>@LAT25LON1
+
+## Sukuna 宿儺
+- Weight class: Beetleweight
+- Team: Team HyperTech Robotics
+- Image: https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/23258/Screenshot_2025-12-10_110952.png
+
+---
+
+@LAT35LON1 | created:1770754151 | updated:1770754151 | relates:competes_in>@LAT25LON1
+
+## CRUX
+- Weight class: Beetleweight
+- Team: Purge Engineering
+- Image: https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/18307/CRUX_RCE.png
+
+---
+
+@LAT36LON1 | created:1770754151 | updated:1770754151 | relates:competes_in>@LAT25LON1
+
+## Over-N-Out
+- Weight class: Beetleweight
+- Team: ADHD Garage
+- Image: https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/18472/Over_and_out_final_assembly_wheel_blade.png
+
+---
+
+@LAT37LON1 | created:1770754582 | updated:1770754582 | relates:competes_in>@LAT25LON1
+
+## Metally Croissant
+- Weight class: Full Combat Antweight
+- Team: BoweBots
+- Image: https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/21736/image.png
+
+---
+
+@LAT38LON1 | created:1770754582 | updated:1770754582 | relates:competes_in>@LAT25LON1
+
+## TENACITY!
+- Weight class: Full Combat Antweight
+- Team: Team HyperTech Robotics
+- Image: https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/18674/20250715_140123__1_.jpg
+
+---
+
+@LAT39LON1 | created:1770754582 | updated:1770754582 | relates:competes_in>@LAT25LON1
+
+## Anteater
+- Weight class: Full Combat Antweight
+- Team: BoomBox
+- Image: https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/20165/20251018_033002.jpg
+
+---
+
+@LAT40LON1 | created:1770754582 | updated:1770754582 | relates:competes_in>@LAT25LON1
+
+## Benny
+- Weight class: Full Combat Antweight
+- Team: ADHD Garage
+- Image: https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/19386/Benny.png
+
+---
+
+@LAT41LON1 | created:1770754582 | updated:1770754582 | relates:competes_in>@LAT25LON1
+
+## AntHide
+- Weight class: Full Combat Antweight
+- Team: ADHD Garage
+- Image: https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/8151/PXL_20230629_204739996._2_exported_608_1688071707099.jpg
+
+---
+
+@LAT42LON1 | created:1770754582 | updated:1770754582 | relates:competes_in>@LAT25LON1
+
+## Lil' Nasty
+- Weight class: Full Combat Antweight
+- Team: Barnhouse Robotics
+- Image: https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/24955/LilNasty.jpg
+
+---
+
+@LAT43LON1 | created:1770754582 | updated:1770754582 | relates:competes_in>@LAT25LON1
+
+## Zephyr
+- Weight class: Full Combat Antweight
+- Team: Atlas
+- Image: https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/20550/Screenshot_2025-05-04_090159.png
+
+---
+
+@LAT45LON1 | created:1770754582 | updated:1770754582 | relates:competes_in>@LAT25LON1
+
+## Black Talon
+- Weight class: Full Combat Antweight
+- Team: Trouble Robotics
+- Image: unknown
+
+---
+
+@LAT46LON1 | created:1770754582 | updated:1770754582 | relates:competes_in>@LAT25LON1
+
+## Ghost Viper
+- Weight class: Full Combat Antweight
+- Team: Team Dairy
+- Image: unknown

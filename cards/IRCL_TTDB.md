@@ -1,5 +1,11 @@
 # IRCL TTDB (Bot Oblivion 2025)
 
+> Agent note: When parsing or updating this TTDB, refer to the TTDB RFCs in `RFCs/`:
+> - `RFCs/TTDB-RFC-0001-File-Format.md`
+> - `RFCs/TTDB-RFC-0002-Cursor-Semantics.md`
+> - `RFCs/TTDB-RFC-0003-Typed-Edges.md`
+> - `RFCs/TTDB-RFC-0004-Event-ID-and-Collision.md`
+
 ```mmpdb
 db_id: mmpdb:ircl:events:v0-1
 db_name: "IRCL TTDB"

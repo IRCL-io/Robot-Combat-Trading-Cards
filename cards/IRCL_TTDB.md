@@ -56,7 +56,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 
 ---
 
-@LAT0LON0 | created:1770743813 | updated:1770743813 | relates:has_bot>@LAT1LON1,has_bot>@LAT2LON1,has_bot>@LAT3LON1,has_bot>@LAT4LON1,has_bot>@LAT5LON1,has_bot>@LAT6LON1,has_bot>@LAT7LON1,has_bot>@LAT8LON1,has_bot>@LAT9LON1,has_bot>@LAT10LON1,has_bot>@LAT11LON1,has_bot>@LAT12LON1,has_bot>@LAT13LON1,has_bot>@LAT14LON1,has_bot>@LAT15LON1,has_bot>@LAT16LON1,has_bot>@LAT17LON1,has_bot>@LAT18LON1,has_bot>@LAT19LON1,has_bot>@LAT20LON1,has_bot>@LAT21LON1,has_bot>@LAT22LON1,has_bot>@LAT23LON1,has_bot>@LAT24LON1
+@LAT0LON0 | created:1770743813 | updated:1770743813 | relates:has_bot>@LAT-75LON-170,has_bot>@LAT-60LON-130,has_bot>@LAT-45LON-90,has_bot>@LAT-30LON-50,has_bot>@LAT-15LON-10,has_bot>@LAT0LON30,has_bot>@LAT15LON70,has_bot>@LAT30LON110,has_bot>@LAT45LON150,has_bot>@LAT60LON-170,has_bot>@LAT75LON-130,has_bot>@LAT-75LON-130,has_bot>@LAT-60LON-90,has_bot>@LAT-45LON-50,has_bot>@LAT-30LON-10,has_bot>@LAT-15LON30,has_bot>@LAT0LON70,has_bot>@LAT15LON110,has_bot>@LAT30LON150,has_bot>@LAT45LON-170,has_bot>@LAT60LON-130,has_bot>@LAT75LON-90,has_bot>@LAT-75LON-90,has_bot>@LAT-60LON-50
 
 ## Bot Oblivion 2025 (Event)
 - Back card image: C:/git/Robot-Combat-Trading-Cards/cards/Bot_Oblivion_2025/Bot_Oblivion_2025_back.png
@@ -67,34 +67,34 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
   - Beetleweight: https://www.robotcombatevents.com/events/4646/competitions/5404
 
 ### Robots
-- @LAT1LON1 BoomBox (Beetleweight)
-- @LAT2LON1 SweeperKeeper (Beetleweight)
-- @LAT3LON1 Virilade (Beetleweight)
-- @LAT4LON1 Renegade (Beetleweight)
-- @LAT5LON1 Gyro (Beetleweight)
-- @LAT6LON1 Plan B (Beetleweight)
-- @LAT7LON1 Under-Bite (Beetleweight)
-- @LAT8LON1 Apple Monger (Beetleweight)
-- @LAT9LON1 TENACITY! (Full Combat Antweight)
-- @LAT10LON1 A is for Aardvark FC (Full Combat Antweight)
-- @LAT11LON1 Triple A (Full Combat Antweight)
-- @LAT12LON1 ICU2 (Full Combat Antweight)
-- @LAT13LON1 JUMBO (Full Combat Antweight)
-- @LAT14LON1 Anubis (Full Combat Antweight)
-- @LAT15LON1 Cyclone (Full Combat Antweight)
-- @LAT16LON1 Deadly Croissant (Plastic Antweight)
-- @LAT17LON1 Schlagzeug (Plastic Antweight)
-- @LAT18LON1 I Think I'm A Clone Now (Plastic Antweight)
-- @LAT19LON1 Squatchy (Plastic Antweight)
-- @LAT20LON1 WedgeMaster (Plastic Antweight)
-- @LAT21LON1 Double A (Plastic Antweight)
-- @LAT22LON1 Rickrolled (Plastic Antweight)
-- @LAT23LON1 RUPTURE (Plastic Antweight)
-- @LAT24LON1 Uhmerican Exxxpress (Plastic Antweight)
+- @LAT-75LON-170 BoomBox (Beetleweight)
+- @LAT-60LON-130 SweeperKeeper (Beetleweight)
+- @LAT-45LON-90 Virilade (Beetleweight)
+- @LAT-30LON-50 Renegade (Beetleweight)
+- @LAT-15LON-10 Gyro (Beetleweight)
+- @LAT0LON30 Plan B (Beetleweight)
+- @LAT15LON70 Under-Bite (Beetleweight)
+- @LAT30LON110 Apple Monger (Beetleweight)
+- @LAT45LON150 TENACITY! (Full Combat Antweight)
+- @LAT60LON-170 A is for Aardvark FC (Full Combat Antweight)
+- @LAT75LON-130 Triple A (Full Combat Antweight)
+- @LAT-75LON-130 ICU2 (Full Combat Antweight)
+- @LAT-60LON-90 JUMBO (Full Combat Antweight)
+- @LAT-45LON-50 Anubis (Full Combat Antweight)
+- @LAT-30LON-10 Cyclone (Full Combat Antweight)
+- @LAT-15LON30 Deadly Croissant (Plastic Antweight)
+- @LAT0LON70 Schlagzeug (Plastic Antweight)
+- @LAT15LON110 I Think I'm A Clone Now (Plastic Antweight)
+- @LAT30LON150 Squatchy (Plastic Antweight)
+- @LAT45LON-170 WedgeMaster (Plastic Antweight)
+- @LAT60LON-130 Double A (Plastic Antweight)
+- @LAT75LON-90 Rickrolled (Plastic Antweight)
+- @LAT-75LON-90 RUPTURE (Plastic Antweight)
+- @LAT-60LON-50 Uhmerican Exxxpress (Plastic Antweight)
 
 ---
 
-@LAT1LON1 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
+@LAT-75LON-170 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
 
 ## BoomBox
 - Card image: ![BoomBox](Bot_Oblivion_2025/BoomBox.png)
@@ -104,7 +104,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 
 ---
 
-@LAT2LON1 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
+@LAT-60LON-130 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
 
 ## SweeperKeeper
 - Card image: ![SweeperKeeper](Bot_Oblivion_2025/SweeperKeeper.png)
@@ -114,7 +114,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 
 ---
 
-@LAT3LON1 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
+@LAT-45LON-90 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
 
 ## Virilade
 - Card image: ![Virilade](Bot_Oblivion_2025/Virilade.png)
@@ -124,7 +124,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 
 ---
 
-@LAT4LON1 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
+@LAT-30LON-50 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
 
 ## Renegade
 - Card image: ![Renegade](Bot_Oblivion_2025/Renegade.png)
@@ -134,7 +134,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 
 ---
 
-@LAT5LON1 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
+@LAT-15LON-10 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
 
 ## Gyro
 - Card image: ![Gyro](Bot_Oblivion_2025/Gyro.png)
@@ -144,7 +144,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 
 ---
 
-@LAT6LON1 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
+@LAT0LON30 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
 
 ## Plan B
 - Card image: ![Plan_B](Bot_Oblivion_2025/Plan_B.png)
@@ -154,7 +154,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 
 ---
 
-@LAT7LON1 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
+@LAT15LON70 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
 
 ## Under-Bite
 - Card image: ![Under_Bite](Bot_Oblivion_2025/Under_Bite.png)
@@ -164,7 +164,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 
 ---
 
-@LAT8LON1 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
+@LAT30LON110 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
 
 ## Apple Monger
 - Card image: ![Apple_Monger](Bot_Oblivion_2025/Apple_Monger.png)
@@ -174,7 +174,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 
 ---
 
-@LAT9LON1 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
+@LAT45LON150 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
 
 ## TENACITY!
 - Card image: ![TENACITY](Bot_Oblivion_2025/TENACITY.png)
@@ -184,7 +184,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 
 ---
 
-@LAT10LON1 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
+@LAT60LON-170 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
 
 ## A is for Aardvark FC
 - Card image: ![A_is_for_Aardvark_FC](Bot_Oblivion_2025/A_is_for_Aardvark_FC.png)
@@ -194,7 +194,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 
 ---
 
-@LAT11LON1 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
+@LAT75LON-130 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
 
 ## Triple A
 - Card image: ![Triple_A](Bot_Oblivion_2025/Triple_A.png)
@@ -204,7 +204,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 
 ---
 
-@LAT12LON1 | created:1770743813 | updated:1770755062 | relates:competes_in>@LAT0LON0,competes_in>@LAT25LON1
+@LAT-75LON-130 | created:1770743813 | updated:1770755062 | relates:competes_in>@LAT0LON0,competes_in>@LAT-45LON-10
 
 ## ICU2
 - Card image: ![ICU2](IRCL_Presents_Spring_Bot_Breaker_2026/ICU2.png)
@@ -214,7 +214,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 
 ---
 
-@LAT13LON1 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
+@LAT-60LON-90 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
 
 ## JUMBO
 - Card image: ![JUMBO](Bot_Oblivion_2025/JUMBO.png)
@@ -224,7 +224,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 
 ---
 
-@LAT14LON1 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
+@LAT-45LON-50 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
 
 ## Anubis
 - Card image: ![Anubis](Bot_Oblivion_2025/Anubis.png)
@@ -234,7 +234,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 
 ---
 
-@LAT15LON1 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
+@LAT-30LON-10 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
 
 ## Cyclone
 - Card image: ![Cyclone](Bot_Oblivion_2025/Cyclone.png)
@@ -244,7 +244,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 
 ---
 
-@LAT16LON1 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
+@LAT-15LON30 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
 
 ## Deadly Croissant
 - Card image: ![Deadly_Croissant](Bot_Oblivion_2025/Deadly_Croissant.png)
@@ -254,7 +254,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 
 ---
 
-@LAT17LON1 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
+@LAT0LON70 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
 
 ## Schlagzeug
 - Card image: ![Schlagzeug](Bot_Oblivion_2025/Schlagzeug.png)
@@ -264,7 +264,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 
 ---
 
-@LAT18LON1 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
+@LAT15LON110 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
 
 ## I Think I'm A Clone Now
 - Card image: ![I_Think_I_m_A_Clone_Now](Bot_Oblivion_2025/I_Think_I_m_A_Clone_Now.png)
@@ -274,7 +274,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 
 ---
 
-@LAT19LON1 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
+@LAT30LON150 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
 
 ## Squatchy
 - Card image: ![Squatchy](Bot_Oblivion_2025/Squatchy.png)
@@ -284,7 +284,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 
 ---
 
-@LAT20LON1 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
+@LAT45LON-170 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
 
 ## WedgeMaster
 - Card image: ![WedgeMaster](Bot_Oblivion_2025/WedgeMaster.png)
@@ -294,7 +294,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 
 ---
 
-@LAT21LON1 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
+@LAT60LON-130 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
 
 ## Double A
 - Card image: ![Double_A](Bot_Oblivion_2025/Double_A.png)
@@ -304,7 +304,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 
 ---
 
-@LAT22LON1 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
+@LAT75LON-90 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
 
 ## Rickrolled
 - Card image: ![Rickrolled](Bot_Oblivion_2025/Rickrolled.png)
@@ -314,7 +314,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 
 ---
 
-@LAT23LON1 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
+@LAT-75LON-90 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
 
 ## RUPTURE
 - Card image: ![RUPTURE](Bot_Oblivion_2025/RUPTURE.png)
@@ -324,7 +324,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 
 ---
 
-@LAT24LON1 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
+@LAT-60LON-50 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
 
 ## Uhmerican Exxxpress
 - Card image: ![Uhmerican_Exxxpress](Bot_Oblivion_2025/Uhmerican_Exxxpress.png)
@@ -334,7 +334,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 
 ---
 
-@LAT25LON1 | created:1770754151 | updated:1770755062 | relates:has_bot>@LAT26LON1,has_bot>@LAT27LON1,has_bot>@LAT28LON1,has_bot>@LAT29LON1,has_bot>@LAT30LON1,has_bot>@LAT31LON1,has_bot>@LAT32LON1,has_bot>@LAT33LON1,has_bot>@LAT34LON1,has_bot>@LAT35LON1,has_bot>@LAT36LON1,has_bot>@LAT37LON1,has_bot>@LAT38LON1,has_bot>@LAT39LON1,has_bot>@LAT40LON1,has_bot>@LAT41LON1,has_bot>@LAT42LON1,has_bot>@LAT43LON1,has_bot>@LAT12LON1,has_bot>@LAT45LON1,has_bot>@LAT46LON1
+@LAT-45LON-10 | created:1770754151 | updated:1770755062 | relates:has_bot>@LAT-30LON30,has_bot>@LAT-15LON70,has_bot>@LAT0LON110,has_bot>@LAT15LON150,has_bot>@LAT30LON-170,has_bot>@LAT45LON-130,has_bot>@LAT60LON-90,has_bot>@LAT75LON-50,has_bot>@LAT-75LON-50,has_bot>@LAT-60LON-10,has_bot>@LAT-45LON30,has_bot>@LAT-30LON70,has_bot>@LAT-15LON110,has_bot>@LAT0LON150,has_bot>@LAT15LON-170,has_bot>@LAT30LON-130,has_bot>@LAT45LON-90,has_bot>@LAT60LON-50,has_bot>@LAT-75LON-130,has_bot>@LAT75LON-10,has_bot>@LAT-75LON-10
 
 ## IRCL Presents: Spring Bot Breaker 2026 (Event)
 - Back card image: C:/git/Robot-Combat-Trading-Cards/cards/IRCL_Presents_Spring_Bot_Breaker_2026/IRCL_Presents_Spring_Bot_Breaker_2026_back.png
@@ -352,38 +352,38 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 
 ### Robots
 #### Full Combat Antweight
-- @LAT37LON1 Metally Croissant (Full Combat Antweight)
-- @LAT38LON1 TENACITY! (Full Combat Antweight)
-- @LAT39LON1 Anteater (Full Combat Antweight)
-- @LAT40LON1 Benny (Full Combat Antweight)
-- @LAT41LON1 AntHide (Full Combat Antweight)
-- @LAT42LON1 Lil' Nasty (Full Combat Antweight)
-- @LAT43LON1 Zephyr (Full Combat Antweight)
-- @LAT12LON1 ICU2 (Full Combat Antweight)
-- @LAT45LON1 Black Talon (Full Combat Antweight)
-- @LAT46LON1 Ghost Viper (Full Combat Antweight)
+- @LAT-30LON70 Metally Croissant (Full Combat Antweight)
+- @LAT-15LON110 TENACITY! (Full Combat Antweight)
+- @LAT0LON150 Anteater (Full Combat Antweight)
+- @LAT15LON-170 Benny (Full Combat Antweight)
+- @LAT30LON-130 AntHide (Full Combat Antweight)
+- @LAT45LON-90 Lil' Nasty (Full Combat Antweight)
+- @LAT60LON-50 Zephyr (Full Combat Antweight)
+- @LAT-75LON-130 ICU2 (Full Combat Antweight)
+- @LAT75LON-10 Black Talon (Full Combat Antweight)
+- @LAT-75LON-10 Ghost Viper (Full Combat Antweight)
 
 #### Plastic Antweight
-- @LAT26LON1 Smite (Plastic Antweight)
-- @LAT27LON1 Deadly Croissant (Plastic Antweight)
-- @LAT28LON1 Badger (Plastic Antweight)
-- @LAT29LON1 Drumstick (Plastic Antweight)
-- @LAT30LON1 ⭐Slay⭐ Queen SLAY (Plastic Antweight)
+- @LAT-30LON30 Smite (Plastic Antweight)
+- @LAT-15LON70 Deadly Croissant (Plastic Antweight)
+- @LAT0LON110 Badger (Plastic Antweight)
+- @LAT15LON150 Drumstick (Plastic Antweight)
+- @LAT30LON-170 ⭐Slay⭐ Queen SLAY (Plastic Antweight)
 
 #### Beetleweight
-- @LAT31LON1 Doomflower (Beetleweight)
-- @LAT32LON1 Renegade (Beetleweight)
-- @LAT33LON1 Brutal Baguette (Beetleweight)
-- @LAT34LON1 Sukuna 宿儺 (Beetleweight)
-- @LAT35LON1 CRUX (Beetleweight)
-- @LAT36LON1 Over-N-Out (Beetleweight)
+- @LAT45LON-130 Doomflower (Beetleweight)
+- @LAT60LON-90 Renegade (Beetleweight)
+- @LAT75LON-50 Brutal Baguette (Beetleweight)
+- @LAT-75LON-50 Sukuna 宿儺 (Beetleweight)
+- @LAT-60LON-10 CRUX (Beetleweight)
+- @LAT-45LON30 Over-N-Out (Beetleweight)
 
 ### Notes
 - Uses SPARC rules for robot construction.
 
 ---
 
-@LAT26LON1 | created:1770754151 | updated:1770754151 | relates:competes_in>@LAT25LON1
+@LAT-30LON30 | created:1770754151 | updated:1770754151 | relates:competes_in>@LAT-45LON-10
 
 ## Smite
 - Card image: ![Smite](IRCL_Presents_Spring_Bot_Breaker_2026/Smite.png)
@@ -393,7 +393,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 
 ---
 
-@LAT27LON1 | created:1770754151 | updated:1770754151 | relates:competes_in>@LAT25LON1
+@LAT-15LON70 | created:1770754151 | updated:1770754151 | relates:competes_in>@LAT-45LON-10
 
 ## Deadly Croissant
 - Card image: ![Deadly_Croissant](IRCL_Presents_Spring_Bot_Breaker_2026/Deadly_Croissant.png)
@@ -403,7 +403,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 
 ---
 
-@LAT28LON1 | created:1770754151 | updated:1770754151 | relates:competes_in>@LAT25LON1
+@LAT0LON110 | created:1770754151 | updated:1770754151 | relates:competes_in>@LAT-45LON-10
 
 ## Badger
 - Card image: ![Badger](IRCL_Presents_Spring_Bot_Breaker_2026/Badger.png)
@@ -413,7 +413,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 
 ---
 
-@LAT29LON1 | created:1770754151 | updated:1770754151 | relates:competes_in>@LAT25LON1
+@LAT15LON150 | created:1770754151 | updated:1770754151 | relates:competes_in>@LAT-45LON-10
 
 ## Drumstick
 - Card image: ![Drumstick](IRCL_Presents_Spring_Bot_Breaker_2026/Drumstick.png)
@@ -423,7 +423,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 
 ---
 
-@LAT30LON1 | created:1770754151 | updated:1770754151 | relates:competes_in>@LAT25LON1
+@LAT30LON-170 | created:1770754151 | updated:1770754151 | relates:competes_in>@LAT-45LON-10
 
 ## ⭐Slay⭐ Queen SLAY
 - Card image: ![Slay_Queen_SLAY](IRCL_Presents_Spring_Bot_Breaker_2026/Slay_Queen_SLAY.png)
@@ -433,7 +433,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 
 ---
 
-@LAT31LON1 | created:1770754151 | updated:1770754151 | relates:competes_in>@LAT25LON1
+@LAT45LON-130 | created:1770754151 | updated:1770754151 | relates:competes_in>@LAT-45LON-10
 
 ## Doomflower
 - Card image: ![Doomflower](IRCL_Presents_Spring_Bot_Breaker_2026/Doomflower.png)
@@ -443,7 +443,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 
 ---
 
-@LAT32LON1 | created:1770754151 | updated:1770754151 | relates:competes_in>@LAT25LON1
+@LAT60LON-90 | created:1770754151 | updated:1770754151 | relates:competes_in>@LAT-45LON-10
 
 ## Renegade
 - Card image: ![Renegade](IRCL_Presents_Spring_Bot_Breaker_2026/Renegade.png)
@@ -453,7 +453,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 
 ---
 
-@LAT33LON1 | created:1770754151 | updated:1770754151 | relates:competes_in>@LAT25LON1
+@LAT75LON-50 | created:1770754151 | updated:1770754151 | relates:competes_in>@LAT-45LON-10
 
 ## Brutal Baguette
 - Card image: ![Brutal_Baguette](IRCL_Presents_Spring_Bot_Breaker_2026/Brutal_Baguette.png)
@@ -463,7 +463,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 
 ---
 
-@LAT34LON1 | created:1770754151 | updated:1770754151 | relates:competes_in>@LAT25LON1
+@LAT-75LON-50 | created:1770754151 | updated:1770754151 | relates:competes_in>@LAT-45LON-10
 
 ## Sukuna 宿儺
 - Card image: ![Sukuna](IRCL_Presents_Spring_Bot_Breaker_2026/Sukuna.png)
@@ -473,7 +473,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 
 ---
 
-@LAT35LON1 | created:1770754151 | updated:1770754151 | relates:competes_in>@LAT25LON1
+@LAT-60LON-10 | created:1770754151 | updated:1770754151 | relates:competes_in>@LAT-45LON-10
 
 ## CRUX
 - Card image: ![CRUX](IRCL_Presents_Spring_Bot_Breaker_2026/CRUX.png)
@@ -483,7 +483,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 
 ---
 
-@LAT36LON1 | created:1770754151 | updated:1770754151 | relates:competes_in>@LAT25LON1
+@LAT-45LON30 | created:1770754151 | updated:1770754151 | relates:competes_in>@LAT-45LON-10
 
 ## Over-N-Out
 - Card image: ![Over_N_Out](IRCL_Presents_Spring_Bot_Breaker_2026/Over_N_Out.png)
@@ -493,7 +493,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 
 ---
 
-@LAT37LON1 | created:1770754582 | updated:1770754582 | relates:competes_in>@LAT25LON1
+@LAT-30LON70 | created:1770754582 | updated:1770754582 | relates:competes_in>@LAT-45LON-10
 
 ## Metally Croissant
 - Card image: ![Metally_Croissant](IRCL_Presents_Spring_Bot_Breaker_2026/Metally_Croissant.png)
@@ -503,7 +503,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 
 ---
 
-@LAT38LON1 | created:1770754582 | updated:1770754582 | relates:competes_in>@LAT25LON1
+@LAT-15LON110 | created:1770754582 | updated:1770754582 | relates:competes_in>@LAT-45LON-10
 
 ## TENACITY!
 - Card image: ![TENACITY](IRCL_Presents_Spring_Bot_Breaker_2026/TENACITY.png)
@@ -513,7 +513,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 
 ---
 
-@LAT39LON1 | created:1770754582 | updated:1770754582 | relates:competes_in>@LAT25LON1
+@LAT0LON150 | created:1770754582 | updated:1770754582 | relates:competes_in>@LAT-45LON-10
 
 ## Anteater
 - Card image: ![Anteater](IRCL_Presents_Spring_Bot_Breaker_2026/Anteater.png)
@@ -523,7 +523,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 
 ---
 
-@LAT40LON1 | created:1770754582 | updated:1770754582 | relates:competes_in>@LAT25LON1
+@LAT15LON-170 | created:1770754582 | updated:1770754582 | relates:competes_in>@LAT-45LON-10
 
 ## Benny
 - Card image: ![Benny](IRCL_Presents_Spring_Bot_Breaker_2026/Benny.png)
@@ -533,7 +533,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 
 ---
 
-@LAT41LON1 | created:1770754582 | updated:1770754582 | relates:competes_in>@LAT25LON1
+@LAT30LON-130 | created:1770754582 | updated:1770754582 | relates:competes_in>@LAT-45LON-10
 
 ## AntHide
 - Card image: ![AntHide](IRCL_Presents_Spring_Bot_Breaker_2026/AntHide.png)
@@ -543,7 +543,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 
 ---
 
-@LAT42LON1 | created:1770754582 | updated:1770754582 | relates:competes_in>@LAT25LON1
+@LAT45LON-90 | created:1770754582 | updated:1770754582 | relates:competes_in>@LAT-45LON-10
 
 ## Lil' Nasty
 - Card image: ![Lil_Nasty](IRCL_Presents_Spring_Bot_Breaker_2026/Lil_Nasty.png)
@@ -553,7 +553,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 
 ---
 
-@LAT43LON1 | created:1770754582 | updated:1770754582 | relates:competes_in>@LAT25LON1
+@LAT60LON-50 | created:1770754582 | updated:1770754582 | relates:competes_in>@LAT-45LON-10
 
 ## Zephyr
 - Card image: ![Zephyr](IRCL_Presents_Spring_Bot_Breaker_2026/Zephyr.png)
@@ -563,7 +563,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 
 ---
 
-@LAT45LON1 | created:1770754582 | updated:1770754582 | relates:competes_in>@LAT25LON1
+@LAT75LON-10 | created:1770754582 | updated:1770754582 | relates:competes_in>@LAT-45LON-10
 
 ## Black Talon
 - Card image: ![Black_Talon](IRCL_Presents_Spring_Bot_Breaker_2026/Black_Talon.png)
@@ -573,7 +573,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 
 ---
 
-@LAT46LON1 | created:1770754582 | updated:1770754582 | relates:competes_in>@LAT25LON1
+@LAT-75LON-10 | created:1770754582 | updated:1770754582 | relates:competes_in>@LAT-45LON-10
 
 ## Ghost Viper
 - Card image: ![Ghost_Viper](IRCL_Presents_Spring_Bot_Breaker_2026/Ghost_Viper.png)

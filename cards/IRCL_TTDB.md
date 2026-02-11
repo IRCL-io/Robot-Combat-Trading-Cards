@@ -97,7 +97,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 @LAT1LON1 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
 
 ## BoomBox
-- Card image: C:/git/Robot-Combat-Trading-Cards/cards/Bot_Oblivion_2025/BoomBox.png
+- Card image: ![BoomBox](Bot_Oblivion_2025/BoomBox.png)
 - Weight class: Beetleweight
 - Team: BoomBox
 - Image: https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/13551/inbound875028470751609531.png
@@ -107,7 +107,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 @LAT2LON1 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
 
 ## SweeperKeeper
-- Card image: C:/git/Robot-Combat-Trading-Cards/cards/Bot_Oblivion_2025/SweeperKeeper.png
+- Card image: ![SweeperKeeper](Bot_Oblivion_2025/SweeperKeeper.png)
 - Weight class: Beetleweight
 - Team: BoomBox
 - Image: https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/21130/Screenshot_20250505_085650_Fusion.jpg
@@ -117,7 +117,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 @LAT3LON1 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
 
 ## Virilade
-- Card image: C:/git/Robot-Combat-Trading-Cards/cards/Bot_Oblivion_2025/Virilade.png
+- Card image: ![Virilade](Bot_Oblivion_2025/Virilade.png)
 - Weight class: Beetleweight
 - Team: Idiocracy
 - Image: https://www.robotcombatevents.com/assets/RCELogo-3383ca77f76e5be2b7755ea9d0c464aea25a87d8c9f2a4cffd63643392f59fe7.png
@@ -127,7 +127,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 @LAT4LON1 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
 
 ## Renegade
-- Card image: C:/git/Robot-Combat-Trading-Cards/cards/Bot_Oblivion_2025/Renegade.png
+- Card image: ![Renegade](Bot_Oblivion_2025/Renegade.png)
 - Weight class: Beetleweight
 - Team: Bad Decisions Robotics
 - Image: https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/14013/IMG_1146-min.jpeg
@@ -137,7 +137,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 @LAT5LON1 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
 
 ## Gyro
-- Card image: C:/git/Robot-Combat-Trading-Cards/cards/Bot_Oblivion_2025/Gyro.png
+- Card image: ![Gyro](Bot_Oblivion_2025/Gyro.png)
 - Weight class: Beetleweight
 - Team: Geometrically Robotic
 - Image: https://www.robotcombatevents.com/assets/RCELogo-3383ca77f76e5be2b7755ea9d0c464aea25a87d8c9f2a4cffd63643392f59fe7.png
@@ -147,7 +147,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 @LAT6LON1 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
 
 ## Plan B
-- Card image: C:/git/Robot-Combat-Trading-Cards/cards/Bot_Oblivion_2025/Plan_B.png
+- Card image: ![Plan_B](Bot_Oblivion_2025/Plan_B.png)
 - Weight class: Beetleweight
 - Team: Something
 - Image: https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/18553/476064446_519674403912169_7897790394868896022_n.jpg
@@ -157,7 +157,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 @LAT7LON1 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
 
 ## Under-Bite
-- Card image: C:/git/Robot-Combat-Trading-Cards/cards/Bot_Oblivion_2025/Under_Bite.png
+- Card image: ![Under_Bite](Bot_Oblivion_2025/Under_Bite.png)
 - Weight class: Beetleweight
 - Team: BuhlerBots
 - Image: https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/21447/Image_1.jpeg
@@ -167,7 +167,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 @LAT8LON1 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
 
 ## Apple Monger
-- Card image: C:/git/Robot-Combat-Trading-Cards/cards/Bot_Oblivion_2025/Apple_Monger.png
+- Card image: ![Apple_Monger](Bot_Oblivion_2025/Apple_Monger.png)
 - Weight class: Beetleweight
 - Team: Tele Present Tense
 - Image: https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/21623/apples_Medium.png
@@ -177,7 +177,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 @LAT9LON1 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
 
 ## TENACITY!
-- Card image: C:/git/Robot-Combat-Trading-Cards/cards/Bot_Oblivion_2025/TENACITY.png
+- Card image: ![TENACITY](Bot_Oblivion_2025/TENACITY.png)
 - Weight class: Full Combat Antweight
 - Team: Team HyperTech Robotics
 - Image: https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/18674/20250715_140123__1_.jpg
@@ -187,7 +187,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 @LAT10LON1 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
 
 ## A is for Aardvark FC
-- Card image: C:/git/Robot-Combat-Trading-Cards/cards/Bot_Oblivion_2025/A_is_for_Aardvark_FC.png
+- Card image: ![A_is_for_Aardvark_FC](Bot_Oblivion_2025/A_is_for_Aardvark_FC.png)
 - Weight class: Full Combat Antweight
 - Team: Buhler's Bots
 - Image: https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/20619/IMG_8658.JPG
@@ -197,7 +197,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 @LAT11LON1 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
 
 ## Triple A
-- Card image: C:/git/Robot-Combat-Trading-Cards/cards/Bot_Oblivion_2025/Triple_A.png
+- Card image: ![Triple_A](Bot_Oblivion_2025/Triple_A.png)
 - Weight class: Full Combat Antweight
 - Team: Bad Decisions Robotics
 - Image: https://www.robotcombatevents.com/assets/RCELogo-3383ca77f76e5be2b7755ea9d0c464aea25a87d8c9f2a4cffd63643392f59fe7.png
@@ -207,7 +207,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 @LAT12LON1 | created:1770743813 | updated:1770755062 | relates:competes_in>@LAT0LON0,competes_in>@LAT25LON1
 
 ## ICU2
-- Card image: C:/git/Robot-Combat-Trading-Cards/cards/IRCL_Presents_Spring_Bot_Breaker_2026/ICU2.png
+- Card image: ![ICU2](IRCL_Presents_Spring_Bot_Breaker_2026/ICU2.png)
 - Weight class: Full Combat Antweight
 - Team: Tele Present Tense
 - Image: https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/17217/ICU2_Medium_2.png
@@ -217,7 +217,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 @LAT13LON1 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
 
 ## JUMBO
-- Card image: C:/git/Robot-Combat-Trading-Cards/cards/Bot_Oblivion_2025/JUMBO.png
+- Card image: ![JUMBO](Bot_Oblivion_2025/JUMBO.png)
 - Weight class: Full Combat Antweight
 - Team: Something
 - Image: https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/11026/jumbo.jpg
@@ -227,7 +227,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 @LAT14LON1 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
 
 ## Anubis
-- Card image: C:/git/Robot-Combat-Trading-Cards/cards/Bot_Oblivion_2025/Anubis.png
+- Card image: ![Anubis](Bot_Oblivion_2025/Anubis.png)
 - Weight class: Full Combat Antweight
 - Team: BoomBox
 - Image: https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/13584/20250716_193414.jpg
@@ -237,7 +237,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 @LAT15LON1 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
 
 ## Cyclone
-- Card image: C:/git/Robot-Combat-Trading-Cards/cards/Bot_Oblivion_2025/Cyclone.png
+- Card image: ![Cyclone](Bot_Oblivion_2025/Cyclone.png)
 - Weight class: Full Combat Antweight
 - Team: Bobbsey Twins
 - Image: https://www.robotcombatevents.com/assets/RCELogo-3383ca77f76e5be2b7755ea9d0c464aea25a87d8c9f2a4cffd63643392f59fe7.png
@@ -247,7 +247,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 @LAT16LON1 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
 
 ## Deadly Croissant
-- Card image: C:/git/Robot-Combat-Trading-Cards/cards/Bot_Oblivion_2025/Deadly_Croissant.png
+- Card image: ![Deadly_Croissant](Bot_Oblivion_2025/Deadly_Croissant.png)
 - Weight class: Plastic Antweight
 - Team: BoweBots
 - Image: https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/17486/PXL_20250505_042220639.jpg
@@ -257,7 +257,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 @LAT17LON1 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
 
 ## Schlagzeug
-- Card image: C:/git/Robot-Combat-Trading-Cards/cards/Bot_Oblivion_2025/Schlagzeug.png
+- Card image: ![Schlagzeug](Bot_Oblivion_2025/Schlagzeug.png)
 - Weight class: Plastic Antweight
 - Team: BoweBots
 - Image: https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/17612/PXL_20250507_120441776.jpg
@@ -267,7 +267,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 @LAT18LON1 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
 
 ## I Think I'm A Clone Now
-- Card image: C:/git/Robot-Combat-Trading-Cards/cards/Bot_Oblivion_2025/I_Think_I_m_A_Clone_Now.png
+- Card image: ![I_Think_I_m_A_Clone_Now](Bot_Oblivion_2025/I_Think_I_m_A_Clone_Now.png)
 - Weight class: Plastic Antweight
 - Team: BoweBots
 - Image: https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/19596/PXL_20250314_020823711_2__1_.jpg
@@ -277,7 +277,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 @LAT19LON1 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
 
 ## Squatchy
-- Card image: C:/git/Robot-Combat-Trading-Cards/cards/Bot_Oblivion_2025/Squatchy.png
+- Card image: ![Squatchy](Bot_Oblivion_2025/Squatchy.png)
 - Weight class: Plastic Antweight
 - Team: Team Squatch
 - Image: https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/16140/sqmk3.1.jpg
@@ -287,7 +287,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 @LAT20LON1 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
 
 ## WedgeMaster
-- Card image: C:/git/Robot-Combat-Trading-Cards/cards/Bot_Oblivion_2025/WedgeMaster.png
+- Card image: ![WedgeMaster](Bot_Oblivion_2025/WedgeMaster.png)
 - Weight class: Plastic Antweight
 - Team: BoweBots
 - Image: https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/20957/Wedgemaster.png
@@ -297,7 +297,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 @LAT21LON1 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
 
 ## Double A
-- Card image: C:/git/Robot-Combat-Trading-Cards/cards/Bot_Oblivion_2025/Double_A.png
+- Card image: ![Double_A](Bot_Oblivion_2025/Double_A.png)
 - Weight class: Plastic Antweight
 - Team: Bad Decisions Robotics
 - Image: https://www.robotcombatevents.com/assets/RCELogo-3383ca77f76e5be2b7755ea9d0c464aea25a87d8c9f2a4cffd63643392f59fe7.png
@@ -307,7 +307,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 @LAT22LON1 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
 
 ## Rickrolled
-- Card image: C:/git/Robot-Combat-Trading-Cards/cards/Bot_Oblivion_2025/Rickrolled.png
+- Card image: ![Rickrolled](Bot_Oblivion_2025/Rickrolled.png)
 - Weight class: Plastic Antweight
 - Team: BoweBots
 - Image: https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/21313/Screenshot_2025-06-24_153703.png
@@ -317,7 +317,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 @LAT23LON1 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
 
 ## RUPTURE
-- Card image: C:/git/Robot-Combat-Trading-Cards/cards/Bot_Oblivion_2025/RUPTURE.png
+- Card image: ![RUPTURE](Bot_Oblivion_2025/RUPTURE.png)
 - Weight class: Plastic Antweight
 - Team: Geometrically Robotic
 - Image: https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/21376/IMG_5078.jpg
@@ -327,7 +327,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 @LAT24LON1 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
 
 ## Uhmerican Exxxpress
-- Card image: C:/git/Robot-Combat-Trading-Cards/cards/Bot_Oblivion_2025/Uhmerican_Exxxpress.png
+- Card image: ![Uhmerican_Exxxpress](Bot_Oblivion_2025/Uhmerican_Exxxpress.png)
 - Weight class: Plastic Antweight
 - Team: Idiocracy
 - Image: https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/12284/UhmericanExxxpress.png
@@ -386,7 +386,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 @LAT26LON1 | created:1770754151 | updated:1770754151 | relates:competes_in>@LAT25LON1
 
 ## Smite
-- Card image: C:/git/Robot-Combat-Trading-Cards/cards/IRCL_Presents_Spring_Bot_Breaker_2026/Smite.png
+- Card image: ![Smite](IRCL_Presents_Spring_Bot_Breaker_2026/Smite.png)
 - Weight class: Plastic Antweight
 - Team: Barnhouse Robotics
 - Image: https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/17042/PXL_20250312_023621774.png
@@ -396,7 +396,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 @LAT27LON1 | created:1770754151 | updated:1770754151 | relates:competes_in>@LAT25LON1
 
 ## Deadly Croissant
-- Card image: C:/git/Robot-Combat-Trading-Cards/cards/IRCL_Presents_Spring_Bot_Breaker_2026/Deadly_Croissant.png
+- Card image: ![Deadly_Croissant](IRCL_Presents_Spring_Bot_Breaker_2026/Deadly_Croissant.png)
 - Weight class: Plastic Antweight
 - Team: BoweBots
 - Image: https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/17486/Screenshot_20250817-205519_2.png
@@ -406,7 +406,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 @LAT28LON1 | created:1770754151 | updated:1770754151 | relates:competes_in>@LAT25LON1
 
 ## Badger
-- Card image: C:/git/Robot-Combat-Trading-Cards/cards/IRCL_Presents_Spring_Bot_Breaker_2026/Badger.png
+- Card image: ![Badger](IRCL_Presents_Spring_Bot_Breaker_2026/Badger.png)
 - Weight class: Plastic Antweight
 - Team: Team HyperTech Robotics
 - Image: https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/23853/Screenshot_2025-12-17_083346.png
@@ -416,7 +416,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 @LAT29LON1 | created:1770754151 | updated:1770754151 | relates:competes_in>@LAT25LON1
 
 ## Drumstick
-- Card image: C:/git/Robot-Combat-Trading-Cards/cards/IRCL_Presents_Spring_Bot_Breaker_2026/Drumstick.png
+- Card image: ![Drumstick](IRCL_Presents_Spring_Bot_Breaker_2026/Drumstick.png)
 - Weight class: Plastic Antweight
 - Team: Purge Engineering
 - Image: https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/15432/RCL_Pic.png
@@ -426,7 +426,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 @LAT30LON1 | created:1770754151 | updated:1770754151 | relates:competes_in>@LAT25LON1
 
 ## ⭐Slay⭐ Queen SLAY
-- Card image: C:/git/Robot-Combat-Trading-Cards/cards/IRCL_Presents_Spring_Bot_Breaker_2026/Slay_Queen_SLAY.png
+- Card image: ![Slay_Queen_SLAY](IRCL_Presents_Spring_Bot_Breaker_2026/Slay_Queen_SLAY.png)
 - Weight class: Plastic Antweight
 - Team: ADHD Garage
 - Image: https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/24072/PlantHide__1_.png
@@ -436,7 +436,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 @LAT31LON1 | created:1770754151 | updated:1770754151 | relates:competes_in>@LAT25LON1
 
 ## Doomflower
-- Card image: C:/git/Robot-Combat-Trading-Cards/cards/IRCL_Presents_Spring_Bot_Breaker_2026/Doomflower.png
+- Card image: ![Doomflower](IRCL_Presents_Spring_Bot_Breaker_2026/Doomflower.png)
 - Weight class: Beetleweight
 - Team: Barnhouse Robotics
 - Image: https://www.robotcombatevents.com/assets/RCELogo-3383ca77f76e5be2b7755ea9d0c464aea25a87d8c9f2a4cffd63643392f59fe7.png
@@ -446,7 +446,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 @LAT32LON1 | created:1770754151 | updated:1770754151 | relates:competes_in>@LAT25LON1
 
 ## Renegade
-- Card image: C:/git/Robot-Combat-Trading-Cards/cards/IRCL_Presents_Spring_Bot_Breaker_2026/Renegade.png
+- Card image: ![Renegade](IRCL_Presents_Spring_Bot_Breaker_2026/Renegade.png)
 - Weight class: Beetleweight
 - Team: Bad Decisions Robotics
 - Image: https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/14013/IMG_1403-min.jpeg
@@ -456,7 +456,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 @LAT33LON1 | created:1770754151 | updated:1770754151 | relates:competes_in>@LAT25LON1
 
 ## Brutal Baguette
-- Card image: C:/git/Robot-Combat-Trading-Cards/cards/IRCL_Presents_Spring_Bot_Breaker_2026/Brutal_Baguette.png
+- Card image: ![Brutal_Baguette](IRCL_Presents_Spring_Bot_Breaker_2026/Brutal_Baguette.png)
 - Weight class: Beetleweight
 - Team: BoweBots
 - Image: https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/24357/Brutal_Baguette.png
@@ -466,17 +466,17 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 @LAT34LON1 | created:1770754151 | updated:1770754151 | relates:competes_in>@LAT25LON1
 
 ## Sukuna 宿儺
-- Card image: C:/git/Robot-Combat-Trading-Cards/cards/IRCL_Presents_Spring_Bot_Breaker_2026/Sukuna.png
+- Card image: ![Sukuna](IRCL_Presents_Spring_Bot_Breaker_2026/Sukuna.png)
 - Weight class: Beetleweight
 - Team: Team HyperTech Robotics
-- Image: https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/23258/Screenshot_2025-12-10_110952.png
+- Image: https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/23258/Screenshot_2026-01-19_134230.png
 
 ---
 
 @LAT35LON1 | created:1770754151 | updated:1770754151 | relates:competes_in>@LAT25LON1
 
 ## CRUX
-- Card image: C:/git/Robot-Combat-Trading-Cards/cards/IRCL_Presents_Spring_Bot_Breaker_2026/CRUX.png
+- Card image: ![CRUX](IRCL_Presents_Spring_Bot_Breaker_2026/CRUX.png)
 - Weight class: Beetleweight
 - Team: Purge Engineering
 - Image: https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/18307/CRUX_RCE.png
@@ -486,7 +486,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 @LAT36LON1 | created:1770754151 | updated:1770754151 | relates:competes_in>@LAT25LON1
 
 ## Over-N-Out
-- Card image: C:/git/Robot-Combat-Trading-Cards/cards/IRCL_Presents_Spring_Bot_Breaker_2026/Over_N_Out.png
+- Card image: ![Over_N_Out](IRCL_Presents_Spring_Bot_Breaker_2026/Over_N_Out.png)
 - Weight class: Beetleweight
 - Team: ADHD Garage
 - Image: https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/18472/Over_and_out_final_assembly_wheel_blade.png
@@ -496,7 +496,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 @LAT37LON1 | created:1770754582 | updated:1770754582 | relates:competes_in>@LAT25LON1
 
 ## Metally Croissant
-- Card image: C:/git/Robot-Combat-Trading-Cards/cards/IRCL_Presents_Spring_Bot_Breaker_2026/Metally_Croissant.png
+- Card image: ![Metally_Croissant](IRCL_Presents_Spring_Bot_Breaker_2026/Metally_Croissant.png)
 - Weight class: Full Combat Antweight
 - Team: BoweBots
 - Image: https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/21736/image.png
@@ -506,7 +506,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 @LAT38LON1 | created:1770754582 | updated:1770754582 | relates:competes_in>@LAT25LON1
 
 ## TENACITY!
-- Card image: C:/git/Robot-Combat-Trading-Cards/cards/IRCL_Presents_Spring_Bot_Breaker_2026/TENACITY.png
+- Card image: ![TENACITY](IRCL_Presents_Spring_Bot_Breaker_2026/TENACITY.png)
 - Weight class: Full Combat Antweight
 - Team: Team HyperTech Robotics
 - Image: https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/18674/20250715_140123__1_.jpg
@@ -516,7 +516,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 @LAT39LON1 | created:1770754582 | updated:1770754582 | relates:competes_in>@LAT25LON1
 
 ## Anteater
-- Card image: C:/git/Robot-Combat-Trading-Cards/cards/IRCL_Presents_Spring_Bot_Breaker_2026/Anteater.png
+- Card image: ![Anteater](IRCL_Presents_Spring_Bot_Breaker_2026/Anteater.png)
 - Weight class: Full Combat Antweight
 - Team: BoomBox
 - Image: https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/20165/20251018_033002.jpg
@@ -526,7 +526,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 @LAT40LON1 | created:1770754582 | updated:1770754582 | relates:competes_in>@LAT25LON1
 
 ## Benny
-- Card image: C:/git/Robot-Combat-Trading-Cards/cards/IRCL_Presents_Spring_Bot_Breaker_2026/Benny.png
+- Card image: ![Benny](IRCL_Presents_Spring_Bot_Breaker_2026/Benny.png)
 - Weight class: Full Combat Antweight
 - Team: ADHD Garage
 - Image: https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/19386/Benny.png
@@ -536,7 +536,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 @LAT41LON1 | created:1770754582 | updated:1770754582 | relates:competes_in>@LAT25LON1
 
 ## AntHide
-- Card image: C:/git/Robot-Combat-Trading-Cards/cards/IRCL_Presents_Spring_Bot_Breaker_2026/AntHide.png
+- Card image: ![AntHide](IRCL_Presents_Spring_Bot_Breaker_2026/AntHide.png)
 - Weight class: Full Combat Antweight
 - Team: ADHD Garage
 - Image: https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/8151/PXL_20230629_204739996._2_exported_608_1688071707099.jpg
@@ -546,7 +546,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 @LAT42LON1 | created:1770754582 | updated:1770754582 | relates:competes_in>@LAT25LON1
 
 ## Lil' Nasty
-- Card image: C:/git/Robot-Combat-Trading-Cards/cards/IRCL_Presents_Spring_Bot_Breaker_2026/Lil_Nasty.png
+- Card image: ![Lil_Nasty](IRCL_Presents_Spring_Bot_Breaker_2026/Lil_Nasty.png)
 - Weight class: Full Combat Antweight
 - Team: Barnhouse Robotics
 - Image: https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/24955/LilNasty.jpg
@@ -556,7 +556,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 @LAT43LON1 | created:1770754582 | updated:1770754582 | relates:competes_in>@LAT25LON1
 
 ## Zephyr
-- Card image: C:/git/Robot-Combat-Trading-Cards/cards/IRCL_Presents_Spring_Bot_Breaker_2026/Zephyr.png
+- Card image: ![Zephyr](IRCL_Presents_Spring_Bot_Breaker_2026/Zephyr.png)
 - Weight class: Full Combat Antweight
 - Team: Atlas
 - Image: https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/20550/Screenshot_2025-05-04_090159.png
@@ -566,7 +566,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 @LAT45LON1 | created:1770754582 | updated:1770754582 | relates:competes_in>@LAT25LON1
 
 ## Black Talon
-- Card image: C:/git/Robot-Combat-Trading-Cards/cards/IRCL_Presents_Spring_Bot_Breaker_2026/Black_Talon.png
+- Card image: ![Black_Talon](IRCL_Presents_Spring_Bot_Breaker_2026/Black_Talon.png)
 - Weight class: Full Combat Antweight
 - Team: Trouble Robotics
 - Image: unknown
@@ -576,7 +576,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 @LAT46LON1 | created:1770754582 | updated:1770754582 | relates:competes_in>@LAT25LON1
 
 ## Ghost Viper
-- Card image: C:/git/Robot-Combat-Trading-Cards/cards/IRCL_Presents_Spring_Bot_Breaker_2026/Ghost_Viper.png
+- Card image: ![Ghost_Viper](IRCL_Presents_Spring_Bot_Breaker_2026/Ghost_Viper.png)
 - Weight class: Full Combat Antweight
 - Team: Team Dairy
 - Image: unknown

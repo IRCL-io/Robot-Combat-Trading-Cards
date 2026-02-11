@@ -2,6 +2,7 @@
 import argparse
 import re
 import subprocess
+import os
 from pathlib import Path
 
 # Page size: U.S. Letter at 300 dpi (unused here, kept for consistency)
@@ -309,6 +310,18 @@ def update_record_lines(lines: list[str], record_id: str, field: str, value: str
     return updated
 
 
+def relative_to_base(path: Path, base_dir: Path) -> str:
+    try:
+        rel = path.resolve().relative_to(base_dir.resolve())
+        return rel.as_posix()
+    except ValueError:
+        return os.path.relpath(path.as_posix(), base_dir.as_posix()).replace("\\", "/")
+
+
+def format_markdown_image(alt_text: str, rel_path: str) -> str:
+    return f"![{alt_text}]({rel_path})"
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Generate single card PNGs from TTDB.")
     parser.add_argument(
@@ -347,6 +360,7 @@ def main() -> None:
     cards_dir.mkdir(parents=True, exist_ok=True)
 
     ttdb_lines = ttdb_path.read_text(encoding="utf-8").splitlines()
+    ttdb_dir = ttdb_path.parent.resolve()
 
     for robot in robots:
         robot_slug = slugify(robot["name"])
@@ -356,8 +370,9 @@ def main() -> None:
         svg_path.write_text(create_card_front_svg(robot, event_name), encoding="utf-8")
         svg_to_png(svg_path, png_path)
 
-        rel_path = png_path.as_posix()
-        ttdb_lines = update_record_lines(ttdb_lines, robot["record_id"], "Card image", rel_path)
+        rel_path = relative_to_base(png_path, ttdb_dir)
+        image_value = format_markdown_image(robot["name"], rel_path)
+        ttdb_lines = update_record_lines(ttdb_lines, robot["record_id"], "Card image", image_value)
 
         if not args.keep_svgs:
             svg_path.unlink(missing_ok=True)
@@ -369,7 +384,10 @@ def main() -> None:
     if not args.keep_svgs:
         back_svg.unlink(missing_ok=True)
 
-    ttdb_lines = update_record_lines(ttdb_lines, event_id, "Back card image", back_png.as_posix())
+    back_rel_path = relative_to_base(back_png, ttdb_dir)
+    back_alt = f"{event_name} Back"
+    back_value = format_markdown_image(back_alt, back_rel_path)
+    ttdb_lines = update_record_lines(ttdb_lines, event_id, "Back card image", back_value)
 
     ttdb_path.write_text("\n".join(ttdb_lines) + "\n", encoding="utf-8")
     print(f"Generated {len(robots)} cards + back card in {cards_dir}")

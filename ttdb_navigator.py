@@ -6,7 +6,7 @@ import tkinter as tk
 from tkinter import ttk
 from tkinter import font as tkfont
 
-DB_PATH = Path("MyMentalPalaceDB.md")
+DB_PATH = Path("cards/IRCL_TTDB.md")
 
 REFRESH_MS = 1500
 ANIMATION_MS = 16
@@ -15,7 +15,7 @@ ANIMATION_MS = 16
 class NavigatorApp(tk.Tk):
     def __init__(self) -> None:
         super().__init__()
-        self.title("TTDB Navigator")
+        self.title("IRCL TTDB Navigator")
         self.geometry("1200x800")
         self.minsize(900, 600)
 

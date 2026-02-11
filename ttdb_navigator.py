@@ -32,6 +32,9 @@ class NavigatorApp(tk.Tk):
         self._globe_target_lon = 0.0
         self._globe_animating = False
         self._globe_items: dict[int, str] = {}
+        self._record_image_path: Path | None = None
+        self._record_image_is_url = False
+        self._record_photo: tk.PhotoImage | None = None
 
         self._init_fonts()
         self._build_ui()
@@ -116,8 +119,16 @@ class NavigatorApp(tk.Tk):
         right_pane.add(text_frame, weight=3)
         right_pane.add(globe_frame, weight=2)
 
+        record_pane = ttk.Panedwindow(text_frame, orient="horizontal")
+        record_pane.pack(fill="both", expand=True)
+
+        record_text_frame = ttk.Frame(record_pane)
+        record_image_frame = ttk.Frame(record_pane, padding=(8, 8))
+        record_pane.add(record_text_frame, weight=3)
+        record_pane.add(record_image_frame, weight=2)
+
         self.db_view = tk.Text(
-            text_frame,
+            record_text_frame,
             wrap="word",
             font=self.font_body,
             padx=12,
@@ -128,11 +139,19 @@ class NavigatorApp(tk.Tk):
             relief="flat",
         )
         self.db_view.pack(side="left", fill="both", expand=True)
-        text_scroll = ttk.Scrollbar(text_frame, orient="vertical", command=self.db_view.yview)
+        text_scroll = ttk.Scrollbar(record_text_frame, orient="vertical", command=self.db_view.yview)
         text_scroll.pack(side="right", fill="y")
         self.db_view.configure(yscrollcommand=text_scroll.set)
         self._apply_text_tags(self.db_view)
         self.db_view.configure(state="disabled")
+
+        self.record_image_canvas = tk.Canvas(
+            record_image_frame,
+            background="#0f0f12",
+            highlightthickness=0,
+        )
+        self.record_image_canvas.pack(fill="both", expand=True)
+        self.record_image_canvas.bind("<Configure>", lambda _event: self._render_record_image())
 
         self.globe = tk.Canvas(
             globe_frame,
@@ -367,6 +386,7 @@ class NavigatorApp(tk.Tk):
     def _render_db_record(self, record_id: str | None) -> None:
         if not record_id or record_id not in self._db_records:
             self._render_markdown(self.db_view, "No record selected.")
+            self._set_record_image(None)
             return
         record = self._db_records[record_id]
         widget = self.db_view
@@ -411,6 +431,113 @@ class NavigatorApp(tk.Tk):
             self._insert_markdown(widget, body)
 
         widget.configure(state="disabled")
+        self._set_record_image_from_record(record)
+
+    def _set_record_image_from_record(self, record: dict) -> None:
+        image_ref = self._extract_image_reference(record.get("body", ""))
+        self._set_record_image(image_ref)
+
+    def _extract_image_reference(self, body: str) -> str | None:
+        for line in body.splitlines():
+            md_match = re.search(r"!\[[^]]*\]\(([^)]+)\)", line)
+            if md_match:
+                return md_match.group(1).strip()
+
+            field_match = re.match(r"^\\s*-\\s*(Card image|Back card image|Image):\\s*(.+)$", line)
+            if field_match:
+                value = field_match.group(2).strip()
+                md_match = re.search(r"!\[[^]]*\]\(([^)]+)\)", value)
+                if md_match:
+                    return md_match.group(1).strip()
+                return value
+        return None
+
+    def _set_record_image(self, image_ref: str | None) -> None:
+        self._record_image_path = None
+        self._record_image_is_url = False
+        self._record_photo = None
+
+        if not image_ref:
+            self._render_record_image(message="No image found in record.")
+            return
+
+        if image_ref.startswith("http://") or image_ref.startswith("https://"):
+            self._record_image_is_url = True
+            self._render_record_image(message="Remote image (not loaded).")
+            return
+
+        path = Path(image_ref)
+        if not path.is_absolute():
+            path = DB_PATH.parent / path
+        self._record_image_path = path
+        self._render_record_image()
+
+    def _render_record_image(self, message: str | None = None) -> None:
+        canvas = self.record_image_canvas
+        canvas.delete("all")
+
+        width = max(canvas.winfo_width(), 1)
+        height = max(canvas.winfo_height(), 1)
+        pad = 12
+        if message:
+            canvas.create_text(
+                width / 2,
+                height / 2,
+                text=message,
+                fill="#a7a7b3",
+                font=self.font_body,
+                width=max(width - pad * 2, 1),
+                justify="center",
+            )
+            return
+
+        if self._record_image_is_url:
+            canvas.create_text(
+                width / 2,
+                height / 2,
+                text="Remote image (not loaded).",
+                fill="#a7a7b3",
+                font=self.font_body,
+                width=max(width - pad * 2, 1),
+                justify="center",
+            )
+            return
+
+        if not self._record_image_path or not self._record_image_path.exists():
+            canvas.create_text(
+                width / 2,
+                height / 2,
+                text="Image file not found.",
+                fill="#a7a7b3",
+                font=self.font_body,
+                width=max(width - pad * 2, 1),
+                justify="center",
+            )
+            return
+
+        try:
+            image = tk.PhotoImage(file=str(self._record_image_path))
+        except tk.TclError:
+            canvas.create_text(
+                width / 2,
+                height / 2,
+                text="Unsupported image format.",
+                fill="#a7a7b3",
+                font=self.font_body,
+                width=max(width - pad * 2, 1),
+                justify="center",
+            )
+            return
+
+        target_w = max(width - pad * 2, 1)
+        target_h = max(height - pad * 2, 1)
+        scale = max(image.width() / target_w, image.height() / target_h)
+        if scale > 1:
+            factor = int(scale) if scale.is_integer() else int(scale) + 1
+            image = image.subsample(factor, factor)
+
+        self._record_photo = image
+        canvas.create_image(width / 2, height / 2, image=image)
 
     def _update_header(self) -> None:
         if self._db_selected_id:

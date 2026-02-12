@@ -48,10 +48,10 @@ typed_edges:
 
 ```cursor
 selected:
-  - @LAT0LON0
+  - @LAT-45LON-10
 preview:
-  @LAT0LON0: "Bot Oblivion 2025 event record with roster of robots and source URLs."
-agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
+  @LAT-45LON-10: "Spring Bot Breaker 2026 event record with roster of robots and source URLs."
+agent_note: "Cycle-01 event dataset for Spring Bot Breaker 2026."
 ```
 
 ---

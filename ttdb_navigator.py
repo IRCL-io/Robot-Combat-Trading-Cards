@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import math
 import re
+from fractions import Fraction
 from pathlib import Path
 import tkinter as tk
 from tkinter import ttk
@@ -11,6 +12,9 @@ DB_PATH = Path("cards/IRCL_TTDB.md")
 
 REFRESH_MS = 1500
 ANIMATION_MS = 16
+CYCLE_START_DELAY_MS = 3000
+CYCLE_STEP_MS = 3000
+SELECT_SCALE_EXP = 4.0
 
 
 class NavigatorApp(tk.Tk):
@@ -35,7 +39,11 @@ class NavigatorApp(tk.Tk):
         self._globe_items: dict[int, str] = {}
         self._globe_item_meta: dict[int, dict] = {}
         self._image_cache: dict[str, tk.PhotoImage] = {}
-        self._image_scaled_cache: dict[tuple[str, int], tk.PhotoImage] = {}
+        self._image_scaled_cache: dict[tuple[str, int, int], tk.PhotoImage] = {}
+        self._cycle_after_id: str | None = None
+        self._cycle_list: list[str] = []
+        self._cycle_index = 0
+        self._cycle_source_id: str | None = None
 
         self._init_fonts()
         self._build_ui()
@@ -156,6 +164,7 @@ class NavigatorApp(tk.Tk):
             self._populate_db_list()
             self._render_globe()
             self._update_header()
+            self._cancel_cycle()
             return
 
         records, order, selected, coords = self._parse_db_records(content)
@@ -172,6 +181,7 @@ class NavigatorApp(tk.Tk):
         self._update_header()
         self._center_on_selected()
         self._render_globe()
+        self._schedule_cycle_from_selected()
 
     def _parse_db_records(
         self, content: str
@@ -279,7 +289,12 @@ class NavigatorApp(tk.Tk):
         record_id = self._db_order[selection[0]]
         self._select_db_record(record_id, from_list=True)
 
-    def _select_db_record(self, record_id: str | None, from_list: bool = False) -> None:
+    def _select_db_record(
+        self,
+        record_id: str | None,
+        from_list: bool = False,
+        from_cycle: bool = False,
+    ) -> None:
         if not record_id or record_id not in self._db_records:
             return
         self._db_selected_id = record_id
@@ -292,6 +307,8 @@ class NavigatorApp(tk.Tk):
         self._update_header()
         self._center_on_selected()
         self._render_globe()
+        if not from_cycle:
+            self._schedule_cycle_from_selected()
 
     def _update_header(self) -> None:
         if self._db_selected_id:
@@ -299,6 +316,43 @@ class NavigatorApp(tk.Tk):
             self.current_selection_var.set(f"Selected: {label}")
         else:
             self.current_selection_var.set("Selected: (none)")
+
+    def _schedule_cycle_from_selected(self) -> None:
+        self._cancel_cycle()
+        source_id = self._db_selected_id
+        if not source_id:
+            return
+        record = self._db_records.get(source_id, {})
+        edges = record.get("edges", [])
+        bots = [
+            edge.get("target")
+            for edge in edges
+            if edge.get("type") == "has_bot" and edge.get("target") in self._db_records
+        ]
+        if not bots:
+            return
+        self._cycle_source_id = source_id
+        self._cycle_list = bots
+        self._cycle_index = 0
+        self._cycle_after_id = self.after(CYCLE_START_DELAY_MS, self._cycle_step)
+
+    def _cancel_cycle(self) -> None:
+        if self._cycle_after_id:
+            self.after_cancel(self._cycle_after_id)
+        self._cycle_after_id = None
+        self._cycle_list = []
+        self._cycle_index = 0
+        self._cycle_source_id = None
+
+    def _cycle_step(self) -> None:
+        if not self._cycle_list or not self._cycle_source_id:
+            self._cancel_cycle()
+            return
+        record_id = self._cycle_list[self._cycle_index]
+        self._cycle_index = (self._cycle_index + 1) % len(self._cycle_list)
+        if record_id in self._db_records:
+            self._select_db_record(record_id, from_cycle=True)
+        self._cycle_after_id = self.after(CYCLE_STEP_MS, self._cycle_step)
 
     def _center_on_selected(self) -> None:
         record_id = self._db_selected_id
@@ -489,11 +543,31 @@ class NavigatorApp(tk.Tk):
                 globe.create_line(sxp, syp, txp, typ, fill=color, width=width)
 
         for record_id, x, y, z in nodes_front:
-            self._draw_globe_node(record_id, x, y, z, cx, cy, radius, selected=False)
+            self._draw_globe_node(
+                record_id,
+                x,
+                y,
+                z,
+                cx,
+                cy,
+                radius,
+                height,
+                selected=False,
+            )
 
         if selected_point:
             record_id, x, y, z = selected_point
-            self._draw_globe_node(record_id, x, y, z, cx, cy, radius, selected=True)
+            self._draw_globe_node(
+                record_id,
+                x,
+                y,
+                z,
+                cx,
+                cy,
+                radius,
+                height,
+                selected=True,
+            )
 
     def _draw_globe_node(
         self,
@@ -504,13 +578,14 @@ class NavigatorApp(tk.Tk):
         cx: float,
         cy: float,
         radius: float,
+        panel_height: float,
         selected: bool,
     ) -> None:
         globe = self.globe
         px = cx + x * radius
         py = cy - y * radius
 
-        image = self._get_record_image(record_id, z if selected else None, radius)
+        image = self._get_record_image(record_id, z, radius, panel_height, selected)
         if image:
             item = globe.create_image(px, py, image=image, tags=("node",))
         else:
@@ -633,8 +708,10 @@ class NavigatorApp(tk.Tk):
     def _get_record_image(
         self,
         record_id: str,
-        z: float | None,
+        z: float,
         radius: float,
+        panel_height: float,
+        selected: bool,
     ) -> tk.PhotoImage | None:
         record = self._db_records.get(record_id, {})
         image_ref = record.get("card_image")
@@ -653,27 +730,35 @@ class NavigatorApp(tk.Tk):
             self._image_cache[record_id] = raw
 
         base_scale = 0.10
-        max_scale = 0.50
-        scale = base_scale
-        if z is not None:
+        if not selected:
+            scale = base_scale
+        else:
             t = max(0.0, min(1.0, (z + 1) / 2))
-            scale = base_scale + (max_scale - base_scale) * t
+            t_exp = t**SELECT_SCALE_EXP
+            max_dim = max(raw.width(), raw.height())
+            target_pixels = max(panel_height * 0.8, 1.0)
+            target_scale = target_pixels / max_dim if max_dim > 0 else base_scale
+            if target_scale < base_scale:
+                target_scale = base_scale
+            scale = base_scale + (target_scale - base_scale) * t_exp
 
         max_dim = max(raw.width(), raw.height())
-        max_allowed = radius * 0.9
+        max_allowed = radius * 1.9
         if max_dim > 0:
             scale = min(scale, max_allowed / max_dim)
 
         if scale <= 0:
             return None
 
-        subsample = max(1, round(1 / scale))
-        cache_key = (record_id, subsample)
+        ratio = Fraction(scale).limit_denominator(12)
+        num = max(1, ratio.numerator)
+        den = max(1, ratio.denominator)
+        cache_key = (record_id, num, den)
         cached = self._image_scaled_cache.get(cache_key)
         if cached is not None:
             return cached
 
-        scaled = raw.subsample(subsample, subsample)
+        scaled = raw.zoom(num, num).subsample(den, den)
         self._image_scaled_cache[cache_key] = scaled
         return scaled
 

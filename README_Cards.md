@@ -1,6 +1,8 @@
 # Robot-Combat-Trading-Cards
-## >> [recently generated cards](/past%20events/SpringBotBreaker_deck.pdf) <<
 
+```
+python tte_generate_cards.py --ttdb "cards/IRCL_TTDB.md" --event-name "Spring Bot Breaker 2026" 
+```
 
 This project generates trading cards for a given robot combat event.   
 

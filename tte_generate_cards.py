@@ -101,7 +101,12 @@ def parse_robot_block(section):
         elif stripped.startswith("- Team:"):
             robot["team"] = stripped.split(":", 1)[1].strip()
         elif stripped.startswith("- Image:"):
-            robot["image_url"] = stripped.split(":", 1)[1].strip()
+            image_value = stripped.split(":", 1)[1].strip()
+            image_match = re.search(r"!\[[^\]]*\]\(([^)]+)\)", image_value)
+            if image_match:
+                robot["image_url"] = image_match.group(1).strip()
+            else:
+                robot["image_url"] = image_value
     return robot
 
 

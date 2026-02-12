@@ -439,6 +439,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 - Card image: ![Doomflower](Spring_Bot_Breaker_2026/Doomflower.png)
 - Weight class: Beetleweight
 - Team: Barnhouse Robotics
+- URL: https://www.robotcombatevents.com/groups/2796/resources/22541
 - Image: ![Doomflower](https://www.robotcombatevents.com/assets/RCELogo-3383ca77f76e5be2b7755ea9d0c464aea25a87d8c9f2a4cffd63643392f59fe7.png)
 
 ---
@@ -449,6 +450,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 - Card image: ![Renegade](Spring_Bot_Breaker_2026/Renegade.png)
 - Weight class: Beetleweight
 - Team: Bad Decisions Robotics
+- URL: https://www.robotcombatevents.com/groups/2611/resources/14013
 - Image: ![Renegade](https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/14013/IMG_1403-min.jpeg)
 
 ---
@@ -459,6 +461,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 - Card image: ![Brutal Baguette](Spring_Bot_Breaker_2026/Brutal_Baguette.png)
 - Weight class: Beetleweight
 - Team: BoweBots
+- URL: https://www.robotcombatevents.com/groups/6815/resources/24357
 - Image: ![Brutal Baguette](https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/24357/Brutal_Baguette.png)
 
 ---
@@ -469,6 +472,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 - Card image: ![Sukuna 宿儺](Spring_Bot_Breaker_2026/Sukuna.png)
 - Weight class: Beetleweight
 - Team: Team HyperTech Robotics
+- URL: https://www.robotcombatevents.com/groups/2609/resources/23258
 - Image: ![Sukuna 宿儺](https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/23258/Screenshot_2026-01-19_134230.png)
 
 ---
@@ -479,6 +483,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 - Card image: ![CRUX](Spring_Bot_Breaker_2026/CRUX.png)
 - Weight class: Beetleweight
 - Team: Purge Engineering
+- URL: https://www.robotcombatevents.com/groups/5164/resources/18307
 - Image: ![CRUX](https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/18307/CRUX_RCE.png)
 
 ---
@@ -489,6 +494,7 @@ agent_note: "Cycle-01 event dataset for Bot Oblivion 2025."
 - Card image: ![Over-N-Out](Spring_Bot_Breaker_2026/Over_N_Out.png)
 - Weight class: Beetleweight
 - Team: ADHD Garage
+- URL: https://www.robotcombatevents.com/groups/1107/resources/18472
 - Image: ![Over-N-Out](https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/18472/Over_and_out_final_assembly_wheel_blade.png)
 
 ---

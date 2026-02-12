@@ -341,6 +341,14 @@ def main() -> None:
         help="Event name to render (must match an Event title in the TTDB).",
     )
     parser.add_argument(
+        "--robot-name",
+        help="Optional robot name to render a single card (matches a Robot title in the TTDB).",
+    )
+    parser.add_argument(
+        "--team-name",
+        help="Optional team name to disambiguate robots with the same name.",
+    )
+    parser.add_argument(
         "--cards-dir",
         default=None,
         help="Directory for generated card PNGs.",
@@ -366,6 +374,23 @@ def main() -> None:
 
     ttdb_lines = ttdb_path.read_text(encoding="utf-8").splitlines()
     ttdb_dir = ttdb_path.parent.resolve()
+
+    if args.robot_name:
+        matches = [robot for robot in robots if robot["name"].lower() == args.robot_name.lower()]
+        if args.team_name:
+            matches = [
+                robot for robot in matches if (robot.get("team") or "").lower() == args.team_name.lower()
+            ]
+        if not matches:
+            team_hint = f" (team: {args.team_name})" if args.team_name else ""
+            raise ValueError(f"Robot not found for event {event_name}: {args.robot_name}{team_hint}")
+        if len(matches) > 1 and not args.team_name:
+            teams = ", ".join(sorted({robot.get("team") or "" for robot in matches if robot.get("team")}))
+            raise ValueError(
+                f"Multiple robots named '{args.robot_name}' found for event {event_name}. "
+                f"Use --team-name to disambiguate. Teams: {teams}"
+            )
+        robots = matches
 
     for robot in robots:
         robot_slug = slugify(robot["name"])

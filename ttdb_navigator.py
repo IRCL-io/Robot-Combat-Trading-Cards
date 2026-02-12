@@ -5,6 +5,7 @@ from pathlib import Path
 import tkinter as tk
 from tkinter import ttk
 from tkinter import font as tkfont
+import webbrowser
 
 DB_PATH = Path("cards/IRCL_TTDB.md")
 
@@ -32,9 +33,9 @@ class NavigatorApp(tk.Tk):
         self._globe_target_lon = 0.0
         self._globe_animating = False
         self._globe_items: dict[int, str] = {}
-        self._record_image_path: Path | None = None
-        self._record_image_is_url = False
-        self._record_photo: tk.PhotoImage | None = None
+        self._globe_item_meta: dict[int, dict] = {}
+        self._image_cache: dict[str, tk.PhotoImage] = {}
+        self._image_scaled_cache: dict[tuple[str, int], tk.PhotoImage] = {}
 
         self._init_fonts()
         self._build_ui()
@@ -111,47 +112,8 @@ class NavigatorApp(tk.Tk):
         self.db_listbox.configure(yscrollcommand=list_scroll.set)
         self.db_listbox.bind("<<ListboxSelect>>", self._on_db_list_select)
 
-        right_pane = ttk.Panedwindow(right, orient="vertical")
-        right_pane.pack(fill="both", expand=True)
-
-        text_frame = ttk.Frame(right_pane)
-        globe_frame = ttk.Frame(right_pane)
-        right_pane.add(text_frame, weight=3)
-        right_pane.add(globe_frame, weight=2)
-
-        record_pane = ttk.Panedwindow(text_frame, orient="horizontal")
-        record_pane.pack(fill="both", expand=True)
-
-        record_text_frame = ttk.Frame(record_pane)
-        record_image_frame = ttk.Frame(record_pane, padding=(8, 8))
-        record_pane.add(record_text_frame, weight=3)
-        record_pane.add(record_image_frame, weight=2)
-
-        self.db_view = tk.Text(
-            record_text_frame,
-            wrap="word",
-            font=self.font_body,
-            padx=12,
-            pady=12,
-            background="#0f0f12",
-            foreground="#e9e9f0",
-            insertbackground="#e9e9f0",
-            relief="flat",
-        )
-        self.db_view.pack(side="left", fill="both", expand=True)
-        text_scroll = ttk.Scrollbar(record_text_frame, orient="vertical", command=self.db_view.yview)
-        text_scroll.pack(side="right", fill="y")
-        self.db_view.configure(yscrollcommand=text_scroll.set)
-        self._apply_text_tags(self.db_view)
-        self.db_view.configure(state="disabled")
-
-        self.record_image_canvas = tk.Canvas(
-            record_image_frame,
-            background="#0f0f12",
-            highlightthickness=0,
-        )
-        self.record_image_canvas.pack(fill="both", expand=True)
-        self.record_image_canvas.bind("<Configure>", lambda _event: self._render_record_image())
+        globe_frame = ttk.Frame(right)
+        globe_frame.pack(fill="both", expand=True)
 
         self.globe = tk.Canvas(
             globe_frame,
@@ -161,19 +123,6 @@ class NavigatorApp(tk.Tk):
         self.globe.pack(fill="both", expand=True)
         self.globe.bind("<Configure>", self._on_globe_resize)
         self.globe.bind("<Button-1>", self._on_globe_click)
-
-    def _apply_text_tags(self, text: tk.Text) -> None:
-        text.tag_configure("h1", font=self.font_h1, foreground="#ffd166")
-        text.tag_configure("h2", font=self.font_h2, foreground="#f4a261")
-        text.tag_configure("h3", font=self.font_h3, foreground="#e76f51")
-        text.tag_configure("h4", font=self.font_h4, foreground="#e9c46a")
-        text.tag_configure("bullet", lmargin1=18, lmargin2=36)
-        text.tag_configure("quote", foreground="#a7a7b3", lmargin1=18, lmargin2=36)
-        text.tag_configure("code", font=self.font_code, foreground="#c4f1ff")
-        text.tag_configure("fence", font=self.font_code, foreground="#6c7a89")
-        text.tag_configure("rule", foreground="#39424e")
-        text.tag_configure("muted", foreground="#a7a7b3")
-        text.tag_configure("link", foreground="#7cc7ff", underline=True)
 
     def _poll_files(self) -> None:
         if self._auto_refresh.get():
@@ -198,47 +147,6 @@ class NavigatorApp(tk.Tk):
         self._file_mtimes[path] = stat.st_mtime
         return path.read_text(encoding="utf-8")
 
-    def _render_markdown(self, widget: tk.Text, content: str) -> None:
-        widget.configure(state="normal")
-        widget.delete("1.0", "end")
-        self._insert_markdown(widget, content)
-        widget.configure(state="disabled")
-
-    def _insert_markdown(self, widget: tk.Text, content: str) -> None:
-        in_code = False
-        for raw_line in content.splitlines():
-            line = raw_line.rstrip("\n")
-
-            if line.startswith("```"):
-                in_code = not in_code
-                widget.insert("end", line + "\n", ("fence",))
-                continue
-
-            if in_code:
-                widget.insert("end", line + "\n", ("code",))
-                continue
-
-            heading_match = re.match(r"^(#{1,6})\s+(.*)$", line)
-            if heading_match:
-                level = len(heading_match.group(1))
-                tag = f"h{min(level, 4)}"
-                widget.insert("end", heading_match.group(2) + "\n", (tag,))
-                continue
-
-            if re.match(r"^\s*(-|\*|\d+\.)\s+", line):
-                widget.insert("end", line + "\n", ("bullet",))
-                continue
-
-            if re.match(r"^\s*>\s+", line):
-                widget.insert("end", line + "\n", ("quote",))
-                continue
-
-            if re.match(r"^\s*---+\s*$", line):
-                widget.insert("end", line + "\n", ("rule",))
-                continue
-
-            widget.insert("end", line + "\n")
-
     def _update_db_data(self, content: str) -> None:
         if content.startswith("File not found:"):
             self._db_records = {}
@@ -246,7 +154,6 @@ class NavigatorApp(tk.Tk):
             self._db_selected_id = None
             self._db_coords = {}
             self._populate_db_list()
-            self._render_markdown(self.db_view, content)
             self._render_globe()
             self._update_header()
             return
@@ -255,12 +162,13 @@ class NavigatorApp(tk.Tk):
         self._db_records = records
         self._db_order = order
         self._db_coords = coords
+        self._image_cache = {}
+        self._image_scaled_cache = {}
 
         if self._db_selected_id not in self._db_records:
             self._db_selected_id = selected or (order[0] if order else None)
 
         self._populate_db_list()
-        self._render_db_record(self._db_selected_id)
         self._update_header()
         self._center_on_selected()
         self._render_globe()
@@ -306,6 +214,8 @@ class NavigatorApp(tk.Tk):
                 if title_match:
                     title = title_match.group(1).strip()
                     break
+            card_image = self._extract_card_image(body)
+            url = self._extract_field_value(body, ("URL",))
 
             edges = []
             relates_match = re.search(r"relates:([^|]+)", header_line)
@@ -334,6 +244,8 @@ class NavigatorApp(tk.Tk):
                 "body": body,
                 "title": title,
                 "edges": edges,
+                "card_image": card_image,
+                "url": url,
             }
             order.append(record_id)
 
@@ -369,7 +281,6 @@ class NavigatorApp(tk.Tk):
 
     def _select_db_record(self, record_id: str | None, from_list: bool = False) -> None:
         if not record_id or record_id not in self._db_records:
-            self._render_markdown(self.db_view, "No records available.")
             return
         self._db_selected_id = record_id
         if not from_list and record_id in self._db_order:
@@ -378,170 +289,14 @@ class NavigatorApp(tk.Tk):
             self.db_listbox.selection_set(idx)
             self.db_listbox.activate(idx)
             self.db_listbox.see(idx)
-        self._render_db_record(record_id)
         self._update_header()
         self._center_on_selected()
         self._render_globe()
 
-    def _render_db_record(self, record_id: str | None) -> None:
-        if not record_id or record_id not in self._db_records:
-            self._render_markdown(self.db_view, "No record selected.")
-            self._set_record_image(None)
-            return
-        record = self._db_records[record_id]
-        widget = self.db_view
-        widget.configure(state="normal")
-        widget.delete("1.0", "end")
-
-        widget.insert("end", f"{record_id}\n", ("h2",))
-        widget.insert("end", record["header"] + "\n", ("muted",))
-
-        edges = record.get("edges", [])
-        if edges:
-            widget.insert("end", "\nRelated records\n", ("h3",))
-            for idx, edge in enumerate(edges):
-                edge_type = edge.get("type") or "relates"
-                target = edge.get("target") or ""
-                tag = f"link_{record_id}_{idx}"
-                widget.tag_configure(tag, foreground="#7cc7ff", underline=True)
-                widget.tag_bind(
-                    tag,
-                    "<Button-1>",
-                    lambda _event, rid=target: self._select_db_record(rid),
-                )
-                widget.tag_bind(
-                    tag,
-                    "<Enter>",
-                    lambda _event: widget.configure(cursor="hand2"),
-                )
-                widget.tag_bind(
-                    tag,
-                    "<Leave>",
-                    lambda _event: widget.configure(cursor=""),
-                )
-                widget.insert("end", f"- {edge_type} -> ", ("bullet",))
-                if target in self._db_records:
-                    widget.insert("end", target + "\n", ("bullet", tag))
-                else:
-                    widget.insert("end", target + "\n", ("bullet", "muted"))
-
-        body = record.get("body", "")
-        if body:
-            widget.insert("end", "\n")
-            self._insert_markdown(widget, body)
-
-        widget.configure(state="disabled")
-        self._set_record_image_from_record(record)
-
-    def _set_record_image_from_record(self, record: dict) -> None:
-        image_ref = self._extract_image_reference(record.get("body", ""))
-        self._set_record_image(image_ref)
-
-    def _extract_image_reference(self, body: str) -> str | None:
-        for line in body.splitlines():
-            md_match = re.search(r"!\[[^]]*\]\(([^)]+)\)", line)
-            if md_match:
-                return md_match.group(1).strip()
-
-            field_match = re.match(r"^\\s*-\\s*(Card image|Back card image|Image):\\s*(.+)$", line)
-            if field_match:
-                value = field_match.group(2).strip()
-                md_match = re.search(r"!\[[^]]*\]\(([^)]+)\)", value)
-                if md_match:
-                    return md_match.group(1).strip()
-                return value
-        return None
-
-    def _set_record_image(self, image_ref: str | None) -> None:
-        self._record_image_path = None
-        self._record_image_is_url = False
-        self._record_photo = None
-
-        if not image_ref:
-            self._render_record_image(message="No image found in record.")
-            return
-
-        if image_ref.startswith("http://") or image_ref.startswith("https://"):
-            self._record_image_is_url = True
-            self._render_record_image(message="Remote image (not loaded).")
-            return
-
-        path = Path(image_ref)
-        if not path.is_absolute():
-            path = DB_PATH.parent / path
-        self._record_image_path = path
-        self._render_record_image()
-
-    def _render_record_image(self, message: str | None = None) -> None:
-        canvas = self.record_image_canvas
-        canvas.delete("all")
-
-        width = max(canvas.winfo_width(), 1)
-        height = max(canvas.winfo_height(), 1)
-        pad = 12
-        if message:
-            canvas.create_text(
-                width / 2,
-                height / 2,
-                text=message,
-                fill="#a7a7b3",
-                font=self.font_body,
-                width=max(width - pad * 2, 1),
-                justify="center",
-            )
-            return
-
-        if self._record_image_is_url:
-            canvas.create_text(
-                width / 2,
-                height / 2,
-                text="Remote image (not loaded).",
-                fill="#a7a7b3",
-                font=self.font_body,
-                width=max(width - pad * 2, 1),
-                justify="center",
-            )
-            return
-
-        if not self._record_image_path or not self._record_image_path.exists():
-            canvas.create_text(
-                width / 2,
-                height / 2,
-                text="Image file not found.",
-                fill="#a7a7b3",
-                font=self.font_body,
-                width=max(width - pad * 2, 1),
-                justify="center",
-            )
-            return
-
-        try:
-            image = tk.PhotoImage(file=str(self._record_image_path))
-        except tk.TclError:
-            canvas.create_text(
-                width / 2,
-                height / 2,
-                text="Unsupported image format.",
-                fill="#a7a7b3",
-                font=self.font_body,
-                width=max(width - pad * 2, 1),
-                justify="center",
-            )
-            return
-
-        target_w = max(width - pad * 2, 1)
-        target_h = max(height - pad * 2, 1)
-        scale = max(image.width() / target_w, image.height() / target_h)
-        if scale > 1:
-            factor = int(scale) if scale.is_integer() else int(scale) + 1
-            image = image.subsample(factor, factor)
-
-        self._record_photo = image
-        canvas.create_image(width / 2, height / 2, image=image)
-
     def _update_header(self) -> None:
         if self._db_selected_id:
-            self.current_selection_var.set(f"Selected: {self._db_selected_id}")
+            label = self._get_record_label(self._db_selected_id)
+            self.current_selection_var.set(f"Selected: {label}")
         else:
             self.current_selection_var.set("Selected: (none)")
 
@@ -603,8 +358,16 @@ class NavigatorApp(tk.Tk):
         if not item:
             return
         record_id = self._globe_items.get(item[0])
-        if record_id:
+        if not record_id:
+            return
+        if record_id != self._db_selected_id:
             self._select_db_record(record_id)
+            return
+        meta = self._globe_item_meta.get(item[0], {})
+        if meta.get("z", 0) >= 0.95:
+            url = self._db_records.get(record_id, {}).get("url")
+            if url:
+                webbrowser.open(url)
 
     def _project_point(self, lat: float, lon: float) -> tuple[float, float, float]:
         lat_r = math.radians(lat)
@@ -632,6 +395,7 @@ class NavigatorApp(tk.Tk):
         globe = self.globe
         globe.delete("all")
         self._globe_items = {}
+        self._globe_item_meta = {}
 
         width = max(globe.winfo_width(), 200)
         height = max(globe.winfo_height(), 200)
@@ -725,11 +489,34 @@ class NavigatorApp(tk.Tk):
                 globe.create_line(sxp, syp, txp, typ, fill=color, width=width)
 
         for record_id, x, y, z in nodes_front:
-            px = cx + x * radius
-            py = cy - y * radius
-            size = 5
-            fill = "#7cc7ff"
-            outline = "#0b0b10"
+            self._draw_globe_node(record_id, x, y, z, cx, cy, radius, selected=False)
+
+        if selected_point:
+            record_id, x, y, z = selected_point
+            self._draw_globe_node(record_id, x, y, z, cx, cy, radius, selected=True)
+
+    def _draw_globe_node(
+        self,
+        record_id: str,
+        x: float,
+        y: float,
+        z: float,
+        cx: float,
+        cy: float,
+        radius: float,
+        selected: bool,
+    ) -> None:
+        globe = self.globe
+        px = cx + x * radius
+        py = cy - y * radius
+
+        image = self._get_record_image(record_id, z if selected else None, radius)
+        if image:
+            item = globe.create_image(px, py, image=image, tags=("node",))
+        else:
+            size = 6 if selected else 4
+            fill = "#ffd166" if selected else "#7cc7ff"
+            outline = "#f4a261" if selected else "#0b0b10"
             item = globe.create_oval(
                 px - size,
                 py - size,
@@ -740,28 +527,16 @@ class NavigatorApp(tk.Tk):
                 width=2,
                 tags=("node",),
             )
-            self._globe_items[item] = record_id
 
-        if selected_point:
-            record_id, x, y, z = selected_point
-            px = cx + x * radius
-            py = cy - y * radius
-            size = 7
-            item = globe.create_oval(
-                px - size,
-                py - size,
-                px + size,
-                py + size,
-                fill="#ffd166",
-                outline="#f4a261",
-                width=2,
-                tags=("node",),
-            )
-            self._globe_items[item] = record_id
+        self._globe_items[item] = record_id
+        self._globe_item_meta[item] = {"record_id": record_id, "z": z}
+
+        if selected:
+            label = self._get_record_label(record_id)
             globe.create_text(
                 px,
-                py - 14,
-                text=record_id,
+                py - 18,
+                text=label,
                 fill="#e9e9f0",
                 font=("TkDefaultFont", 9, "bold"),
             )
@@ -818,6 +593,89 @@ class NavigatorApp(tk.Tk):
         for x, y in points:
             flat.extend([x, y])
         return flat
+
+    def _get_record_label(self, record_id: str) -> str:
+        record = self._db_records.get(record_id, {})
+        return record.get("title") or record_id
+
+    def _extract_field_value(self, body: str, field_names: tuple[str, ...]) -> str | None:
+        if not body:
+            return None
+        field_pattern = "|".join(re.escape(name) for name in field_names)
+        regex = re.compile(rf"^\s*-\s*({field_pattern})\s*:\s*(.+)$", re.I)
+        for line in body.splitlines():
+            match = regex.match(line)
+            if match:
+                return match.group(2).strip()
+        return None
+
+    def _extract_card_image(self, body: str) -> str | None:
+        value = self._extract_field_value(body, ("Card image",))
+        if not value:
+            value = self._extract_field_value(body, ("Image",))
+        if not value:
+            return None
+        md_match = re.search(r"!\[[^]]*\]\(([^)]+)\)", value)
+        if md_match:
+            return md_match.group(1).strip()
+        return value.strip()
+
+    def _resolve_image_path(self, image_ref: str) -> Path | None:
+        if not image_ref:
+            return None
+        if image_ref.startswith(("http://", "https://")):
+            return None
+        path = Path(image_ref)
+        if not path.is_absolute():
+            path = DB_PATH.parent / path
+        return path
+
+    def _get_record_image(
+        self,
+        record_id: str,
+        z: float | None,
+        radius: float,
+    ) -> tk.PhotoImage | None:
+        record = self._db_records.get(record_id, {})
+        image_ref = record.get("card_image")
+        if not image_ref:
+            return None
+        path = self._resolve_image_path(image_ref)
+        if not path or not path.exists():
+            return None
+
+        raw = self._image_cache.get(record_id)
+        if raw is None:
+            try:
+                raw = tk.PhotoImage(file=str(path))
+            except tk.TclError:
+                return None
+            self._image_cache[record_id] = raw
+
+        base_scale = 0.10
+        max_scale = 0.50
+        scale = base_scale
+        if z is not None:
+            t = max(0.0, min(1.0, (z + 1) / 2))
+            scale = base_scale + (max_scale - base_scale) * t
+
+        max_dim = max(raw.width(), raw.height())
+        max_allowed = radius * 0.9
+        if max_dim > 0:
+            scale = min(scale, max_allowed / max_dim)
+
+        if scale <= 0:
+            return None
+
+        subsample = max(1, round(1 / scale))
+        cache_key = (record_id, subsample)
+        cached = self._image_scaled_cache.get(cache_key)
+        if cached is not None:
+            return cached
+
+        scaled = raw.subsample(subsample, subsample)
+        self._image_scaled_cache[cache_key] = scaled
+        return scaled
 
 
 def main() -> None:

@@ -57,7 +57,7 @@ agent_note: "Cycle-01 event dataset for Spring Bot Breaker 2026."
 ---
 
 @LAT0LON0 | created:1770743813 | updated:1770743813 | z:100
-relates:has_bot>@LAT-75LON-170,has_bot>@LAT-60LON-130,has_bot>@LAT-45LON-90,has_bot>@LAT-30LON-50,has_bot>@LAT-15LON-10,has_bot>@LAT0LON30,has_bot>@LAT15LON70,has_bot>@LAT30LON110,has_bot>@LAT45LON150,has_bot>@LAT60LON-170,has_bot>@LAT75LON-130,has_bot>@LAT-75LON-130,has_bot>@LAT-60LON-90,has_bot>@LAT-45LON-50,has_bot>@LAT-30LON-10,has_bot>@LAT-15LON30,has_bot>@LAT0LON70,has_bot>@LAT15LON110,has_bot>@LAT30LON150,has_bot>@LAT45LON-170,has_bot>@LAT60LON-130,has_bot>@LAT75LON-90,has_bot>@LAT-75LON-90,has_bot>@LAT-60LON-50
+relates:has_bot>@LAT-30LON30,has_bot>@LAT-15LON70,has_bot>@LAT0LON110,has_bot>@LAT15LON150,has_bot>@LAT30LON-170,has_bot>@LAT45LON-130,has_bot>@LAT60LON-90,has_bot>@LAT75LON-50,has_bot>@LAT-75LON-50,has_bot>@LAT-60LON-10,has_bot>@LAT-45LON30,has_bot>@LAT-30LON70,has_bot>@LAT-15LON110,has_bot>@LAT0LON150,has_bot>@LAT15LON-170,has_bot>@LAT30LON-130,has_bot>@LAT45LON-90,has_bot>@LAT60LON-50,has_bot>@LAT-75LON-130,has_bot>@LAT75LON-10,has_bot>@LAT-75LON-10,has_bot>@LAT-60LON30,has_bot>@LAT60LON-170,has_bot>@LAT75LON-130,has_bot>@LAT-60LON-90,has_bot>@LAT-45LON-50,has_bot>@LAT-30LON-10
 
 ## Bot Oblivion 2025 (Event)
 - Back card image: ![Bot Oblivion 2025](Bot_Oblivion_2025/BotOblivion2025.png)
@@ -186,7 +186,7 @@ relates:has_bot>@LAT-75LON-170,has_bot>@LAT-60LON-130,has_bot>@LAT-45LON-90,has_
 
 ---
 
-@LAT60LON-170 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
+@LAT60LON-170 | created:1770743813 | updated:1771539276 | relates:competes_in>@LAT0LON0,competes_in>@LAT-45LON-10
 
 ## A is for Aardvark FC
 - Card image: ![A_is_for_Aardvark_FC](Bot_Oblivion_2025/A_is_for_Aardvark_FC.png)
@@ -196,7 +196,7 @@ relates:has_bot>@LAT-75LON-170,has_bot>@LAT-60LON-130,has_bot>@LAT-45LON-90,has_
 
 ---
 
-@LAT75LON-130 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
+@LAT75LON-130 | created:1770743813 | updated:1771539276 | relates:competes_in>@LAT0LON0,competes_in>@LAT-45LON-10
 
 ## Triple A
 - Card image: ![Triple_A](Bot_Oblivion_2025/Triple_A.png)
@@ -216,7 +216,7 @@ relates:has_bot>@LAT-75LON-170,has_bot>@LAT-60LON-130,has_bot>@LAT-45LON-90,has_
 
 ---
 
-@LAT-60LON-90 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
+@LAT-60LON-90 | created:1770743813 | updated:1771539276 | relates:competes_in>@LAT0LON0,competes_in>@LAT-45LON-10
 
 ## JUMBO
 - Card image: ![JUMBO](Bot_Oblivion_2025/JUMBO.png)
@@ -226,7 +226,7 @@ relates:has_bot>@LAT-75LON-170,has_bot>@LAT-60LON-130,has_bot>@LAT-45LON-90,has_
 
 ---
 
-@LAT-45LON-50 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
+@LAT-45LON-50 | created:1770743813 | updated:1771539276 | relates:competes_in>@LAT0LON0,competes_in>@LAT-45LON-10
 
 ## Anubis
 - Card image: ![Anubis](Bot_Oblivion_2025/Anubis.png)
@@ -236,7 +236,7 @@ relates:has_bot>@LAT-75LON-170,has_bot>@LAT-60LON-130,has_bot>@LAT-45LON-90,has_
 
 ---
 
-@LAT-30LON-10 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0
+@LAT-30LON-10 | created:1770743813 | updated:1771539276 | relates:competes_in>@LAT0LON0,competes_in>@LAT-45LON-10
 
 ## Cyclone
 - Card image: ![Cyclone](Bot_Oblivion_2025/Cyclone.png)
@@ -336,8 +336,8 @@ relates:has_bot>@LAT-75LON-170,has_bot>@LAT-60LON-130,has_bot>@LAT-45LON-90,has_
 
 ---
 
-@LAT-45LON-10 | created:1770754151 | updated:1771537214 | z:100
-relates:has_bot>@LAT-30LON30,has_bot>@LAT-15LON70,has_bot>@LAT0LON110,has_bot>@LAT15LON150,has_bot>@LAT30LON-170,has_bot>@LAT45LON-130,has_bot>@LAT60LON-90,has_bot>@LAT75LON-50,has_bot>@LAT-75LON-50,has_bot>@LAT-60LON-10,has_bot>@LAT-45LON30,has_bot>@LAT-30LON70,has_bot>@LAT-15LON110,has_bot>@LAT0LON150,has_bot>@LAT15LON-170,has_bot>@LAT30LON-130,has_bot>@LAT45LON-90,has_bot>@LAT60LON-50,has_bot>@LAT-75LON-130,has_bot>@LAT75LON-10,has_bot>@LAT-75LON-10,has_bot>@LAT-60LON30
+@LAT-45LON-10 | created:1770754151 | updated:1771539276 | z:100
+relates:has_bot>@LAT-30LON30,has_bot>@LAT-15LON70,has_bot>@LAT0LON110,has_bot>@LAT15LON150,has_bot>@LAT30LON-170,has_bot>@LAT45LON-130,has_bot>@LAT60LON-90,has_bot>@LAT75LON-50,has_bot>@LAT-75LON-50,has_bot>@LAT-60LON-10,has_bot>@LAT-45LON30,has_bot>@LAT-30LON70,has_bot>@LAT-15LON110,has_bot>@LAT0LON150,has_bot>@LAT15LON-170,has_bot>@LAT30LON-130,has_bot>@LAT45LON-90,has_bot>@LAT60LON-50,has_bot>@LAT-75LON-130,has_bot>@LAT75LON-10,has_bot>@LAT-75LON-10,has_bot>@LAT-60LON30,has_bot>@LAT60LON-170,has_bot>@LAT75LON-130,has_bot>@LAT-60LON-90,has_bot>@LAT-45LON-50,has_bot>@LAT-30LON-10
 
 ## Spring Bot Breaker 2026 (Event)
 - Back card image: ![Spring Bot Breaker 2026 Back](Spring_Bot_Breaker_2026/Spring_Bot_Breaker_2026_back.png)
@@ -372,6 +372,11 @@ relates:has_bot>@LAT-30LON30,has_bot>@LAT-15LON70,has_bot>@LAT0LON110,has_bot>@L
 - @LAT75LON-10 Black Talon (Full Combat Antweight)
 - @LAT-75LON-10 Ghost Viper (Full Combat Antweight)
 - @LAT-60LON30 Brawndo the thirst mutilator (Full Combat Antweight)
+- @LAT-30LON-10 Cyclone (Full Combat Antweight)
+- @LAT-45LON-50 Anubis (Full Combat Antweight)
+- @LAT-60LON-90 JUMBO (Full Combat Antweight)
+- @LAT75LON-130 Triple A (Full Combat Antweight)
+- @LAT60LON-170 A is for Aardvark FC (Full Combat Antweight)
 
 #### Plastic Antweight
 - @LAT-30LON30 Smite (Plastic Antweight)

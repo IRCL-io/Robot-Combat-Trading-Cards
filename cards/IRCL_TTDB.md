@@ -336,8 +336,8 @@ relates:has_bot>@LAT-75LON-170,has_bot>@LAT-60LON-130,has_bot>@LAT-45LON-90,has_
 
 ---
 
-@LAT-45LON-10 | created:1770754151 | updated:1770755062 | z:100
-relates:has_bot>@LAT-30LON30,has_bot>@LAT-15LON70,has_bot>@LAT0LON110,has_bot>@LAT15LON150,has_bot>@LAT30LON-170,has_bot>@LAT45LON-130,has_bot>@LAT60LON-90,has_bot>@LAT75LON-50,has_bot>@LAT-75LON-50,has_bot>@LAT-60LON-10,has_bot>@LAT-45LON30,has_bot>@LAT-30LON70,has_bot>@LAT-15LON110,has_bot>@LAT0LON150,has_bot>@LAT15LON-170,has_bot>@LAT30LON-130,has_bot>@LAT45LON-90,has_bot>@LAT60LON-50,has_bot>@LAT-75LON-130,has_bot>@LAT75LON-10,has_bot>@LAT-75LON-10
+@LAT-45LON-10 | created:1770754151 | updated:1771537214 | z:100
+relates:has_bot>@LAT-30LON30,has_bot>@LAT-15LON70,has_bot>@LAT0LON110,has_bot>@LAT15LON150,has_bot>@LAT30LON-170,has_bot>@LAT45LON-130,has_bot>@LAT60LON-90,has_bot>@LAT75LON-50,has_bot>@LAT-75LON-50,has_bot>@LAT-60LON-10,has_bot>@LAT-45LON30,has_bot>@LAT-30LON70,has_bot>@LAT-15LON110,has_bot>@LAT0LON150,has_bot>@LAT15LON-170,has_bot>@LAT30LON-130,has_bot>@LAT45LON-90,has_bot>@LAT60LON-50,has_bot>@LAT-75LON-130,has_bot>@LAT75LON-10,has_bot>@LAT-75LON-10,has_bot>@LAT-60LON30
 
 ## Spring Bot Breaker 2026 (Event)
 - Back card image: ![Spring Bot Breaker 2026](Spring_Bot_Breaker_2026/IRCL_SBB2026-2.jpg)
@@ -348,6 +348,9 @@ relates:has_bot>@LAT-30LON30,has_bot>@LAT-15LON70,has_bot>@LAT0LON110,has_bot>@L
 - End: 22:00
 - Website: https://ircl-io.github.io/
 - Registration fee: $25
+- Maximum combatants: 24
+- Competitions:
+  - Full Combat Antweight: https://www.robotcombatevents.com/events/6479/competitions/7079
 - Registrations:
   - Full Combat Antweight: {{count:Full Combat Antweight}}
   - Plastic Antweight: {{count:Plastic Antweight}}
@@ -365,6 +368,7 @@ relates:has_bot>@LAT-30LON30,has_bot>@LAT-15LON70,has_bot>@LAT0LON110,has_bot>@L
 - @LAT-75LON-130 ICU2 (Full Combat Antweight)
 - @LAT75LON-10 Black Talon (Full Combat Antweight)
 - @LAT-75LON-10 Ghost Viper (Full Combat Antweight)
+- @LAT-60LON30 Brawndo the thirst mutilator (Full Combat Antweight)
 
 #### Plastic Antweight
 - @LAT-30LON30 Smite (Plastic Antweight)
@@ -600,3 +604,13 @@ relates:has_bot>@LAT-30LON30,has_bot>@LAT-15LON70,has_bot>@LAT0LON110,has_bot>@L
 - Weight class: Full Combat Antweight
 - Team: Team Dairy
 - Image: ![Ghost Viper](unknown)
+
+---
+
+@LAT-60LON30 | created:1771536994 | updated:1771537136 | relates:competes_in>@LAT-45LON-10
+
+## Brawndo the thirst mutilator
+- Card image: ![Brawndo the thirst mutilator](Spring_Bot_Breaker_2026/Brawndo_the_thirst_mutilator.png)
+- Weight class: Full Combat Antweight
+- Team: Idiocracy
+- Image: ![Brawndo the thirst mutilator](https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/16424/PXL_20241026_021724261.jpg)

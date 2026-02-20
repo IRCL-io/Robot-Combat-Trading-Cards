@@ -118,7 +118,7 @@ relates:has_bot>@LAT-30LON30,has_bot>@LAT-15LON70,has_bot>@LAT0LON110,has_bot>@L
 @LAT-45LON-90 | created:1770743813 | updated:1771546070 | relates:competes_in>@LAT0LON0,competes_in>@LAT-45LON-10
 
 ## Virilade
-- Card image: ![Virilade](Bot_Oblivion_2025/Virilade.png)
+- Card image: ![Virilade](Spring_Bot_Breaker_2026/Virilade.png)
 - Weight class: Beetleweight
 - Team: Idiocracy
 - Image: ![Virilade](https://www.robotcombatevents.com/assets/RCELogo-3383ca77f76e5be2b7755ea9d0c464aea25a87d8c9f2a4cffd63643392f59fe7.png)
@@ -423,7 +423,7 @@ relates:has_bot>@LAT-30LON30,has_bot>@LAT-15LON70,has_bot>@LAT0LON110,has_bot>@L
 @LAT0LON110 | created:1770754151 | updated:1771545356 | relates:competes_in>@LAT-45LON-10
 
 ## Lil'Gnarly
-- Card image: ![Lil'Gnarly](Spring_Bot_Breaker_2026/Spring_Bot_Breaker_2026_back.png)
+- Card image: ![Lil'Gnarly](Spring_Bot_Breaker_2026/Lil_Gnarly.png)
 - Weight class: Plastic Antweight
 - Team: Barnhouse Robotics
 - Image: ![Lil'Gnarly](https://www.robotcombatevents.com/assets/RCELogo-3383ca77f76e5be2b7755ea9d0c464aea25a87d8c9f2a4cffd63643392f59fe7.png)
@@ -433,7 +433,7 @@ relates:has_bot>@LAT-30LON30,has_bot>@LAT-15LON70,has_bot>@LAT0LON110,has_bot>@L
 @LAT15LON150 | created:1770754151 | updated:1771545356 | relates:competes_in>@LAT-45LON-10
 
 ## Ammit
-- Card image: ![Ammit](Spring_Bot_Breaker_2026/Spring_Bot_Breaker_2026_back.png)
+- Card image: ![Ammit](Spring_Bot_Breaker_2026/Ammit.png)
 - Weight class: Plastic Antweight
 - Team: BoomBox
 - Image: ![Ammit](https://www.robotcombatevents.com/assets/RCELogo-3383ca77f76e5be2b7755ea9d0c464aea25a87d8c9f2a4cffd63643392f59fe7.png)
@@ -443,7 +443,7 @@ relates:has_bot>@LAT-30LON30,has_bot>@LAT-15LON70,has_bot>@LAT0LON110,has_bot>@L
 @LAT30LON-170 | created:1770754151 | updated:1771545356 | relates:competes_in>@LAT-45LON-10
 
 ## Broadside Killer
-- Card image: ![Broadside Killer](Spring_Bot_Breaker_2026/Spring_Bot_Breaker_2026_back.png)
+- Card image: ![Broadside Killer](Spring_Bot_Breaker_2026/Broadside_Killer.png)
 - Weight class: Plastic Antweight
 - Team: BoweBots
 - Image: ![Broadside Killer](https://www.robotcombatevents.com/assets/RCELogo-3383ca77f76e5be2b7755ea9d0c464aea25a87d8c9f2a4cffd63643392f59fe7.png)
@@ -453,7 +453,7 @@ relates:has_bot>@LAT-30LON30,has_bot>@LAT-15LON70,has_bot>@LAT0LON110,has_bot>@L
 @LAT-45LON70 | created:1771545356 | updated:1771545356 | relates:competes_in>@LAT-45LON-10
 
 ## Outbreak Plantfected
-- Card image: ![Outbreak Plantfected](Spring_Bot_Breaker_2026/Spring_Bot_Breaker_2026_back.png)
+- Card image: ![Outbreak Plantfected](Spring_Bot_Breaker_2026/Outbreak_Plantfected.png)
 - Weight class: Plastic Antweight
 - Team: Trouble Robotics
 - Image: ![Outbreak Plantfected](https://www.robotcombatevents.com/assets/RCELogo-3383ca77f76e5be2b7755ea9d0c464aea25a87d8c9f2a4cffd63643392f59fe7.png)
@@ -485,7 +485,7 @@ relates:has_bot>@LAT-30LON30,has_bot>@LAT-15LON70,has_bot>@LAT0LON110,has_bot>@L
 @LAT75LON-50 | created:1770754151 | updated:1770754151 | relates:competes_in>@LAT-45LON-10
 
 ## Dreadly Croissant
-- Card image: ![Dreadly Croissant](Spring_Bot_Breaker_2026/Spring_Bot_Breaker_2026_back.png)
+- Card image: ![Dreadly Croissant](Spring_Bot_Breaker_2026/Dreadly_Croissant.png)
 - Weight class: Beetleweight
 - Team: BoweBots
 - Image: ![Dreadly Croissant](https://www.robotcombatevents.com/assets/RCELogo-3383ca77f76e5be2b7755ea9d0c464aea25a87d8c9f2a4cffd63643392f59fe7.png)
@@ -506,7 +506,7 @@ relates:has_bot>@LAT-30LON30,has_bot>@LAT-15LON70,has_bot>@LAT0LON110,has_bot>@L
 @LAT-60LON-10 | created:1770754151 | updated:1770754151 | relates:competes_in>@LAT-45LON-10
 
 ## Fafner
-- Card image: ![Fafner](Spring_Bot_Breaker_2026/Spring_Bot_Breaker_2026_back.png)
+- Card image: ![Fafner](Spring_Bot_Breaker_2026/Fafner.png)
 - Weight class: Beetleweight
 - Team: BoweBots
 - Image: ![Fafner](https://www.robotcombatevents.com/assets/RCELogo-3383ca77f76e5be2b7755ea9d0c464aea25a87d8c9f2a4cffd63643392f59fe7.png)
@@ -527,7 +527,7 @@ relates:has_bot>@LAT-30LON30,has_bot>@LAT-15LON70,has_bot>@LAT0LON110,has_bot>@L
 @LAT-45LON110 | created:1771546070 | updated:1771546070 | relates:competes_in>@LAT-45LON-10
 
 ## Falling Guillotine
-- Card image: ![Falling Guillotine](Spring_Bot_Breaker_2026/Spring_Bot_Breaker_2026_back.png)
+- Card image: ![Falling Guillotine](Spring_Bot_Breaker_2026/Falling_Guillotine.png)
 - Weight class: Beetleweight
 - Team: Trouble Robotics
 - Image: ![Falling Guillotine](https://www.robotcombatevents.com/assets/RCELogo-3383ca77f76e5be2b7755ea9d0c464aea25a87d8c9f2a4cffd63643392f59fe7.png)
@@ -537,7 +537,7 @@ relates:has_bot>@LAT-30LON30,has_bot>@LAT-15LON70,has_bot>@LAT0LON110,has_bot>@L
 @LAT-45LON150 | created:1771546070 | updated:1771546070 | relates:competes_in>@LAT-45LON-10
 
 ## The Corrugated Crusader
-- Card image: ![The Corrugated Crusader](Spring_Bot_Breaker_2026/Spring_Bot_Breaker_2026_back.png)
+- Card image: ![The Corrugated Crusader](Spring_Bot_Breaker_2026/The_Corrugated_Crusader.png)
 - Weight class: Beetleweight
 - Team: ADHD Garage
 - Image: ![The Corrugated Crusader](https://www.robotcombatevents.com/assets/RCELogo-3383ca77f76e5be2b7755ea9d0c464aea25a87d8c9f2a4cffd63643392f59fe7.png)
@@ -547,7 +547,7 @@ relates:has_bot>@LAT-30LON30,has_bot>@LAT-15LON70,has_bot>@LAT0LON110,has_bot>@L
 @LAT-45LON-170 | created:1771546070 | updated:1771546070 | relates:competes_in>@LAT-45LON-10
 
 ## Sub-Zero
-- Card image: ![Sub-Zero](Spring_Bot_Breaker_2026/Spring_Bot_Breaker_2026_back.png)
+- Card image: ![Sub-Zero](Spring_Bot_Breaker_2026/Sub_Zero.png)
 - Weight class: Beetleweight
 - Team: BoomBox
 - Image: ![Sub-Zero](https://www.robotcombatevents.com/assets/RCELogo-3383ca77f76e5be2b7755ea9d0c464aea25a87d8c9f2a4cffd63643392f59fe7.png)
@@ -601,7 +601,7 @@ relates:has_bot>@LAT-30LON30,has_bot>@LAT-15LON70,has_bot>@LAT0LON110,has_bot>@L
 @LAT30LON-130 | created:1770754582 | updated:1771545786 | relates:competes_in>@LAT-45LON-10
 
 ## Spur
-- Card image: ![Spur](Spring_Bot_Breaker_2026/Spring_Bot_Breaker_2026_back.png)
+- Card image: ![Spur](Spring_Bot_Breaker_2026/Spur.png)
 - Weight class: Full Combat Antweight
 - Team: ADHD Garage
 - Image: ![Spur](https://www.robotcombatevents.com/assets/RCELogo-3383ca77f76e5be2b7755ea9d0c464aea25a87d8c9f2a4cffd63643392f59fe7.png)

@@ -243,7 +243,7 @@ relates:has_bot>@LAT-30LON30,has_bot>@LAT-15LON70,has_bot>@LAT0LON110,has_bot>@L
 @LAT-30LON-150 | created:1771547000 | updated:1771547000 | relates:competes_in>@LAT-45LON-10
 
 ## Dread
-- Card image: ![Dread](Spring_Bot_Breaker_2026/IRCL_SBB2026-2.jpg)
+- Card image: ![Dread](Spring_Bot_Breaker_2026/Dread.png)
 - Weight class: Full Combat Antweight
 - Team: Bad Decisions Robotics
 - Image: ![Dread](https://www.robotcombatevents.com/assets/RCELogo-3383ca77f76e5be2b7755ea9d0c464aea25a87d8c9f2a4cffd63643392f59fe7.png)
@@ -253,7 +253,7 @@ relates:has_bot>@LAT-30LON30,has_bot>@LAT-15LON70,has_bot>@LAT0LON110,has_bot>@L
 @LAT-15LON-110 | created:1771547300 | updated:1771547300 | relates:competes_in>@LAT-45LON-10
 
 ## TinkaTuff
-- Card image: ![TinkaTuff](Spring_Bot_Breaker_2026/IRCL_SBB2026-2.jpg)
+- Card image: ![TinkaTuff](Spring_Bot_Breaker_2026/TinkaTuff.png)
 - Weight class: Full Combat Antweight
 - Team: Batchelor Bots
 - Image: ![TinkaTuff](https://www.robotcombatevents.com/assets/RCELogo-3383ca77f76e5be2b7755ea9d0c464aea25a87d8c9f2a4cffd63643392f59fe7.png)
@@ -263,7 +263,7 @@ relates:has_bot>@LAT-30LON30,has_bot>@LAT-15LON70,has_bot>@LAT0LON110,has_bot>@L
 @LAT0LON-70 | created:1771547300 | updated:1771547300 | relates:competes_in>@LAT-45LON-10
 
 ## Bob²
-- Card image: ![Bob²](Spring_Bot_Breaker_2026/IRCL_SBB2026-2.jpg)
+- Card image: ![Bob²](Spring_Bot_Breaker_2026/Bob.png)
 - Weight class: Full Combat Antweight
 - Team: DiscomBOBulators
 - Image: ![Bob²](https://www.robotcombatevents.com/assets/RCELogo-3383ca77f76e5be2b7755ea9d0c464aea25a87d8c9f2a4cffd63643392f59fe7.png)
@@ -335,7 +335,7 @@ relates:has_bot>@LAT-30LON30,has_bot>@LAT-15LON70,has_bot>@LAT0LON110,has_bot>@L
 @LAT-30LON-30 | created:1771547200 | updated:1771547200 | relates:competes_in>@LAT-45LON-10
 
 ## BOB
-- Card image: ![BOB](Spring_Bot_Breaker_2026/IRCL_SBB2026-2.jpg)
+- Card image: ![BOB](Spring_Bot_Breaker_2026/Bob.png)
 - Weight class: Plastic Antweight
 - Team: DiscomBOBulators
 - Image: ![BOB](https://www.robotcombatevents.com/assets/RCELogo-3383ca77f76e5be2b7755ea9d0c464aea25a87d8c9f2a4cffd63643392f59fe7.png)
@@ -449,7 +449,7 @@ relates:has_bot>@LAT-30LON30,has_bot>@LAT-15LON70,has_bot>@LAT0LON110,has_bot>@L
 @LAT30LON10 | created:1771547500 | updated:1771547500 | relates:competes_in>@LAT-45LON-10
 
 ## Mistwitz
-- Card image: ![Mistwitz](Spring_Bot_Breaker_2026/IRCL_SBB2026-2.jpg)
+- Card image: ![Mistwitz](Spring_Bot_Breaker_2026/Mistwitz.png)
 - Weight class: Beetleweight
 - Team: Batchelor Bots
 - Image: ![Mistwitz](https://www.robotcombatevents.com/assets/RCELogo-3383ca77f76e5be2b7755ea9d0c464aea25a87d8c9f2a4cffd63643392f59fe7.png)
@@ -459,7 +459,7 @@ relates:has_bot>@LAT-30LON30,has_bot>@LAT-15LON70,has_bot>@LAT0LON110,has_bot>@L
 @LAT45LON10 | created:1771547500 | updated:1771547500 | relates:competes_in>@LAT-45LON-10
 
 ## Bunzilla!!
-- Card image: ![Bunzilla!!](Spring_Bot_Breaker_2026/IRCL_SBB2026-2.jpg)
+- Card image: ![Bunzilla!!](Spring_Bot_Breaker_2026/Bunzilla.png)
 - Weight class: Beetleweight
 - Team: Barnhouse Robotics
 - Image: ![Bunzilla!!](https://www.robotcombatevents.com/assets/RCELogo-3383ca77f76e5be2b7755ea9d0c464aea25a87d8c9f2a4cffd63643392f59fe7.png)
@@ -710,7 +710,7 @@ relates:has_bot>@LAT-30LON30,has_bot>@LAT-15LON70,has_bot>@LAT0LON110,has_bot>@L
 @LAT75LON-90 | created:1770743813 | updated:1770743813 | relates:competes_in>@LAT0LON0,competes_in>@LAT-45LON-10
 
 ## Rickrolled
-- Card image: ![Rickrolled](Bot_Oblivion_2025/Rickrolled.png)
+- Card image: ![Rickrolled](Spring_Bot_Breaker_2026/Rickrolled.png)
 - Weight class: Plastic Antweight
 - Team: BoweBots
 - Image: ![Rickrolled](https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/21313/Screenshot_2025-06-24_153703.png)

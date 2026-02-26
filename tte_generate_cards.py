@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import argparse
+import unicodedata
 import re
 import subprocess
 import os
@@ -20,7 +21,9 @@ CORNER_SIZE = 40
 
 
 def slugify(text: str) -> str:
-    slug = re.sub(r"[^A-Za-z0-9]+", "_", text.strip())
+    normalized = unicodedata.normalize("NFKD", text.strip())
+    ascii_text = normalized.encode("ascii", "ignore").decode("ascii")
+    slug = re.sub(r"[^A-Za-z0-9]+", "_", ascii_text)
     slug = slug.strip("_")
     return slug or "item"
 

@@ -56,8 +56,8 @@ agent_note: "event dataset for Spring Bot Breaker 2026."
 
 ---
 
-@LAT-45LON-10 | created:1770754151 | updated:1771546070 | z:100
-relates:has_bot>@LAT-30LON30,has_bot>@LAT-15LON70,has_bot>@LAT0LON110,has_bot>@LAT15LON150,has_bot>@LAT30LON-170,has_bot>@LAT-45LON70,has_bot>@LAT60LON-90,has_bot>@LAT75LON-50,has_bot>@LAT-75LON-50,has_bot>@LAT-60LON-10,has_bot>@LAT30LON10,has_bot>@LAT45LON10,has_bot>@LAT-45LON30,has_bot>@LAT-45LON110,has_bot>@LAT-45LON150,has_bot>@LAT-45LON-170,has_bot>@LAT-45LON-90,has_bot>@LAT-30LON70,has_bot>@LAT-15LON110,has_bot>@LAT0LON150,has_bot>@LAT15LON-170,has_bot>@LAT30LON-130,has_bot>@LAT45LON-90,has_bot>@LAT60LON-50,has_bot>@LAT-75LON-130,has_bot>@LAT75LON-10,has_bot>@LAT-75LON-10,has_bot>@LAT-60LON30,has_bot>@LAT-30LON-150,has_bot>@LAT-15LON-110,has_bot>@LAT0LON-70,has_bot>@LAT-60LON-90,has_bot>@LAT75LON-90,has_bot>@LAT-30LON-30
+@LAT-45LON-10 | created:1770754151 | updated:1772109495 | z:100
+relates:has_bot>@LAT-30LON70,has_bot>@LAT-15LON110,has_bot>@LAT0LON150,has_bot>@LAT15LON-170,has_bot>@LAT45LON-90,has_bot>@LAT60LON-50,has_bot>@LAT-75LON-130,has_bot>@LAT75LON-10,has_bot>@LAT-75LON-10,has_bot>@LAT-60LON30,has_bot>@LAT30LON-130,has_bot>@LAT-30LON-150,has_bot>@LAT-15LON-110,has_bot>@LAT0LON-70,has_bot>@LAT-60LON-90,has_bot>@LAT-75LON30,has_bot>@LAT-30LON30,has_bot>@LAT-15LON70,has_bot>@LAT0LON110,has_bot>@LAT15LON150,has_bot>@LAT30LON-170,has_bot>@LAT-45LON70,has_bot>@LAT75LON-90,has_bot>@LAT-30LON-30,has_bot>@LAT60LON-90,has_bot>@LAT-75LON-50,has_bot>@LAT-45LON30,has_bot>@LAT-45LON110,has_bot>@LAT-45LON150,has_bot>@LAT-45LON-170,has_bot>@LAT-45LON-90,has_bot>@LAT75LON-50,has_bot>@LAT-60LON-10,has_bot>@LAT30LON10,has_bot>@LAT45LON10,has_bot>@LAT-60LON70
 
 ## Spring Bot Breaker 2026 (Event)
 - Event image: ![Spring Bot Breaker 2026](Spring_Bot_Breaker_2026/IRCL_SBB2026-2.jpg)
@@ -139,6 +139,7 @@ Bot - Team
 - @LAT-15LON-110 TinkaTuff (Full Combat Antweight)
 - @LAT0LON-70 Bob² (Full Combat Antweight)
 - @LAT-60LON-90 JUMBO (Full Combat Antweight)
+- @LAT-75LON30 Sovereign Gear (Full Combat Antweight)
 
 #### Plastic Antweight
 - @LAT-30LON30 Smite (Plastic Antweight)
@@ -162,6 +163,7 @@ Bot - Team
 - @LAT-60LON-10 Fafner (Beetleweight)
 - @LAT30LON10 Mistwitz (Beetleweight)
 - @LAT45LON10 Bunzilla!! (Beetleweight)
+- @LAT-60LON70 VALKYRIA (Beetleweight)
 
 ### Notes
 - Uses SPARC rules for robot construction.
@@ -310,6 +312,16 @@ Bot - Team
 - Weight class: Full Combat Antweight
 - Team: DiscomBOBulators
 - Image: ![Bob²](https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/26097/Screenshot_20260223_215306_Google_2.jpg)
+
+---
+
+@LAT-75LON30 | created:1772109495 | updated:1772109495 | relates:competes_in>@LAT-45LON-10
+
+## Sovereign Gear
+- Card image: ![Sovereign Gear](Spring_Bot_Breaker_2026/Sovereign_Gear.png)
+- Weight class: Full Combat Antweight
+- Team: Rosified Pantheon Robotics
+- Image: ![Sovereign Gear](https://www.robotcombatevents.com/assets/RCELogo-3383ca77f76e5be2b7755ea9d0c464aea25a87d8c9f2a4cffd63643392f59fe7.png)
 
 ---
 
@@ -506,6 +518,16 @@ Bot - Team
 - Weight class: Beetleweight
 - Team: Barnhouse Robotics
 - Image: ![Bunzilla!!](https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/26039/PXL_20260212_225443801.jpg)
+
+---
+
+@LAT-60LON70 | created:1772109495 | updated:1772109495 | relates:competes_in>@LAT-45LON-10
+
+## VALKYRIA
+- Card image: ![VALKYRIA](Spring_Bot_Breaker_2026/VALKYRIA.png)
+- Weight class: Beetleweight
+- Team: Rosified Pantheon Robotics
+- Image: ![VALKYRIA](https://www.robotcombatevents.com/assets/RCELogo-3383ca77f76e5be2b7755ea9d0c464aea25a87d8c9f2a4cffd63643392f59fe7.png)
 
 ---
 

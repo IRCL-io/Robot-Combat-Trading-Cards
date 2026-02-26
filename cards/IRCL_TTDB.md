@@ -321,7 +321,7 @@ Bot - Team
 - Card image: ![Sovereign Gear](Spring_Bot_Breaker_2026/Sovereign_Gear.png)
 - Weight class: Full Combat Antweight
 - Team: Rosified Pantheon Robotics
-- Image: ![Sovereign Gear](https://www.robotcombatevents.com/assets/RCELogo-3383ca77f76e5be2b7755ea9d0c464aea25a87d8c9f2a4cffd63643392f59fe7.png)
+- Image: ![Sovereign Gear](https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/23418/SG_F.jpg)
 
 ---
 
@@ -527,7 +527,7 @@ Bot - Team
 - Card image: ![VALKYRIA](Spring_Bot_Breaker_2026/VALKYRIA.png)
 - Weight class: Beetleweight
 - Team: Rosified Pantheon Robotics
-- Image: ![VALKYRIA](https://www.robotcombatevents.com/assets/RCELogo-3383ca77f76e5be2b7755ea9d0c464aea25a87d8c9f2a4cffd63643392f59fe7.png)
+- Image: ![VALKYRIA](https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/24209/ft-3lb-undercutter-bot_lg.png)
 
 ---
 

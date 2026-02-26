@@ -51,7 +51,7 @@ selected:
   - @LAT-45LON-10
 preview:
   @LAT-45LON-10: "Spring Bot Breaker 2026 event record with roster of robots and source URLs."
-agent_note: "Cycle-01 event dataset for Spring Bot Breaker 2026."
+agent_note: "event dataset for Spring Bot Breaker 2026."
 ```
 
 ---
@@ -69,15 +69,58 @@ relates:has_bot>@LAT-30LON30,has_bot>@LAT-15LON70,has_bot>@LAT0LON110,has_bot>@L
 - End: 22:00
 - Website: https://ircl-io.github.io/
 - Registration fee: $25
-- Maximum combatants: 24
-- Competitions:
-  - Full Combat Antweight: https://www.robotcombatevents.com/events/6479/competitions/7078
-  - Plastic Antweight: https://www.robotcombatevents.com/events/6479/competitions/7077
-  - Beetleweight: https://www.robotcombatevents.com/events/6479/competitions/7079
-- Registrations:
-  - Full Combat Antweight: 15
-  - Plastic Antweight: 8
-  - Beetleweight: 11
+
+Competitions:
+### Full Combat Antweight
+https://www.robotcombatevents.com/events/6479/competitions/7078
+
+Bot	- Team
+- Metally Croissant	- BoweBots	 
+- TENACITY!	- Team HyperTech Robotics	
+- Anteater - BoomBox	
+- Benny	- ADHD Garage	
+- Lil' Nasty - Barnhouse Robotics	
+- Zephyr - Atlas	
+- ICU2 - Tele Present Tense	
+- Black Talon	- Trouble Robotics	
+- Ghost Viper	- Team Dairy	
+- Brawndo the thirst mutilator - Idiocracy	
+- Spur - ADHD Garage	
+- Dread - Bad Decisions Robotics	
+- TinkaTuff - Batchelor Bots	
+- Bob² - DiscomBOBulators	
+- JUMBO - Something	
+- Sovereign Gear - Rosified Pantheon Robotics	
+
+### Plastic Antweight
+https://www.robotcombatevents.com/events/6479/competitions/7077
+
+Bot - Team
+- Smite - Barnhouse Robotics	
+- Deadly Croissant - BoweBots	
+- Lil'Gnarly - Barnhouse Robotics	
+- Ammit - BoomBox
+- Broadside Killer - BoweBots	
+- Outbreak Plantfected - Trouble Robotics	
+- Rickrolled - BoweBots	
+- BOB -	DiscomBOBulators
+
+### Beetleweight
+https://www.robotcombatevents.com/events/6479/competitions/7079
+
+Bot - Team
+- Renegade - Bad Decisions Robotics	
+- Sukuna 宿儺 - Team HyperTech Robotics	
+- Over-N-Out - ADHD Garage	
+- Falling Guillotine - Trouble Robotics	
+- The Corrugated Crusader - ADHD Garage	
+- Sub-Zero - BoomBox	
+- Virilade - Idiocracy	
+- Dreadly - Croissant	BoweBots	
+- Fafner - BoweBots	
+- Mistwitz - Batchelor Bots	
+- Bunzilla!!- Barnhouse Robotics	
+- VALKYRIA - Rosified Pantheon Robotics
 
 ### Robots
 #### Full Combat Antweight

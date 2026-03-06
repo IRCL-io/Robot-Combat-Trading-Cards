@@ -72,7 +72,8 @@ relates:has_bot>@LAT-30LON70,has_bot>@LAT-15LON110,has_bot>@LAT0LON150,has_bot>@
 
 Competitions:
 ### Full Combat Antweight
-https://www.robotcombatevents.com/events/6479/competitions/7078
+url - count
+https://www.robotcombatevents.com/events/6479/competitions/7078 - 16
 
 Bot	- Team
 - Metally Croissant	- BoweBots	 
@@ -93,7 +94,8 @@ Bot	- Team
 - Sovereign Gear - Rosified Pantheon Robotics	
 
 ### Plastic Antweight
-https://www.robotcombatevents.com/events/6479/competitions/7077
+url - count
+https://www.robotcombatevents.com/events/6479/competitions/7077 - 8
 
 Bot - Team
 - Smite - Barnhouse Robotics	
@@ -106,7 +108,8 @@ Bot - Team
 - BOB -	DiscomBOBulators
 
 ### Beetleweight
-https://www.robotcombatevents.com/events/6479/competitions/7079
+url - count
+https://www.robotcombatevents.com/events/6479/competitions/7079 - 14
 
 Bot - Team
 - Renegade - Bad Decisions Robotics	
@@ -121,6 +124,8 @@ Bot - Team
 - Mistwitz - Batchelor Bots	
 - Bunzilla!!- Barnhouse Robotics	
 - VALKYRIA - Rosified Pantheon Robotics
+- Gyro - Geometrically Robotic
+- Plan B - Something
 
 ### Robots
 #### Full Combat Antweight

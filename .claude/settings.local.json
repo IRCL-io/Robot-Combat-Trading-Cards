@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls c:/git/Robot-Combat-Trading-Cards/*.py)"
+    ]
+  }
+}

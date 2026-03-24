@@ -64,8 +64,8 @@ agent_note: "event dataset for Spring Bot Breaker 2026."
 
 ---
 
-@LAT-45LON-10 | created:1770754151 | updated:1772807653 | z:100
-relates:has_bot>@LAT-75LON30,has_bot>@LAT-75LON-30,has_bot>@LAT-60LON30,has_bot>@LAT-60LON-30,has_bot>@LAT-45LON30,has_bot>@LAT-45LON-30,has_bot>@LAT-30LON30,has_bot>@LAT-30LON-30,has_bot>@LAT-15LON30,has_bot>@LAT-15LON-30,has_bot>@LAT0LON30,has_bot>@LAT0LON-30,has_bot>@LAT15LON30,has_bot>@LAT15LON-30,has_bot>@LAT30LON30,has_bot>@LAT30LON-30,has_bot>@LAT-60LON70,has_bot>@LAT-60LON-70,has_bot>@LAT-45LON70,has_bot>@LAT-45LON-70,has_bot>@LAT-30LON70,has_bot>@LAT-30LON-70,has_bot>@LAT-15LON70,has_bot>@LAT-15LON-70,has_bot>@LAT0LON70,has_bot>@LAT-75LON110,has_bot>@LAT-75LON-110,has_bot>@LAT-60LON110,has_bot>@LAT-60LON-110,has_bot>@LAT-45LON110,has_bot>@LAT-45LON-110,has_bot>@LAT-30LON110,has_bot>@LAT-30LON-110,has_bot>@LAT-15LON110,has_bot>@LAT-15LON-110,has_bot>@LAT0LON110,has_bot>@LAT0LON-110,has_bot>@LAT15LON110,has_bot>@LAT15LON-110
+@LAT-45LON-10 | created:1770754151 | updated:1774396800 | z:100
+relates:has_bot>@LAT-75LON30,has_bot>@LAT-75LON-30,has_bot>@LAT-60LON30,has_bot>@LAT-60LON-30,has_bot>@LAT-45LON30,has_bot>@LAT-45LON-30,has_bot>@LAT-30LON30,has_bot>@LAT-30LON-30,has_bot>@LAT-15LON30,has_bot>@LAT-15LON-30,has_bot>@LAT0LON30,has_bot>@LAT0LON-30,has_bot>@LAT15LON30,has_bot>@LAT15LON-30,has_bot>@LAT30LON30,has_bot>@LAT30LON-30,has_bot>@LAT45LON30,has_bot>@LAT-60LON70,has_bot>@LAT-60LON-70,has_bot>@LAT-45LON70,has_bot>@LAT-45LON-70,has_bot>@LAT-30LON70,has_bot>@LAT-30LON-70,has_bot>@LAT-15LON70,has_bot>@LAT-15LON-70,has_bot>@LAT0LON70,has_bot>@LAT-75LON110,has_bot>@LAT-75LON-110,has_bot>@LAT-60LON110,has_bot>@LAT-60LON-110,has_bot>@LAT-45LON110,has_bot>@LAT-45LON-110,has_bot>@LAT-30LON110,has_bot>@LAT-30LON-110,has_bot>@LAT-15LON110,has_bot>@LAT-15LON-110,has_bot>@LAT0LON110,has_bot>@LAT0LON-110,has_bot>@LAT15LON110,has_bot>@LAT15LON-110
 
 ## Spring Bot Breaker 2026 (Event)
 - Event image: ![Spring Bot Breaker 2026](Spring_Bot_Breaker_2026/IRCL_SBB2026-2.jpg)
@@ -81,7 +81,7 @@ relates:has_bot>@LAT-75LON30,has_bot>@LAT-75LON-30,has_bot>@LAT-60LON30,has_bot>
 Competitions:
 ### Full Combat Antweight
 url - count
-https://www.robotcombatevents.com/events/6479/competitions/7078 - 16
+https://www.robotcombatevents.com/events/6479/competitions/7078 - 17
 
 Bot	- Team
 - Metally Croissant	- BoweBots
@@ -100,6 +100,7 @@ Bot	- Team
 - Bob² - DiscomBOBulators
 - JUMBO - Something
 - Sovereign Gear - Rosified Pantheon Robotics
+- Cyclone - Bobbsey Twins
 
 ### Plastic Antweight
 url - count
@@ -154,6 +155,7 @@ Bot - Team
 - @LAT15LON-30 Bob² (Full Combat Antweight)
 - @LAT30LON30 JUMBO (Full Combat Antweight)
 - @LAT30LON-30 Sovereign Gear (Full Combat Antweight)
+- @LAT45LON30 Cyclone (Full Combat Antweight)
 
 #### Plastic Antweight
 - @LAT-60LON70 Smite (Plastic Antweight)
@@ -351,6 +353,16 @@ Bot - Team
 - Weight class: Full Combat Antweight
 - Team: Rosified Pantheon Robotics
 - Image: ![Sovereign Gear](https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/23418/SG_F.jpg)
+
+---
+
+@LAT45LON30 | created:1774396800 | updated:1774396800 | relates:competes_in>@LAT-45LON-10
+
+## Cyclone
+- Card image: ![Cyclone](Spring_Bot_Breaker_2026/Cyclone.png)
+- Weight class: Full Combat Antweight
+- Team: Bobbsey Twins
+- Image: ![Cyclone](Spring_Bot_Breaker_2026/IRCL_SBB2026-2.jpg)
 
 ---
 

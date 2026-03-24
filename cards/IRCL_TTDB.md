@@ -362,7 +362,7 @@ Bot - Team
 - Card image: ![Cyclone](Spring_Bot_Breaker_2026/Cyclone.png)
 - Weight class: Full Combat Antweight
 - Team: Bobbsey Twins
-- Image: ![Cyclone](Spring_Bot_Breaker_2026/IRCL_SBB2026-2.jpg)
+- Image: ![Cyclone](https://ircl-io.github.io/cards/cards/Spring_Bot_Breaker_2026/IRCL_SBB2026-2.jpg)
 
 ---
 

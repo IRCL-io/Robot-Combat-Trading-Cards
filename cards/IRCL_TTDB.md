@@ -65,10 +65,10 @@ agent_note: "event dataset for Spring Bot Breaker 2026."
 ---
 
 @LAT-45LON-10 | created:1770754151 | updated:1774396800 | z:100
-relates:has_bot>@LAT-75LON30,has_bot>@LAT-75LON-30,has_bot>@LAT-60LON30,has_bot>@LAT-60LON-30,has_bot>@LAT-45LON30,has_bot>@LAT-45LON-30,has_bot>@LAT-30LON30,has_bot>@LAT-30LON-30,has_bot>@LAT-15LON30,has_bot>@LAT-15LON-30,has_bot>@LAT0LON30,has_bot>@LAT0LON-30,has_bot>@LAT15LON30,has_bot>@LAT15LON-30,has_bot>@LAT30LON30,has_bot>@LAT30LON-30,has_bot>@LAT45LON30,has_bot>@LAT-60LON70,has_bot>@LAT-60LON-70,has_bot>@LAT-45LON70,has_bot>@LAT-45LON-70,has_bot>@LAT-30LON70,has_bot>@LAT-30LON-70,has_bot>@LAT-15LON70,has_bot>@LAT-15LON-70,has_bot>@LAT0LON70,has_bot>@LAT-75LON110,has_bot>@LAT-75LON-110,has_bot>@LAT-60LON110,has_bot>@LAT-60LON-110,has_bot>@LAT-45LON110,has_bot>@LAT-45LON-110,has_bot>@LAT-30LON110,has_bot>@LAT-30LON-110,has_bot>@LAT-15LON110,has_bot>@LAT-15LON-110,has_bot>@LAT0LON110,has_bot>@LAT0LON-110,has_bot>@LAT15LON110,has_bot>@LAT15LON-110
+relates:has_bot>@LAT-75LON30,has_bot>@LAT-75LON-30,has_bot>@LAT-60LON30,has_bot>@LAT-60LON-30,has_bot>@LAT-45LON30,has_bot>@LAT-45LON-30,has_bot>@LAT-30LON30,has_bot>@LAT-30LON-30,has_bot>@LAT-15LON30,has_bot>@LAT-15LON-30,has_bot>@LAT0LON30,has_bot>@LAT0LON-30,has_bot>@LAT15LON30,has_bot>@LAT15LON-30,has_bot>@LAT30LON30,has_bot>@LAT30LON-30,has_bot>@LAT45LON30,has_bot>@LAT-60LON70,has_bot>@LAT-60LON-70,has_bot>@LAT-45LON70,has_bot>@LAT-45LON-70,has_bot>@LAT-30LON70,has_bot>@LAT-30LON-70,has_bot>@LAT-15LON70,has_bot>@LAT-15LON-70,has_bot>@LAT0LON70,has_bot>@LAT0LON-70,has_bot>@LAT15LON70,has_bot>@LAT15LON-70,has_bot>@LAT-75LON110,has_bot>@LAT-75LON-110,has_bot>@LAT-60LON110,has_bot>@LAT-60LON-110,has_bot>@LAT-45LON110,has_bot>@LAT-45LON-110,has_bot>@LAT-30LON110,has_bot>@LAT-30LON-110,has_bot>@LAT-15LON110,has_bot>@LAT-15LON-110,has_bot>@LAT0LON110,has_bot>@LAT0LON-110,has_bot>@LAT15LON110,has_bot>@LAT15LON-110
 
 ## Spring Bot Breaker 2026 (Event)
-- Event image: ![Spring Bot Breaker 2026](Spring_Bot_Breaker_2026/IRCL_SBB2026-2.jpg)
+- Event image: ![Spring Bot Breaker 2026](https://ircl-io.github.io/cards/cards/Spring_Bot_Breaker_2026/IRCL_SBB2026-2.jpg)
 - Back card image: ![Spring Bot Breaker 2026 Back](Spring_Bot_Breaker_2026/Spring_Bot_Breaker_2026_back.png)
 - URL: https://www.robotcombatevents.com/events/6479
 - Location: 7211 W Colonial St, Boise, ID 83709, USA
@@ -104,7 +104,7 @@ Bot	- Team
 
 ### Plastic Antweight
 url - count
-https://www.robotcombatevents.com/events/6479/competitions/7077 - 9
+https://www.robotcombatevents.com/events/6479/competitions/7077 - 12
 
 Bot - Team
 - Smite - Barnhouse Robotics
@@ -116,6 +116,9 @@ Bot - Team
 - Rickrolled - BoweBots
 - BOB -	DiscomBOBulators
 - I Think I'm A Clone Now - BoweBots
+- Unicorna - Voidout
+- Graveline - Voidout
+- Thing	- Bobbsey Twins
 
 ### Beetleweight
 url - count
@@ -167,6 +170,9 @@ Bot - Team
 - @LAT-15LON70 Rickrolled (Plastic Antweight)
 - @LAT-15LON-70 BOB (Plastic Antweight)
 - @LAT0LON70 I Think I'm A Clone Now (Plastic Antweight)
+- @LAT0LON-70 Unicorna (Plastic Antweight)
+- @LAT15LON70 Graveline (Plastic Antweight)
+- @LAT15LON-70 Thing (Plastic Antweight)
 
 #### Beetleweight
 - @LAT-75LON110 Renegade (Beetleweight)
@@ -196,7 +202,7 @@ Bot - Team
 - Weight class: Full Combat Antweight
 - Team: BoweBots
 - URL: https://www.robotcombatevents.com/groups/6815/resources/21736
-- Image: ![Metally Croissant](https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/21736/image.png)
+- Image: ![Metally Croissant](https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/21736/PXL_20260324_034717228.jpg)
 
 ---
 
@@ -352,7 +358,7 @@ Bot - Team
 - Card image: ![Sovereign Gear](Spring_Bot_Breaker_2026/Sovereign_Gear.png)
 - Weight class: Full Combat Antweight
 - Team: Rosified Pantheon Robotics
-- Image: ![Sovereign Gear](https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/23418/SG_F.jpg)
+- Image: ![Sovereign Gear](https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/23418/Sovereign_Gear.png)
 
 ---
 
@@ -455,6 +461,35 @@ Bot - Team
 - Weight class: Plastic Antweight
 - Team: BoweBots
 - Image: ![I Think I'm A Clone Now](https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/19596/PXL_20250314_020823711_2__1_.jpg)
+
+---
+
+@LAT0LON-70 | created:1774396800 | updated:1774396800 | relates:competes_in>@LAT-45LON-10
+
+## Unicorna
+- Card image: ![Unicorna](Spring_Bot_Breaker_2026/Unicorna.png)
+- Weight class: Plastic Antweight
+- Team: Voidout
+- Image: ![Unicorna](https://ircl-io.github.io/cards/cards/Spring_Bot_Breaker_2026/IRCL_SBB2026-2.jpg)
+
+---
+
+@LAT15LON70 | created:1774396800 | updated:1774396800 | relates:competes_in>@LAT-45LON-10
+
+## Graveline
+- Card image: ![Graveline](Spring_Bot_Breaker_2026/Graveline.png)
+- Weight class: Plastic Antweight
+- Team: Voidout
+- Image: ![Graveline](https://ircl-io.github.io/cards/cards/Spring_Bot_Breaker_2026/IRCL_SBB2026-2.jpg)
+---
+
+@LAT15LON-70 | created:1774396800 | updated:1774396800 | relates:competes_in>@LAT-45LON-10
+
+## Thing
+- Card image: ![Thing](Spring_Bot_Breaker_2026/Thing.png)
+- Weight class: Plastic Antweight
+- Team: Bobbsey Twins
+- Image: ![Thing](https://ircl-io.github.io/cards/cards/Spring_Bot_Breaker_2026/IRCL_SBB2026-2.jpg)
 
 ---
 

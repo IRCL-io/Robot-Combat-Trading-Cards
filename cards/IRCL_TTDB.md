@@ -259,7 +259,7 @@ Bot - Team
 - Weight class: Full Combat Antweight
 - Team: Tele Present Tense
 - URL: https://www.robotcombatevents.com/groups/3652/resources/17217
-- Image: ![ICU2](https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/17217/ICU2_Medium_2.png)
+- Image: ![ICU2](https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/17217/ICU2.jpeg)
 
 ---
 
@@ -319,7 +319,7 @@ Bot - Team
 - Card image: ![Bob²](Spring_Bot_Breaker_2026/Bob2.png)
 - Weight class: Full Combat Antweight
 - Team: DiscomBOBulators
-- Image: ![Bob²](https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/26097/Screenshot_20260223_215306_Google_2.jpg)
+- Image: ![Bob²](https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/26097/SmartSelect_20260325_112505_Onshape.jpg)
 
 ---
 
@@ -448,7 +448,7 @@ Bot - Team
 @LAT0LON-70 | created:1774396800 | updated:1774396800 | relates:competes_in>@LAT-45LON-10
 
 ## Grave Line
-- Card image: ![Grave Line](Spring_Bot_Breaker_2026/Graveline.png)
+- Card image: ![Grave Line](Spring_Bot_Breaker_2026/Grave_Line.png)
 - Weight class: Plastic Antweight
 - Team: Voidout
 - Image: ![Grave Line](https://ircl-io.github.io/cards/cards/Spring_Bot_Breaker_2026/IRCL_SBB2026-2.jpg)

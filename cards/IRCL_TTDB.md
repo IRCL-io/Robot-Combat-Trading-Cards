@@ -51,7 +51,7 @@ typed_edges:
 > so that cards bounce in from opposite sides of the globe back and forth.
 > - Full Combat Antweight: LON ±30,  LAT -75 → +30 step 15  (positions 1-16)
 > - Plastic Antweight:     LON ±70,  LAT -60 → 0  step 15  (positions 1-9)
-> - Beetleweight:          LON ±110, LAT -75 → +15 step 15  (positions 1-14)
+> - Beetleweight:          LON ±110, LAT -75 → +15 step 15  (positions 1-13)
 > Odd roster positions → +LON (right). Even roster positions → -LON (left).
 
 ```cursor
@@ -65,7 +65,7 @@ agent_note: "event dataset for Spring Bot Breaker 2026."
 ---
 
 @LAT-45LON-10 | created:1770754151 | updated:1774396800 | z:100
-relates:has_bot>@LAT-75LON30,has_bot>@LAT-75LON-30,has_bot>@LAT-60LON30,has_bot>@LAT-60LON-30,has_bot>@LAT-45LON30,has_bot>@LAT-45LON-30,has_bot>@LAT-30LON30,has_bot>@LAT-30LON-30,has_bot>@LAT-15LON30,has_bot>@LAT-15LON-30,has_bot>@LAT0LON30,has_bot>@LAT0LON-30,has_bot>@LAT15LON30,has_bot>@LAT15LON-30,has_bot>@LAT30LON30,has_bot>@LAT30LON-30,has_bot>@LAT45LON30,has_bot>@LAT-60LON70,has_bot>@LAT-60LON-70,has_bot>@LAT-45LON70,has_bot>@LAT-45LON-70,has_bot>@LAT-30LON70,has_bot>@LAT-30LON-70,has_bot>@LAT-15LON70,has_bot>@LAT-15LON-70,has_bot>@LAT0LON70,has_bot>@LAT0LON-70,has_bot>@LAT15LON70,has_bot>@LAT15LON-70,has_bot>@LAT-75LON110,has_bot>@LAT-75LON-110,has_bot>@LAT-60LON110,has_bot>@LAT-60LON-110,has_bot>@LAT-45LON110,has_bot>@LAT-45LON-110,has_bot>@LAT-30LON110,has_bot>@LAT-30LON-110,has_bot>@LAT-15LON110,has_bot>@LAT-15LON-110,has_bot>@LAT0LON110,has_bot>@LAT0LON-110,has_bot>@LAT15LON110,has_bot>@LAT15LON-110
+relates:has_bot>@LAT-75LON30,has_bot>@LAT-75LON-30,has_bot>@LAT-60LON30,has_bot>@LAT-60LON-30,has_bot>@LAT-45LON30,has_bot>@LAT-45LON-30,has_bot>@LAT-30LON30,has_bot>@LAT-30LON-30,has_bot>@LAT-15LON30,has_bot>@LAT-15LON-30,has_bot>@LAT0LON30,has_bot>@LAT0LON-30,has_bot>@LAT15LON30,has_bot>@LAT15LON-30,has_bot>@LAT30LON30,has_bot>@LAT30LON-30,has_bot>@LAT45LON30,has_bot>@LAT-60LON70,has_bot>@LAT-60LON-70,has_bot>@LAT-45LON70,has_bot>@LAT-45LON-70,has_bot>@LAT-30LON70,has_bot>@LAT-30LON-70,has_bot>@LAT-15LON70,has_bot>@LAT-15LON-70,has_bot>@LAT0LON70,has_bot>@LAT0LON-70,has_bot>@LAT15LON70,has_bot>@LAT15LON-70,has_bot>@LAT-75LON110,has_bot>@LAT-75LON-110,has_bot>@LAT-60LON110,has_bot>@LAT-60LON-110,has_bot>@LAT-45LON110,has_bot>@LAT-45LON-110,has_bot>@LAT-30LON110,has_bot>@LAT-30LON-110,has_bot>@LAT-15LON110,has_bot>@LAT-15LON-110,has_bot>@LAT0LON110,has_bot>@LAT0LON-110,has_bot>@LAT15LON110
 
 ## Spring Bot Breaker 2026 (Event)
 - Event image: ![Spring Bot Breaker 2026](https://ircl-io.github.io/cards/cards/Spring_Bot_Breaker_2026/IRCL_SBB2026-2.jpg)
@@ -122,13 +122,12 @@ Bot - Team
 
 ### Beetleweight
 url - count
-https://www.robotcombatevents.com/events/6479/competitions/7079 - 14
+https://www.robotcombatevents.com/events/6479/competitions/7079 - 13
 
 Bot - Team
 - Renegade - Bad Decisions Robotics
 - Sukuna 宿儺 - Team HyperTech Robotics
 - Over-N-Out - ADHD Garage
-- Falling Guillotine - Trouble Robotics
 - The Corrugated Crusader - ADHD Garage
 - Sub-Zero - BoomBox
 - Virilade - Idiocracy
@@ -178,17 +177,16 @@ Bot - Team
 - @LAT-75LON110 Renegade (Beetleweight)
 - @LAT-75LON-110 Sukuna 宿儺 (Beetleweight)
 - @LAT-60LON110 Over-N-Out (Beetleweight)
-- @LAT-60LON-110 Falling Guillotine (Beetleweight)
-- @LAT-45LON110 The Corrugated Crusader (Beetleweight)
-- @LAT-45LON-110 Sub-Zero (Beetleweight)
-- @LAT-30LON110 Virilade (Beetleweight)
-- @LAT-30LON-110 Dreadly Croissant (Beetleweight)
-- @LAT-15LON110 Fafner (Beetleweight)
-- @LAT-15LON-110 Mistwitz (Beetleweight)
-- @LAT0LON110 Bunzilla!! (Beetleweight)
-- @LAT0LON-110 VALKYRIA (Beetleweight)
-- @LAT15LON110 Gyro (Beetleweight)
-- @LAT15LON-110 Plan B (Beetleweight)
+- @LAT-60LON-110 The Corrugated Crusader (Beetleweight)
+- @LAT-45LON110 Sub-Zero (Beetleweight)
+- @LAT-45LON-110 Virilade (Beetleweight)
+- @LAT-30LON110 Dreadly Croissant (Beetleweight)
+- @LAT-30LON-110 Fafner (Beetleweight)
+- @LAT-15LON110 Mistwitz (Beetleweight)
+- @LAT-15LON-110 Bunzilla!! (Beetleweight)
+- @LAT0LON110 VALKYRIA (Beetleweight)
+- @LAT0LON-110 Gyro (Beetleweight)
+- @LAT15LON110 Plan B (Beetleweight)
 
 ### Notes
 - Uses SPARC rules for robot construction.
@@ -526,17 +524,7 @@ Bot - Team
 
 ---
 
-@LAT-60LON-110 | created:1771546070 | updated:1771546070 | relates:competes_in>@LAT-45LON-10
-
-## Falling Guillotine
-- Card image: ![Falling Guillotine](Spring_Bot_Breaker_2026/Falling_Guillotine.png)
-- Weight class: Beetleweight
-- Team: Trouble Robotics
-- Image: ![Falling Guillotine](https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/18493/PXL_20251018_160954017.jpg)
-
----
-
-@LAT-45LON110 | created:1771546070 | updated:1771546070 | relates:competes_in>@LAT-45LON-10
+@LAT-60LON-110 | created:1771546070 | updated:1774396800 | relates:competes_in>@LAT-45LON-10
 
 ## The Corrugated Crusader
 - Card image: ![The Corrugated Crusader](Spring_Bot_Breaker_2026/The_Corrugated_Crusader.png)
@@ -546,7 +534,7 @@ Bot - Team
 
 ---
 
-@LAT-45LON-110 | created:1771546070 | updated:1771546070 | relates:competes_in>@LAT-45LON-10
+@LAT-45LON110 | created:1771546070 | updated:1774396800 | relates:competes_in>@LAT-45LON-10
 
 ## Sub-Zero
 - Card image: ![Sub-Zero](Spring_Bot_Breaker_2026/Sub_Zero.png)
@@ -556,7 +544,7 @@ Bot - Team
 
 ---
 
-@LAT-30LON110 | created:1770743813 | updated:1771546070 | relates:competes_in>@LAT-45LON-10
+@LAT-45LON-110 | created:1770743813 | updated:1774396800 | relates:competes_in>@LAT-45LON-10
 
 ## Virilade
 - Card image: ![Virilade](Spring_Bot_Breaker_2026/Virilade.png)
@@ -566,7 +554,7 @@ Bot - Team
 
 ---
 
-@LAT-30LON-110 | created:1770754151 | updated:1770754151 | relates:competes_in>@LAT-45LON-10
+@LAT-30LON110 | created:1770754151 | updated:1774396800 | relates:competes_in>@LAT-45LON-10
 
 ## Dreadly Croissant
 - Card image: ![Dreadly Croissant](Spring_Bot_Breaker_2026/Dreadly_Croissant.png)
@@ -576,7 +564,7 @@ Bot - Team
 
 ---
 
-@LAT-15LON110 | created:1770754151 | updated:1770754151 | relates:competes_in>@LAT-45LON-10
+@LAT-30LON-110 | created:1770754151 | updated:1774396800 | relates:competes_in>@LAT-45LON-10
 
 ## Fafner
 - Card image: ![Fafner](Spring_Bot_Breaker_2026/Fafner.png)
@@ -586,7 +574,7 @@ Bot - Team
 
 ---
 
-@LAT-15LON-110 | created:1771547500 | updated:1771547500 | relates:competes_in>@LAT-45LON-10
+@LAT-15LON110 | created:1771547500 | updated:1774396800 | relates:competes_in>@LAT-45LON-10
 
 ## Mistwitz
 - Card image: ![Mistwitz](Spring_Bot_Breaker_2026/Mistwitz.png)
@@ -596,7 +584,7 @@ Bot - Team
 
 ---
 
-@LAT0LON110 | created:1771547500 | updated:1771547500 | relates:competes_in>@LAT-45LON-10
+@LAT-15LON-110 | created:1771547500 | updated:1774396800 | relates:competes_in>@LAT-45LON-10
 
 ## Bunzilla!!
 - Card image: ![Bunzilla!!](Spring_Bot_Breaker_2026/Bunzilla.png)
@@ -606,7 +594,7 @@ Bot - Team
 
 ---
 
-@LAT0LON-110 | created:1772109495 | updated:1772109495 | relates:competes_in>@LAT-45LON-10
+@LAT0LON110 | created:1772109495 | updated:1774396800 | relates:competes_in>@LAT-45LON-10
 
 ## VALKYRIA
 - Card image: ![VALKYRIA](Spring_Bot_Breaker_2026/VALKYRIA.png)
@@ -616,7 +604,7 @@ Bot - Team
 
 ---
 
-@LAT15LON110 | created:1770743813 | updated:1772807653 | relates:competes_in>@LAT-45LON-10
+@LAT0LON-110 | created:1770743813 | updated:1774396800 | relates:competes_in>@LAT-45LON-10
 
 ## Gyro
 - Card image: ![Gyro](Spring_Bot_Breaker_2026/Gyro.png)
@@ -626,10 +614,11 @@ Bot - Team
 
 ---
 
-@LAT15LON-110 | created:1770743813 | updated:1772807653 | relates:competes_in>@LAT-45LON-10
+@LAT15LON110 | created:1770743813 | updated:1774396800 | relates:competes_in>@LAT-45LON-10
 
 ## Plan B
 - Card image: ![Plan B](Spring_Bot_Breaker_2026/Plan_B.png)
 - Weight class: Beetleweight
 - Team: Something
 - Image: ![Plan B](https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/18553/476064446_519674403912169_7897790394868896022_n.jpg)
+

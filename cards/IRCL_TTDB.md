@@ -65,7 +65,7 @@ agent_note: "event dataset for Spring Bot Breaker 2026."
 ---
 
 @LAT-45LON-10 | created:1770754151 | updated:1774396800 | z:100
-relates:has_bot>@LAT-75LON30,has_bot>@LAT-75LON-30,has_bot>@LAT-60LON30,has_bot>@LAT-60LON-30,has_bot>@LAT-45LON30,has_bot>@LAT-45LON-30,has_bot>@LAT-30LON30,has_bot>@LAT-30LON-30,has_bot>@LAT-15LON30,has_bot>@LAT-15LON-30,has_bot>@LAT0LON30,has_bot>@LAT0LON-30,has_bot>@LAT15LON30,has_bot>@LAT15LON-30,has_bot>@LAT30LON30,has_bot>@LAT30LON-30,has_bot>@LAT45LON30,has_bot>@LAT-60LON70,has_bot>@LAT-60LON-70,has_bot>@LAT-45LON70,has_bot>@LAT-45LON-70,has_bot>@LAT-30LON70,has_bot>@LAT-30LON-70,has_bot>@LAT-15LON70,has_bot>@LAT-15LON-70,has_bot>@LAT0LON70,has_bot>@LAT0LON-70,has_bot>@LAT-75LON110,has_bot>@LAT-75LON-110,has_bot>@LAT-60LON110,has_bot>@LAT-60LON-110,has_bot>@LAT-45LON110,has_bot>@LAT-45LON-110,has_bot>@LAT-30LON110,has_bot>@LAT-30LON-110,has_bot>@LAT-15LON110,has_bot>@LAT-15LON-110,has_bot>@LAT0LON110,has_bot>@LAT0LON-110,has_bot>@LAT15LON110
+relates:has_bot>@LAT-75LON30,has_bot>@LAT-75LON-30,has_bot>@LAT-60LON30,has_bot>@LAT-60LON-30,has_bot>@LAT-45LON30,has_bot>@LAT-45LON-30,has_bot>@LAT-30LON30,has_bot>@LAT-30LON-30,has_bot>@LAT-15LON30,has_bot>@LAT-15LON-30,has_bot>@LAT0LON30,has_bot>@LAT0LON-30,has_bot>@LAT15LON30,has_bot>@LAT15LON-30,has_bot>@LAT30LON30,has_bot>@LAT30LON-30,has_bot>@LAT-60LON70,has_bot>@LAT-60LON-70,has_bot>@LAT-45LON70,has_bot>@LAT-45LON-70,has_bot>@LAT-30LON70,has_bot>@LAT-30LON-70,has_bot>@LAT-15LON70,has_bot>@LAT-15LON-70,has_bot>@LAT0LON70,has_bot>@LAT0LON-70,has_bot>@LAT-75LON110,has_bot>@LAT-75LON-110,has_bot>@LAT-60LON110,has_bot>@LAT-60LON-110,has_bot>@LAT-45LON110,has_bot>@LAT-45LON-110,has_bot>@LAT-30LON110,has_bot>@LAT-30LON-110,has_bot>@LAT-15LON110,has_bot>@LAT-15LON-110,has_bot>@LAT0LON110,has_bot>@LAT0LON-110,has_bot>@LAT15LON110
 
 ## Spring Bot Breaker 2026 (Event)
 - Event image: ![Spring Bot Breaker 2026](https://ircl-io.github.io/cards/cards/Spring_Bot_Breaker_2026/IRCL_SBB2026-2.jpg)
@@ -81,7 +81,7 @@ relates:has_bot>@LAT-75LON30,has_bot>@LAT-75LON-30,has_bot>@LAT-60LON30,has_bot>
 Competitions:
 ### Full Combat Antweight
 url - count
-https://www.robotcombatevents.com/events/6479/competitions/7078 - 17
+https://www.robotcombatevents.com/events/6479/competitions/7078 - 16
 
 Bot	- Team
 - Metally Croissant	- BoweBots
@@ -91,7 +91,6 @@ Bot	- Team
 - Lil' Nasty - Barnhouse Robotics
 - Zephyr - Atlas
 - ICU2 - Tele Present Tense
-- Black Talon	- Trouble Robotics
 - Ghost Viper	- Team Dairy
 - Brawndo the thirst mutilator - Idiocracy
 - Spur - ADHD Garage
@@ -146,16 +145,15 @@ Bot - Team
 - @LAT-45LON30 Lil' Nasty (Full Combat Antweight)
 - @LAT-45LON-30 Zephyr (Full Combat Antweight)
 - @LAT-30LON30 ICU2 (Full Combat Antweight)
-- @LAT-30LON-30 Black Talon (Full Combat Antweight)
-- @LAT-15LON30 Ghost Viper (Full Combat Antweight)
-- @LAT-15LON-30 Brawndo the thirst mutilator (Full Combat Antweight)
-- @LAT0LON30 Spur (Full Combat Antweight)
-- @LAT0LON-30 Dread (Full Combat Antweight)
-- @LAT15LON30 TinkaTuff (Full Combat Antweight)
-- @LAT15LON-30 Bob² (Full Combat Antweight)
-- @LAT30LON30 JUMBO (Full Combat Antweight)
-- @LAT30LON-30 Sovereign Gear (Full Combat Antweight)
-- @LAT45LON30 Cyclone (Full Combat Antweight)
+- @LAT-30LON-30 Ghost Viper (Full Combat Antweight)
+- @LAT-15LON30 Brawndo the thirst mutilator (Full Combat Antweight)
+- @LAT-15LON-30 Spur (Full Combat Antweight)
+- @LAT0LON30 Dread (Full Combat Antweight)
+- @LAT0LON-30 TinkaTuff (Full Combat Antweight)
+- @LAT15LON30 Bob² (Full Combat Antweight)
+- @LAT15LON-30 JUMBO (Full Combat Antweight)
+- @LAT30LON30 Sovereign Gear (Full Combat Antweight)
+- @LAT30LON-30 Cyclone (Full Combat Antweight)
 
 #### Plastic Antweight
 - @LAT-60LON70 Deadly Croissant (Plastic Antweight)
@@ -265,18 +263,7 @@ Bot - Team
 
 ---
 
-@LAT-30LON-30 | created:1770754582 | updated:1770754582 | relates:competes_in>@LAT-45LON-10
-
-## Black Talon
-- Card image: ![Black Talon](Spring_Bot_Breaker_2026/Black_Talon.png)
-- Weight class: Full Combat Antweight
-- Team: Trouble Robotics
-- URL: https://www.robotcombatevents.com/groups/1925/resources/22179
-- Image: ![Black Talon](https://robotcombatevents.s3.amazonaws.com/uploads/resource/photo/22179/F2AC5BC5-75A6-44F6-B105-B30A388CFF16.png)
-
----
-
-@LAT-15LON30 | created:1770754582 | updated:1770754582 | relates:competes_in>@LAT-45LON-10
+@LAT-30LON-30 | created:1770754582 | updated:1774396800 | relates:competes_in>@LAT-45LON-10
 
 ## Ghost Viper
 - Card image: ![Ghost Viper](Spring_Bot_Breaker_2026/Ghost_Viper.png)
@@ -286,7 +273,7 @@ Bot - Team
 
 ---
 
-@LAT-15LON-30 | created:1771536994 | updated:1771537136 | relates:competes_in>@LAT-45LON-10
+@LAT-15LON30 | created:1771536994 | updated:1774396800 | relates:competes_in>@LAT-45LON-10
 
 ## Brawndo the thirst mutilator
 - Card image: ![Brawndo the thirst mutilator](Spring_Bot_Breaker_2026/Brawndo_the_thirst_mutilator.png)
@@ -296,7 +283,7 @@ Bot - Team
 
 ---
 
-@LAT0LON30 | created:1770754582 | updated:1771545786 | relates:competes_in>@LAT-45LON-10
+@LAT-15LON-30 | created:1770754582 | updated:1774396800 | relates:competes_in>@LAT-45LON-10
 
 ## Spur
 - Card image: ![Spur](Spring_Bot_Breaker_2026/Spur.png)
@@ -306,7 +293,7 @@ Bot - Team
 
 ---
 
-@LAT0LON-30 | created:1771547000 | updated:1771547000 | relates:competes_in>@LAT-45LON-10
+@LAT0LON30 | created:1771547000 | updated:1774396800 | relates:competes_in>@LAT-45LON-10
 
 ## Dread
 - Card image: ![Dread](Spring_Bot_Breaker_2026/Dread.png)
@@ -316,7 +303,7 @@ Bot - Team
 
 ---
 
-@LAT15LON30 | created:1771547300 | updated:1771547300 | relates:competes_in>@LAT-45LON-10
+@LAT0LON-30 | created:1771547300 | updated:1774396800 | relates:competes_in>@LAT-45LON-10
 
 ## TinkaTuff
 - Card image: ![TinkaTuff](Spring_Bot_Breaker_2026/TinkaTuff.png)
@@ -326,7 +313,7 @@ Bot - Team
 
 ---
 
-@LAT15LON-30 | created:1771547300 | updated:1771547300 | relates:competes_in>@LAT-45LON-10
+@LAT15LON30 | created:1771547300 | updated:1774396800 | relates:competes_in>@LAT-45LON-10
 
 ## Bob²
 - Card image: ![Bob²](Spring_Bot_Breaker_2026/Bob2.png)
@@ -336,7 +323,7 @@ Bot - Team
 
 ---
 
-@LAT30LON30 | created:1770743813 | updated:1771545786 | relates:competes_in>@LAT-45LON-10
+@LAT15LON-30 | created:1770743813 | updated:1774396800 | relates:competes_in>@LAT-45LON-10
 
 ## JUMBO
 - Card image: ![JUMBO](Spring_Bot_Breaker_2026/JUMBO.png)
@@ -346,7 +333,7 @@ Bot - Team
 
 ---
 
-@LAT30LON-30 | created:1772109495 | updated:1772109495 | relates:competes_in>@LAT-45LON-10
+@LAT30LON30 | created:1772109495 | updated:1774396800 | relates:competes_in>@LAT-45LON-10
 
 ## Sovereign Gear
 - Card image: ![Sovereign Gear](Spring_Bot_Breaker_2026/Sovereign_Gear.png)
@@ -356,13 +343,14 @@ Bot - Team
 
 ---
 
-@LAT45LON30 | created:1774396800 | updated:1774396800 | relates:competes_in>@LAT-45LON-10
+@LAT30LON-30 | created:1774396800 | updated:1774396800 | relates:competes_in>@LAT-45LON-10
 
 ## Cyclone
 - Card image: ![Cyclone](Spring_Bot_Breaker_2026/Cyclone.png)
 - Weight class: Full Combat Antweight
 - Team: Bobbsey Twins
 - Image: ![Cyclone](https://ircl-io.github.io/cards/cards/Spring_Bot_Breaker_2026/IRCL_SBB2026-2.jpg)
+
 
 ---
 
